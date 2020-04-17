@@ -1,6 +1,16 @@
+// img{
+//     border: 1px solid red;
+//     height: 80px;
+//     display: block;
+//     // 1.不然會高出3公分留白
+//     // 2.可是他向inline-block可以設定寬高
+//     // 3.給他block且不會占滿
+// }
 
+// @import "reset.css"; 
 @import url("reset.css");
 img,a{
+    // display: block;
     display: inline-block;
 }
 
@@ -8,7 +18,10 @@ body{
     font-family:"微軟正黑體",arial,sans-serif;
     color:#000000;
 }
-
+// li{
+//     list-style-type: none !important;
+//     list-style: none;
+// }
 
 @mixin title {
     display: flex;
@@ -23,42 +36,54 @@ body{
     }
     span{
         font-size: 24px;
+        // font-weight: medium;
         font-weight: bold;
         color:#A00404;
-        vertical-align: middle;//不起作用
+        // display: block;
+        vertical-align: middle;//不起作用??
 
     }
     @content
 }
 .wrapper{
-    width: 100%;
+    width: 100%;//!對照視窗百分比
     padding-top: 48px;
-    overflow: hidden;
+    overflow: hidden;//要加這個才安全 會爆出視窗的東西才會結掉避免卷軸
     section{
-        max-width: 100%;//
+        max-width: 100%;//?
         overflow: hidden;
     }
     .container{
         max-width: 1200px;
-        padding: 0 20px;
+        padding: 0 20px;//!!!这样缩小左右才不会贴边
         margin: 0 auto;
     }   
 }
 
 .name{
+    // text-align: left;
+    // padding: 48px 0 25px;//!改成父層pt 子曾margin-bottom
     margin-bottom: 48px;
     h1{
+        // display: inline-block;
         font-size: 80px;
         color:#000000;
         line-height: 90px;
         padding-bottom: 16px;
         border-bottom: 2px solid black;
+        // padding: 3px;
     }
 }
 
 .avator{
-
+    // padding-top:45px;
     margin-bottom: 48px;
+    // font-size: 0;//!!純寫inline的img的話要寫font-size0
+    // img{
+    //     width: 324px;
+    //     height: auto;
+    // }
+    // =======
     .img-avator{
         width: 324px;
         height: 324px;
@@ -79,6 +104,7 @@ body{
     }
     .content{
         padding: 25px 0 0 50px;
+        // margin-bottom: 72px;//改位置
         font-size: 24px;
         line-height: 36px;
         .intro{
@@ -88,16 +114,17 @@ body{
                 content:"";
                 display: block;
                 position: absolute;
-                left: -32px;
-                top: 10px;
+                left: -32px;//16+16
+                top: 10px;//!!!用補充
                 width: 16px;
                 height: 16px;
+                vertical-align: middle;//??又不是行內
                 border-radius:50%;
                 background-color: #96A9C4;
             }
         }
         .more{
-            // margin-bottom: 72px;
+            // margin-bottom: 72px;//?
         }
     }
 }
@@ -121,6 +148,7 @@ body{
             top: 3px;
             width: 16px;
             height: 16px;
+            vertical-align: middle;//??
             border-radius:50%;
             background-color: #96A9C4;
             }
@@ -128,7 +156,7 @@ body{
             &:not(:last-child){
                 margin-bottom: 32px;
                 &::after{
-                    content: "";
+                   content: "";
                     display: block;
                     position: absolute;
                     left: -24px;//16+8
@@ -146,7 +174,8 @@ body{
 }
 
 section.skill{
-    position: relative;
+    // max-width: 1200px;
+    position: relative;//!!!
     &::before{
         content:"";
         display: block;
@@ -168,10 +197,14 @@ section.skill{
     color: #fff;
     .title{
         text-align: center;
-        line-height: 45px;//
-        height: 45px;//
+        line-height: 45px;//讓h2 span繼承 高度出來竟是62
+        height: 45px;//不加差很多 只能寫死高度嗎?
         border-bottom: 1px solid #fff;
+        // padding-bottom: 2px;量出來是8
         padding-bottom: 8px;
+        .title-item{
+            // display: inline-block;//失敗的原因是h2會占滿 span會掉下來
+        }
         h2{
             font-size: 32px;
             display: inline-block;
@@ -192,9 +225,11 @@ section.skill{
         >ul{
             padding-left: 23px;
             border-left: 1px solid rgb(207, 205, 205);
+            // position: relative;改用別的
+            // position: absolute;//會浮起來!!
             >li{
                 opacity: .9;
-                line-height: 32px;//XD丈量高度
+                line-height: 32px;//按照xd框框給的
                 margin-bottom: 16px;
             }
             // >li{ //!!!!!!!
@@ -202,6 +237,7 @@ section.skill{
             //     // line-height: 32px;
             //     margin-bottom: 30px;
             // }
+
         }
     }
 }
@@ -209,12 +245,14 @@ section.skill{
 section.exp{
     .exp-box{
         width: 100%;
+        // padding-top: 72px;
         padding: 72px 0;
         .title{
             @include title();
         }
 
         .content{
+            // width: 100%;//!!!这样等于给他宽度写死 下面写padding会增长出去便1225
             padding: 22px 0 0 25px;
             >ul{
                 border-left: 1px solid #96A9C4;
@@ -231,13 +269,24 @@ section.exp{
                     div[class*="img"]{
                         margin: 8px 0;
                     }
-                    .img-hex{
+                    // .img-hex{//!!!父層沒寫寬高的話 inline的img跟父層div會有自動隔開小間隔
+
+                    //     >img{ 
+                    //         width: 89.5px;
+                    //         height: 66.85px;
+                    //         // width: 100%;
+                    //         // height: 100%;
+                    //     }
+                    // }
+                    .img-hex{//直接父層寫剛好圖片的大小 inline的img跟父層間隔消失
                         width: 89.5px;
                         height: 66.85px;
                         >img{
-                            // object-fit: fill;//不起作用
+                            // object-fit: fill;//??为何不起作用
                             width: 100%;
                             height: 100%;
+                            // width: 89.5px;
+                            // height: 66.85px;
                         }
                     }
                     p{
@@ -250,7 +299,7 @@ section.exp{
                         width: 72px;
                         height: 73px;
                         >img{
-                            // object-fit: fill;//
+                            // object-fit: fill;
                             width: 100%;
                             height: 100%;
                         }
@@ -263,19 +312,19 @@ section.exp{
     }
 }
 
-footer.contact{
+footer.contact{//乾 結果粗心標籤打錯難怪沒吃到
     background-color: #415165;
     .container{
         .contact-box{
-            width: 100%;
+            width: 100%; //這邊剛好1200了 可以不要外面包box了
             padding-top: 24px;
             padding-bottom: 32px;
-            color: #fff;//
+            color: #fff;//吃不到!!
         }
     }
     .title{
         @include title(){
-            color:#fff;//span吃不到color
+            color:#fff;//?span沒吃到
             justify-content: center;
             span{
                 color:#fff;
@@ -287,7 +336,7 @@ footer.contact{
         color:#fff;
         font-weight: lighter;
         >ul{
-            max-width: 529px;
+            max-width: 529px;//!!百分比怕左右空太大
             margin: 0 auto;
             padding-top: 32px;
             >li{
@@ -303,6 +352,7 @@ footer.contact{
                         width: 48px;
                         height: 48px;
                         margin: 0 24px;
+                        // font-size: 0;
                         >img{
                             width: 100%;
                             height: 100%;
