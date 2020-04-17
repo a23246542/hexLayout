@@ -98,12 +98,13 @@ body{
 }
 
 .profile{
+    margin-bottom: 72px;
     .title{
         @include title();
     }
     .content{
         padding: 25px 0 0 50px;
-        margin-bottom: 72px;
+        // margin-bottom: 72px;//改位置
         font-size: 24px;
         line-height: 36px;
         .intro{
@@ -129,6 +130,7 @@ body{
 }
 
 .education{
+    margin-bottom: 72px;
     .title{
         @include title();
     }
@@ -178,7 +180,7 @@ section.skill{
         content:"";
         display: block;
         width: 100%;
-        height: 50%;
+        height: 72.8%;
         position: absolute;
         z-index: -1;
         top: 50%;
@@ -341,9 +343,11 @@ footer.contact{//乾 結果粗心標籤打錯難怪沒吃到
                 font-size: 24px;
                 line-height: 33px;
                 margin-bottom: 16px;
+                text-align: center;
 
                 ul.social-icons{
                     display: flex;
+                    justify-content: center;
                     a{
                         width: 48px;
                         height: 48px;
