@@ -50,7 +50,7 @@ header.header{
         // overflow: hidden;//!!加了這一行因此讓dropdown點得到但看不到!!
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        // justify-content: space-between;
         // margin: 0 4.58%;
         padding:  0 4.58%;
         @include phone(){
@@ -99,6 +99,7 @@ header.header{
     }
 
     .menu-dropdown{
+        margin-left: auto;//!!!!
         display: flex;
         // li{
         //     margin-left: 10%;//為什麼會推出去了
@@ -189,40 +190,86 @@ header.header{
 
 .web-page.feature{
     padding: 64px 0 80px;
+    background: #FBF2F2;
+    @include phone(){
+        padding: 32px 0 56px;
+    }
+    @include pad(){
+        padding: 40px 0 40px;
+    }
     .container{
         max-width: 1200px;
         margin: 0 auto;
+        @include phone(){
+            // max-width: 224px;//是這樣嗎 還是也轉成百分比
+            // max-width: 60%;//有box-size
+            padding: 0 20%;
+        }
+        @include pad(){//要來算container
+            // padding: 0 12.76%;
+            max-width: 696px;
+            
+        }
     }
-    h2{
+    .title{
         margin-bottom: 44px;
         color: $primary;
         font-size: 48px;
         font-weight: bold;
         text-align: center;
+        @include phone(){
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
     }
     ul{
         display: flex;
         flex-wrap: wrap;
+        align-items: center;//沒用
         padding-top: 16px;
+        @include phone(){
+            padding-top: 28px;
+        }
     }
     li{
         width: 25%;
         padding: 0 9px;
+
         @include pad(){
-            width: 50%;
+            width: 50%;//想像是col
+            padding: 0 64px;//bs4作法
+            margin-bottom: 40px;
+            // hahow作法
+            // width: calc(50%-128px);
+            // margin-right: 64px;
+            // margin-left: 64px;
         }
         @include phone(){
             width: 100%;
+            padding: 0;
+            &:not(:last-child){
+                margin-bottom: 28px;
+            }
         }
         span{
-            display: block;
+            // display: block;
             margin-bottom: 40px;
             height: 100px;
+            // ---
+            display: flex;
+            align-items: center;
             img{
                 margin: 0 auto;//沒給明確寬高也可以
+                // height: 100%;//相反 不然會爆出來!!!
+                // width: auto;
+                
+            }
+            @include md(){
+                 margin-bottom: 16px;
+                 height: 80px;
             }
             @include phone(){
-                height: 80px;
+
             }
         }
         h3{
@@ -231,24 +278,41 @@ header.header{
             color: $primary;
             text-align: center;
             font-weight: bold;
-            @include phone(){
-                font-size: ;
-            }
-            @include pad(){
+            @include md(){
                 font-size: 20px;
+                margin-bottom: 8px;
             }
         }
         p{
             color: #000;
+            // line-height: inherit;//??沒吃到1.5
+            line-height: 1.5;
         }
     }
 
     // li:nth-of-type(4){ 好像不只第四個大小不一
-    li{
-        span{
-            display: flex;
-            align-items: center;
-        }
+    // li{
+    //     span{
+    //         display: flex;
+    //         align-items: center;
+    //     }
+    // }
+
+    
+}
+
+@include media-breakpoint-down(md) { 
+    .order-1{
+        order:1;
+    }
+    .order-2{
+        order: 2;
+    }
+    .order-3{
+        order: 3;
+    }
+    .order-4{
+        order: 3;
     }
 }
 
