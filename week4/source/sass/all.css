@@ -3951,7 +3951,7 @@ header.header .menu-dropdown a {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 991.99px) {
   .web-page.feature li span {
     margin-bottom: 16px;
     height: 80px;
@@ -3966,7 +3966,7 @@ header.header .menu-dropdown a {
   font-weight: bold;
 }
 
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 991.99px) {
   .web-page.feature li h3 {
     font-size: 20px;
     margin-bottom: 8px;
@@ -3999,5 +3999,133 @@ header.header .menu-dropdown a {
         -ms-flex-order: 3;
             order: 3;
   }
+}
+
+.web-page.classic .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 991.99px) and (min-width: 768px) {
+  .web-page.classic .container {
+    max-width: 672px;
+  }
+}
+
+.web-page.classic .title {
+  padding-top: 70px;
+  margin-bottom: 60px;
+  text-align: center;
+  font-size: 48px;
+  color: #650300;
+}
+
+@media screen and (max-width: 991.99px) and (min-width: 768px) {
+  .web-page.classic .title {
+    font-size: 32px;
+  }
+}
+
+.web-page.classic ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 992px) {
+  .web-page.classic ul li.sunglasses {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+.web-page.classic li.classic-item .photo {
+  width: 67%;
+  padding-bottom: 26.6%;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+@media screen and (max-width: 991.99px) and (min-width: 768px) {
+  .web-page.classic li.classic-item .photo {
+    width: 61%;
+  }
+}
+
+.web-page.classic li.classic-item .product-name {
+  width: 33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 991.99px) and (min-width: 768px) {
+  .web-page.classic li.classic-item .product-name {
+    width: 39%;
+  }
+}
+
+.web-page.classic li.classic-item .product-name span {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin-right: 12px;
+  background-size: contain;
+  background-position: 50% 50%;
+}
+
+@media screen and (max-width: 991.99px) and (min-width: 768px) {
+  .web-page.classic li.classic-item .product-name span {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.web-page.classic li.classic-item .product-name h3 {
+  text-transform: uppercase;
+  font-size: 48px;
+  color: #aa0601;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 991.99px) and (min-width: 768px) {
+  .web-page.classic li.classic-item .product-name h3 {
+    font-size: 28px;
+  }
+}
+
+.web-page.classic .optical > .photo {
+  background: url("../assets/images/8.png");
+}
+
+.web-page.classic .optical span {
+  background: url("../assets/images/diamond.svg") no-repeat;
+}
+
+.web-page.classic .sunglasses > .photo {
+  background: url("../assets/images/15.png");
+}
+
+.web-page.classic .sunglasses span {
+  color: #aa0601;
+  background: url("../assets/images/Layer_1.svg") no-repeat;
+}
+
+.web-page.classic .functional > .photo {
+  background: url("../assets/images/28.png");
+}
+
+.web-page.classic .functional span {
+  background: url("../assets/images/Page-1.svg") no-repeat;
 }
 /*# sourceMappingURL=all.css.map */
