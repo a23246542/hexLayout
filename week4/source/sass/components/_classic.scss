@@ -35,6 +35,9 @@
     }
     //照片hover發現有黑白特效
     li.classic-item{
+        @include phone(){
+            position: relative;
+        }
         .photo{
             width: 67%;
             // padding-bottom: 40.4%;//320/792 !!結果會錯
@@ -44,6 +47,12 @@
             // background-size: 100% 100%;//跟cover差別
             @include pad(){
                 width: 61%;
+            }
+            @include phone(){
+                width: 93.8%;
+                // padding-bottom: 38%;
+                padding-bottom: 35.73%;//針對父元素
+                margin: 0 auto;
             }
         }
         .product-name{
@@ -57,6 +66,15 @@
             @include pad{
                 // flex: 1;
                 width: 39%;
+            }
+            @include phone{
+                width: auto;
+                position: absolute;
+                right: 0;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
             }
             
             span{
@@ -72,6 +90,10 @@
                     width: 32px;
                     height: 32px;
                 }
+                // @include phone(){
+                //     width: 32px;
+                //     height: 32px;
+                // }
                 
 
             }
@@ -84,6 +106,9 @@
                 @include pad(){
                     font-size: 28px;
                 }
+                // @include phone(){
+                //     font-size: 28px;
+                // }
             }
         }
     }
