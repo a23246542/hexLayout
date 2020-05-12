@@ -1,0 +1,118 @@
+
+//平板657
+
+.web-page.joint{
+    background: url("../assets/images/joint-bg.png") no-repeat;
+    background-position: center top;
+    background-size: cover;
+    .container{
+        max-width: 1540px;
+        margin: 0 auto;
+        // overflow: hidden;
+        @media (max-width:1540px){
+            // 變成平板尺寸
+        }
+    }
+    img{
+        width: 100%;//max-width???
+        height: auto;
+    }
+    .joint-list-item1{
+        margin-bottom: 60px;
+        .left-col{
+            width: 37.3%;
+        }
+        .right-col{
+            width: 62.7%;
+            >img{
+                // height: 100px;
+            }
+            .r-c-body1{
+                >img{
+                    width: 13.77%;
+                }
+                .r-c-body2{
+                    width: 86.23%;
+
+                }
+            }
+
+            .r-c-body2{
+                img{}
+                >div{
+                    position: relative;
+                    width: 30%;
+                    .more{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+                
+            }
+        }
+    }
+
+    .joint-list-item2{
+        ul{
+            justify-content: center;
+            li{
+            width: 38%;
+            // padding-bottom: 38.44%;
+            position: relative;
+            // opacity: .5;//背景會透明調
+                span{
+                    // display: block;
+                    // width: 60px;
+                    // height: 30px;
+                    // position: absolute;//要有固定寬度才能算出來!!!!
+                    // left: 0;
+                    // right: 0;
+                    // top: 0;
+                    // bottom: 0;
+                    // margin: auto;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    font-size: 72px;
+                    font-weight: bold;
+                    color:$primary;
+                    white-space:nowrap;
+                    z-index:100;
+
+                }
+                &::after{
+                    content:"";//
+                    display: block;//
+                    position: absolute;
+                    z-index: 3;
+                    // width: 100%; 定位0000自帶四面撐開
+                    // height: 100%;//可以不用
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    margin: auto;
+                    background-color: rgba(255,255,255,.3);
+                }
+            }
+        }
+        
+        li.double{
+            margin-right: 1.94%;
+            // background: url("../../assets/images/doubleA.png");
+            background: url("../assets/images/doubleA.png");
+            background-size: cover;
+            background-position: 50% 50%;
+            // filter: blur(10px);//這是模糊 改用定位實現文字不透明
+        }
+
+        li.youth{
+            // background: url("../../assets/images/youth.png");
+            background: url("../assets/images/youth.png");
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+    }
+}

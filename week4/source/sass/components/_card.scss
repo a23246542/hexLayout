@@ -1,0 +1,16 @@
+.customer{
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    li{
+        width: 25%;//反正marign會內縮!! 就給他25%就對了
+        height: 100px;
+        background-color: red;
+        &:not(:last-child){
+            margin-right: 2%;
+            // margin-right: 24px;結果依樣
+        }
+    }
+}

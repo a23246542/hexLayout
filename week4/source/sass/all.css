@@ -3672,7 +3672,7 @@ li, a {
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.5;
-  height: 100vh;
+  height: 6000px;
 }
 
 *, *:before, *:after {
@@ -4153,5 +4153,117 @@ header.header .menu-dropdown a {
 
 .web-page.classic .functional span {
   background: url("../assets/images/Page-1.svg") no-repeat;
+}
+
+.web-page.joint {
+  background: url("../assets/images/joint-bg.png") no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+.web-page.joint .container {
+  max-width: 1540px;
+  margin: 0 auto;
+}
+
+.web-page.joint img {
+  width: 100%;
+  height: auto;
+}
+
+.web-page.joint .joint-list-item1 {
+  margin-bottom: 60px;
+}
+
+.web-page.joint .joint-list-item1 .left-col {
+  width: 37.3%;
+}
+
+.web-page.joint .joint-list-item1 .right-col {
+  width: 62.7%;
+}
+
+.web-page.joint .joint-list-item1 .right-col .r-c-body1 > img {
+  width: 13.77%;
+}
+
+.web-page.joint .joint-list-item1 .right-col .r-c-body1 .r-c-body2 {
+  width: 86.23%;
+}
+
+.web-page.joint .joint-list-item1 .right-col .r-c-body2 > div {
+  position: relative;
+  width: 30%;
+}
+
+.web-page.joint .joint-list-item1 .right-col .r-c-body2 > div .more {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.web-page.joint .joint-list-item2 ul {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.web-page.joint .joint-list-item2 ul li {
+  width: 38%;
+  position: relative;
+}
+
+.web-page.joint .joint-list-item2 ul li span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 72px;
+  font-weight: bold;
+  color: #aa0601;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.web-page.joint .joint-list-item2 ul li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.web-page.joint .joint-list-item2 li.double {
+  margin-right: 1.94%;
+  background: url("../assets/images/doubleA.png");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.web-page.joint .joint-list-item2 li.youth {
+  background: url("../assets/images/youth.png");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.customer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.customer li {
+  width: 25%;
+  height: 100px;
+  background-color: red;
+}
+
+.customer li:not(:last-child) {
+  margin-right: 2%;
 }
 /*# sourceMappingURL=all.css.map */
