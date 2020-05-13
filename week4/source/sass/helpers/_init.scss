@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, h6,p,ul,li{
 
 li,a{
     list-style: none;
-    text-decoration: none;
+    text-decoration: none;//無效
 }
 
 
@@ -26,4 +26,20 @@ img{
 display: block;//width: 100%;
 max-width: 100%;
 height: auto;
+}
+
+.title{
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    padding: 64px 0 60px;
+    @include pad(){
+        font-size: 32px;
+    }
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
 }

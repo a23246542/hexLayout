@@ -5,18 +5,28 @@
     background: url("../assets/images/joint-bg.png") no-repeat;
     background-position: center top;
     background-size: cover;
+    padding-bottom: 479px;
     .container{
         max-width: 1540px;
         margin: 0 auto;
         // overflow: hidden;
-        @media (max-width:1540px){
+        @media (max-width:1540px){//!!
             // 變成平板尺寸
+            width: 87.5%;
         }
     }
     img{
         width: 100%;//max-width???
         height: auto;
     }
+
+    // .title{
+    //     font-size: 48px;
+    //     color: #ffffff;
+    //     font-weight: bold;
+    //     text-align: center;
+    //     padding: 64px 0;
+    // }
     .joint-list-item1{
         margin-bottom: 60px;
         .left-col{
@@ -42,10 +52,56 @@
                 >div{
                     position: relative;
                     width: 30%;
+                    float: right;
+                    margin-right: 50px;
+                    // display: flex;
+                    // align-items:center;
                     .more{
+                        background-color: #fff;
                         position: absolute;
-                        top: 0;
-                        left: 0;
+                        top: 22%;
+                        right: -25%;
+                        padding: 8px;
+                        color:$primary;
+                        font-size: 32px;
+                        @include pad(){
+                            // font-size: 53px;
+                        }
+                        @include phone(){
+                            // font-size: 26px;
+                        }
+                        >span{
+                            display: inline-block;//
+                            vertical-align:middle;//
+                            // position: absolute;
+                            position: relative;
+                            &::before{
+                                content: "MORE";
+                                display: block;
+                                position: absolute;
+                                transform: translateY(-170%);
+                            }
+                            &::after{
+                                content:"MORE";
+                                display: block;
+                                position: absolute;//!!!加上這個才能以此為定位 不會往上排
+                                transform: translateY(-180%);
+                            }
+                        }
+                        >img{
+                            display: inline-block;//
+                            vertical-align: middle;//
+                            width: 48px;
+                            height: 48px;
+                            @include pad(){
+                                width: 27px;
+                                height: 27px;
+                            }
+                            @include phone(){
+                                width: 18px;
+                                height: 18px;
+                            }
+                        }
                     }
                 }
                 
@@ -80,6 +136,12 @@
                     color:$primary;
                     white-space:nowrap;
                     z-index:100;
+                    @include pad(){
+                        font-size: 32px;
+                    }
+                    @include phone(){
+                        font-size: 20px;
+                    }
 
                 }
                 &::after{
