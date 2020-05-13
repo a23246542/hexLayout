@@ -59,33 +59,62 @@
                     .more{
                         background-color: #fff;
                         position: absolute;
-                        top: 22%;
-                        right: -25%;
-                        padding: 8px;
+                        top: 50%;
+                        transform:translateY(-50%);
+                        // right: -20%;
+                        left: 10%;
+                        // padding: 15%;//!!好像是以外層div
+                        padding: 4%;
                         color:$primary;
-                        font-size: 32px;
-                        @include pad(){
-                            // font-size: 53px;
+                        // font-size: 38px;
+                        font-size: 59px;
+                        font-weight: bold;
+                        white-space: nowrap;///
+                        @include md(){
+                            font-size: 24px;
+                            // right: -25%;
+                            left: 10%;
                         }
-                        @include phone(){
-                            // font-size: 26px;
-                        }
+                        // @include phone(){
+                        //     font-size: 16px;
+                        // }
                         >span{
                             display: inline-block;//
-                            vertical-align:middle;//
+                            // vertical-align:middle;//
+                            vertical-align: text-bottom;//跟圖片一起
                             // position: absolute;
                             position: relative;
+                            cursor: pointer;
                             &::before{
                                 content: "MORE";
-                                display: block;
+                                // display: block;
                                 position: absolute;
-                                transform: translateY(-170%);
+                                // transition: all .2s .65s;//
+                                // transition: transform .65s .2s;//
+                                transition: all .65s .2s;//
+                                transform: translateY(0%);
                             }
-                            &::after{
+                            &::after{//為什麼before重疊只有after會跑出來
                                 content:"MORE";
-                                display: block;
+                                // display: block;
                                 position: absolute;//!!!加上這個才能以此為定位 不會往上排
-                                transform: translateY(-180%);
+                                left: 0;
+                                top: 0;
+                                // transition:all .2s .65s;
+                                // transition:transform .65s .2s;//這樣縮放動畫才不會跟著跑 可是opacity
+                                transition:all .65s .2s;//這樣縮放動畫才不會跟著跑
+                                transform: translateY(0%);
+ 
+                            }
+                            &:hover{
+                                &::before{
+                                    transform: translateY(-160%);
+                                    opacity: .4;
+                                }
+                                &::after{
+                                    transform: translateY(-80%);
+                                    opacity: .8;
+                                }
                             }
                         }
                         >img{
@@ -93,6 +122,8 @@
                             vertical-align: middle;//
                             width: 48px;
                             height: 48px;
+                            margin-left: -2%;
+                            transition: all .65s .25s;
                             @include pad(){
                                 width: 27px;
                                 height: 27px;
@@ -100,6 +131,11 @@
                             @include phone(){
                                 width: 18px;
                                 height: 18px;
+                            }
+                        }
+                        &:hover{
+                            >img{
+                                transform:translate(25%);
                             }
                         }
                     }

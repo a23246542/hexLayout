@@ -24,7 +24,7 @@ body {
   }
 img{
 display: block;//width: 100%;
-max-width: 100%;
+// max-width: 100%;//會被害死!!more箭頭那邊會被切掉
 height: auto;
 }
 

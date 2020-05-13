@@ -3682,7 +3682,6 @@ body {
 
 img {
   display: block;
-  max-width: 100%;
   height: auto;
 }
 
@@ -3714,6 +3713,7 @@ header.header {
 @media screen and (max-width: 767.98px) {
   header.header {
     height: 50px;
+    padding: 5px 0;
   }
 }
 
@@ -3738,13 +3738,14 @@ header.header .container {
 
 header.header .ham-icon {
   display: none;
+  color: #fff;
 }
 
 @media screen and (max-width: 767.98px) {
   header.header .ham-icon {
     display: block;
     position: absolute;
-    top: 10px;
+    top: 5px;
     left: 4.2%;
     width: 6.4%;
     text-align: center;
@@ -3767,6 +3768,9 @@ header.header h1.logo a {
   header.header h1.logo {
     width: 12.8%;
     margin: 0;
+  }
+  header.header h1.logo img {
+    width: 100%;
   }
 }
 
@@ -3801,8 +3805,8 @@ header.header .menu-dropdown a {
     overflow: hidden;
     background-color: #aa0601;
     color: #fff;
-    -webkit-transition: all .35s;
-    transition: all .35s;
+    -webkit-transition: all .45s;
+    transition: all .45s;
   }
   header.header .menu-dropdown.active {
     max-height: 252px;
@@ -4227,33 +4231,61 @@ header.header .menu-dropdown a {
 .web-page.joint .joint-list-item1 .right-col .r-c-body2 > div .more {
   background-color: #fff;
   position: absolute;
-  top: 22%;
-  right: -25%;
-  padding: 8px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 10%;
+  padding: 4%;
   color: #aa0601;
-  font-size: 32px;
+  font-size: 59px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 991.99px) {
+  .web-page.joint .joint-list-item1 .right-col .r-c-body2 > div .more {
+    font-size: 24px;
+    left: 10%;
+  }
 }
 
 .web-page.joint .joint-list-item1 .right-col .r-c-body2 > div .more > span {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: text-bottom;
   position: relative;
+  cursor: pointer;
 }
 
 .web-page.joint .joint-list-item1 .right-col .r-c-body2 > div .more > span::before {
   content: "MORE";
-  display: block;
   position: absolute;
-  -webkit-transform: translateY(-170%);
-          transform: translateY(-170%);
+  -webkit-transition: all .65s .2s;
+  transition: all .65s .2s;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
 
 .web-page.joint .joint-list-item1 .right-col .r-c-body2 > div .more > span::after {
   content: "MORE";
-  display: block;
   position: absolute;
-  -webkit-transform: translateY(-180%);
-          transform: translateY(-180%);
+  left: 0;
+  top: 0;
+  -webkit-transition: all .65s .2s;
+  transition: all .65s .2s;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.web-page.joint .joint-list-item1 .right-col .r-c-body2 > div .more > span:hover::before {
+  -webkit-transform: translateY(-160%);
+          transform: translateY(-160%);
+  opacity: .4;
+}
+
+.web-page.joint .joint-list-item1 .right-col .r-c-body2 > div .more > span:hover::after {
+  -webkit-transform: translateY(-80%);
+          transform: translateY(-80%);
+  opacity: .8;
 }
 
 .web-page.joint .joint-list-item1 .right-col .r-c-body2 > div .more > img {
@@ -4261,6 +4293,9 @@ header.header .menu-dropdown a {
   vertical-align: middle;
   width: 48px;
   height: 48px;
+  margin-left: -2%;
+  -webkit-transition: all .65s .25s;
+  transition: all .65s .25s;
 }
 
 @media screen and (max-width: 991.99px) {
@@ -4275,6 +4310,11 @@ header.header .menu-dropdown a {
     width: 18px;
     height: 18px;
   }
+}
+
+.web-page.joint .joint-list-item1 .right-col .r-c-body2 > div .more:hover > img {
+  -webkit-transform: translate(25%);
+          transform: translate(25%);
 }
 
 .web-page.joint .joint-list-item2 ul {
