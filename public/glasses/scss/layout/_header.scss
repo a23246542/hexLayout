@@ -1,0 +1,10 @@
+header.header{    background: $primary;    height: 108px;    color:#fff;
+    @include phone(){        height: 50px;        padding: 5px 0;    }    .container{        display: flex;        align-items: center;        padding:  0 4.58%;        @include phone(){            justify-content: center;            position: relative;        }    }    .ham-icon{        display: none;        .fa-bars{
+            color: #fff;        }        @include phone(){            display: block;            position: absolute;            top: 5px;            left: 4.2%;            width: 6.4%;
+            text-align: center;            i{                font-size: 32px;                color: $dark;            }        }    }    h1.logo{        margin-left: 4.58%;        a{            display: block;        }        @include phone(){            width: 12.8%;
+            margin: 0;            img{                width: 100%;
+            }        }    }    .menu-dropdown{        margin-left: auto;
+        display: flex;        li:not(:last-child){        }        li{            margin-left: 64px;        }        a{            color:inherit;            font-size: 20px;        }        @include phone(){            flex-direction: column;            position: absolute;            z-index: 999;            top: 100%;            left: 0;            width: 100%;            max-height: 0;            overflow: hidden;
+            background-color: $primary;            color:#fff;            transition:all .45s;            &.active{                max-height: 252px;
+            }            li{                border-top: 1px solid #fff;                margin: 0;                text-align: center;                padding: 16px 0;
+            }            a{            }        }    }}
