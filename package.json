@@ -18,6 +18,7 @@
   "homepage": "https://github.com/a23246542/hexLayout#readme",
   "dependencies": {
     "autoprefixer": "^9.7.6",
+    "bootstrap": "^4.5.0",
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
@@ -26,6 +27,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
     "gulp-load-plugins": "^2.0.3",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
@@ -38,7 +40,6 @@
     "minimist": "^1.2.5"
   },
   "devDependencies": {
-    "bootstrap": "^4.5.0",
     "gulp-remove-empty-lines": "^0.1.0",
     "gulp-sass": "^4.1.0"
   }

@@ -1,0 +1,30 @@
+@mixin pc(){
+    @media screen and (min-width:992px){//有用
+        @content;
+    }
+}
+@mixin phone {
+    @media screen and (max-width:767.98px) {
+        @content;
+    }
+}
+
+// @mixin phone {
+//     @media screen and (max-width:575.98px){
+
+//     }
+// }
+
+@mixin md {
+    // @media screen and (max-width: 767.98px){
+    @media screen and (max-width: 991.99px){
+        @content;
+    }
+}
+
+@mixin pad{
+    // @media screen and (max-width:991.99px) and (min-width:768px){
+    @media screen and (max-width:991.99px){
+        @content;
+    }
+}

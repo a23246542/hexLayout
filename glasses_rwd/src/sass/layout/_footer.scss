@@ -1,0 +1,169 @@
+/**!
+   Important comments included in minified output.
+**/
+
+footer.footer{
+    padding: 48px 0 27.5px;
+    // background-color: $primary;//這邊用bg-primary
+    // color: lighten(#fff,30%);
+    color:#fff;
+    // .container{
+    //     max-width: 1200px;//寫一次就好
+    // }
+    @include phone(){
+        padding: 24px 0 14px;
+    }
+    .container{
+        // @include pad(){
+        //     width: 88.5%;//但是1200~992之間兩邊會貼 乾脆設container之下的都是平板
+                // 要嘛container當初就用原本的加上padding 有陰影也不會被切 mike好像做過???
+        // }
+        @media (max-width:1199px){
+            width: 88.5%;
+        }
+        @include phone(){
+            width: 96%;
+        }
+    }
+    .footer-nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+        @include phone(){
+            float: right;//!!
+        }
+        a{
+            display: block;
+        }
+
+        li{
+            margin-right: 48px;
+        }
+        &-map{
+            display: flex;//原本寫在上面 但bs4的flex important讓none無效
+            @include phone(){
+                display: none;
+            }
+        }
+        &-social{
+            display: flex;
+            // li{
+            //     margin-left: 32px;//左右會變大
+            // }
+            li:not(:last-child){
+                margin-right: 32px;
+            }
+            a{
+                display: block;
+                width: 48px;
+                height: 48px;
+                img{
+                    width: 100%;
+                }
+                @include pad(){
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+            @include phone(){
+                // display: block;
+                // float: right;
+            }
+        }
+    }
+
+    .footer-nav-info{
+        li{
+            align-items: center;
+            font-size: 36px;
+            margin-bottom: 16px;
+            @include pad(){
+                font-size: 20px;
+            }
+            @include phone(){
+                font-size: 16px;
+            }
+        }
+        li:nth-child(1){
+            img{
+                margin-right: 23px;
+                @include phone(){
+                    width: 16px;
+                    height: 16px;
+                    margin-right: 10px;
+                }
+            }
+        }
+        li:nth-child(2){
+            img{
+                margin-right: 12px;
+                @include phone(){
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 7px;
+                }
+            }
+        }
+    }
+    // hr{//插了忘了還有hr 改樣式
+    //     solid
+    // }
+
+    ul.footer-copyright{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include phone(){
+            flex-direction:column;
+            // justify-content: flex-start;
+            align-items: flex-start;
+        }
+        li{
+            display: flex;
+            &:nth-child(1){
+                align-items: center;
+                @include phone(){
+                    margin-bottom: 10px;
+                }
+            }
+            &:nth-child(2){
+                flex-direction: column;
+            }
+        }
+        img{
+            margin-right: 16px;
+            @include pad(){
+                display: none;
+            }
+            @include phone(){
+                display: block;
+                width: 46px;
+                height: 31.7px;
+                margin-right: 5px;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+
+        }
+        p{
+            // color:inherit;
+            font-size: 16px;
+            opacity: .8;
+        }
+        a{
+            display: block;
+            font-size: 14px;
+            margin-left: 62px;
+            text-decoration:none;//只是無下底線
+            color:#fff;
+            opacity: .8;
+            @include phone(){
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

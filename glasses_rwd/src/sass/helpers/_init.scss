@@ -1,0 +1,51 @@
+h1, h2, h3, h4, h5, h6,p,ul,li{
+    padding: 0;
+    margin: 0;
+    line-height: 1.2;
+}
+
+li,a{
+    list-style: none;
+    text-decoration: none;//無效
+}
+
+
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    // height: 100vh;
+    // height: calc(100%+100px);//為何無效
+    // height:6000px;
+}
+html,body{
+    height: 100%;
+}
+
+*, *:before, *:after{
+    box-sizing: border-box;
+  }
+img{
+display: block;//width: 100%;
+// max-width: 100%;//會被害死!!more箭頭那邊會被切掉
+height: auto;
+}
+
+.title{
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    padding: 64px 0 60px;
+    @include pad(){
+        font-size: 32px;
+    }
+    @include phone(){
+        padding: 36px 0 38px;
+    }
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
