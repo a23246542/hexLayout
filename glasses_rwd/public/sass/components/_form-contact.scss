@@ -1,8 +1,0 @@
-.web-page.contact-form{    background: #AA06010D;    padding-bottom: 92px;    @include phone(){        padding-bottom: 48px;    }    .container{        max-width: 800px;        margin: 0 auto;        @include pad(){            max-width: 64.6%;        }        @include phone(){            max-width: 87.2%;        }    }    .title{        color:$primary;        padding-bottom: 24px;        &+p{            font-size: 20px;            margin-bottom: 20px;        }    }    .form{        margin-bottom: 48px;    }    .form-group{        margin-bottom: 16px;        label{            display: block;
-            margin-bottom: 5px;        }        input.form-control,textarea{            display: block;
-            width: 100%;
-            background: transparent;            border:1.3px solid gray;            outline: 0;
-            padding: 14px 16px;        }        &.check{
-            align-items: baseline;
-            label{                margin-bottom:0;            }        }    }    .send{        text-align: center;        .btn{            display: inline-block;
-            width: 180px;            padding: 16px 0;            font-size: 16px;            color: #fff;            background-color: $primary;            @include md(){                width: 136px;                padding: 7px 0;            }        }    }}

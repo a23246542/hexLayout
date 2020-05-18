@@ -1,229 +1,14 @@
-
-//平板657
-
-.web-page.joint{
-    background: url("../assets/images/joint-bg.png") no-repeat;
-    background-position: center top;
-    background-size: cover;
-    padding-bottom: 479px;
-    @include phone(){
-        padding-bottom: 365px;
-    }
-    .container{
-        max-width: 1540px;
-        margin: 0 auto;
-        // overflow: hidden;
-        @media (max-width:1540px){//!!
-            // 變成平板尺寸
-            width: 87.5%;
-        }
-    }
-    img{
-        width: 100%;//max-width???
-        height: auto;
-    }
-
-    // .title{
-    //     font-size: 48px;
-    //     color: #ffffff;
-    //     font-weight: bold;
-    //     text-align: center;
-    //     padding: 64px 0;
-    // }
-    .joint-list-item1{
-        margin-bottom: 60px;
-        .left-col{
-            width: 37.3%;
-        }
-        .right-col{
-            width: 62.7%;
-            >img{
-                // height: 100px;
-            }
-            .r-c-body1{
-                >img{
-                    width: 13.77%;
-                }
-                .r-c-body2{
-                    width: 86.23%;
-
-                }
-            }
-
-            .r-c-body2{
-                img{}
-                >div{
-                    position: relative;
-                    width: 31.5%;
-                    float: right;
-                    margin-right: 50px;
-                    // display: flex;
-                    // align-items:center;
-                    .more{
-                        background-color: #fff;
-                        position: absolute;
-                        top: 50%;
-                        transform:translateY(-50%);
-                        // right: -20%;
-                        // left: 10%;
-                        left: 15%;
-                        // padding: 15%;//!!好像是以外層div
-                        padding: 4%;
-                        color:$primary;
-                        // font-size: 38px;
-                        font-size: 59px;
-                        font-weight: bold;
-                        white-space: nowrap;///
-                        @include pad(){
-                            font-size: 40px;
-                            padding: 0;
-                            padding-left: 10px;
-                        }
-                        @include phone(){
-                            font-size: 21px;
-                            padding: 0;
-                            padding-left: 5px;
-                            // right: -25%;
-                            left: 15%;
-                        }
-                        // @include phone(){
-                        //     font-size: 16px;
-                        // }
-                        >span{
-                            display: inline-block;//
-                            margin-left: -14%;
-                            // vertical-align:middle;//
-                            vertical-align: text-bottom;//跟圖片一起
-                            // position: absolute;
-                            position: relative;
-                            cursor: pointer;
-                            &::before{
-                                content: "MORE";
-                                // display: block;
-                                position: absolute;
-                                // transition: all .2s .65s;//
-                                // transition: transform .65s .2s;//
-                                transition: all .65s .2s;//
-                                transform: translateY(0%);
-                            }
-                            &::after{//為什麼before重疊只有after會跑出來
-                                content:"MORE";
-                                // display: block;
-                                position: absolute;//!!!加上這個才能以此為定位 不會往上排
-                                left: 0;
-                                top: 0;
-                                // transition:all .2s .65s;
-                                // transition:transform .65s .2s;//這樣縮放動畫才不會跟著跑 可是opacity
-                                transition:all .65s .2s;//這樣縮放動畫才不會跟著跑
-                                transform: translateY(0%);
- 
-                            }
-                            &:hover{
-                                &::before{
-                                    transform: translateY(-160%);
-                                    opacity: .4;
-                                }
-                                &::after{
-                                    transform: translateY(-80%);
-                                    opacity: .8;
-                                }
-                            }
-                        }
-                        >img{
-                            display: inline-block;//
-                            vertical-align: middle;//
-                            width: 48px;
-                            height: 48px;
-                            margin-left: -2%;
-                            transition: all .65s .25s;
-                            @include pad(){
-                                width: 27px;
-                                height: 27px;
-                            }
-                            @include phone(){
-                                width: 18px;
-                                height: 18px;
-                                transform: translateY(-10%);
-                            }
-                        }
-                        &:hover{
-                            >img{
-                                transform:translateX(35%);
-                            }
-                        }
-                    }
-                }
-                
-            }
-        }
-    }
-
-    .joint-list-item2{
-        ul{
-            justify-content: center;
-            li{
-            width: 38%;
-            // padding-bottom: 38.44%;
-            position: relative;
-            // opacity: .5;//背景會透明調
-                span{
-                    // display: block;
-                    // width: 60px;
-                    // height: 30px;
-                    // position: absolute;//要有固定寬度才能算出來!!!!
-                    // left: 0;
-                    // right: 0;
-                    // top: 0;
-                    // bottom: 0;
-                    // margin: auto;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
-                    font-size: 72px;
-                    font-weight: bold;
-                    color:$primary;
-                    white-space:nowrap;
-                    z-index:100;
-                    @include pad(){
-                        font-size: 32px;
-                    }
-                    @include phone(){
-                        font-size: 20px;
-                    }
-
-                }
-                &::after{
-                    content:"";//
-                    display: block;//
-                    position: absolute;
-                    z-index: 3;
-                    // width: 100%; 定位0000自帶四面撐開
-                    // height: 100%;//可以不用
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    top: 0;
-                    margin: auto;
-                    background-color: rgba(255,255,255,.3);
-                }
-            }
-        }
-        
-        li.double{
-            margin-right: 1.94%;
-            // background: url("../../assets/images/doubleA.png");
-            background: url("../assets/images/doubleA.png");
-            background-size: cover;
-            background-position: 50% 50%;
-            // filter: blur(10px);//這是模糊 改用定位實現文字不透明
-        }
-
-        li.youth{
-            // background: url("../../assets/images/youth.png");
-            background: url("../assets/images/youth.png");
-            background-size: cover;
-            background-position: 50% 50%;
-        }
-    }
-}
+.web-page.joint{    background: url("../assets/images/joint-bg.png") no-repeat;    background-position: center top;    background-size: cover;    padding-bottom: 479px;    @include phone(){        padding-bottom: 365px;    }    .container{        max-width: 1540px;        margin: 0 auto;        @media (max-width:1540px){
+            width: 87.5%;        }    }    img{        width: 100%;
+        height: auto;    }    .joint-list-item1{        margin-bottom: 60px;        .left-col{            width: 37.3%;        }        .right-col{            width: 62.7%;            >img{            }            .r-c-body1{                >img{                    width: 13.77%;                }                .r-c-body2{                    width: 86.23%;                }            }            .r-c-body2{                img{}                >div{                    position: relative;                    width: 31.5%;                    float: right;                    margin-right: 50px;                    .more{                        background-color: #fff;                        position: absolute;                        top: 50%;                        transform:translateY(-50%);                        left: 15%;                        padding: 4%;                        color:$primary;                        font-size: 59px;                        font-weight: bold;                        white-space: nowrap;
+                        @include pad(){                            font-size: 40px;                            padding: 0;                            padding-left: 10px;                        }                        @include phone(){                            font-size: 21px;                            padding: 0;                            padding-left: 5px;                            left: 15%;                        }                        >span{                            display: inline-block;
+                            margin-left: -14%;                            vertical-align: text-bottom;
+                            position: relative;                            cursor: pointer;                            &::before{                                content: "MORE";                                position: absolute;                                transition: all .65s .2s;
+                                transform: translateY(0%);                            }                            &::after{
+                                content:"MORE";                                position: absolute;
+                                left: 0;                                top: 0;                                transition:all .65s .2s;
+                                transform: translateY(0%);                            }                            &:hover{                                &::before{                                    transform: translateY(-160%);                                    opacity: .4;                                }                                &::after{                                    transform: translateY(-80%);                                    opacity: .8;                                }                            }                        }                        >img{                            display: inline-block;
+                            vertical-align: middle;
+                            width: 48px;                            height: 48px;                            margin-left: -2%;                            transition: all .65s .25s;                            @include pad(){                                width: 27px;                                height: 27px;                            }                            @include phone(){                                width: 18px;                                height: 18px;                                transform: translateY(-10%);                            }                        }                        &:hover{                            >img{                                transform:translateX(35%);                            }                        }                    }                }            }        }    }    .joint-list-item2{        ul{            justify-content: center;            li{            width: 38%;            position: relative;                span{                    position: absolute;                    top: 50%;                    left: 50%;                    transform: translate(-50%,-50%);                    font-size: 72px;                    font-weight: bold;                    color:$primary;                    white-space:nowrap;                    z-index:100;                    @include pad(){                        font-size: 32px;                    }                    @include phone(){                        font-size: 20px;                    }                }                &::after{                    content:"";
+                    display: block;
+                    position: absolute;                    z-index: 3;                    left: 0;                    right: 0;                    bottom: 0;                    top: 0;                    margin: auto;                    background-color: rgba(255,255,255,.3);                }            }        }        li.double{            margin-right: 1.94%;            background: url("../assets/images/doubleA.png");            background-size: cover;            background-position: 50% 50%;        }        li.youth{            background: url("../assets/images/youth.png");            background-size: cover;            background-position: 50% 50%;        }    }}

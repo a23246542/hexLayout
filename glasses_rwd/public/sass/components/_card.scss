@@ -1,8 +1,0 @@
-.customer{    margin-top: -350px;    padding-bottom: 40px;    .container{        max-width: 1200px;        margin: 0 auto;        @include md(){            margin:  0 6.25%;
-        }    }    ul{        @include md(){            flex-wrap: wrap;
-            justify-content: space-between;        }    }    li{        width: 25%;
-        background-color: red;        &:not(:last-child){            margin-right: 2%;
-        }        @include md(){            margin-right: 0;            margin-bottom: 24px;
-        }        @include pad(){            width: 48%;
-        }        @include phone(){            width: 100%;        }    }    .card{        img{            width: 100%;            height: auto;        }        .card-body{            background-color: #fff;            border:1px solid #DEE2E6;            margin-top: -1px;            padding: 5.68%;
-            font-size: 16px;            color: #212529;            .title-name{                font-weight: bold;                margin-bottom: 16px;            }            p{                margin-bottom: 16px;            }        }        .card-footer{            color:#707070;        }    }}

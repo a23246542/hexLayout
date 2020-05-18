@@ -4,6 +4,8 @@
 // npm i gulp-if
 // npm i gulp-clean-css
 // npm i gulp-compass
+// npm i gulp-concat
+// npm i gulp-clean
 
 // gulp-inject的使用方式
 // 关于gulp-inject的使用方式，今天使用gulp构建项目，使用到了gulp-inject自动插入静态文件到html，但是纠结啦。

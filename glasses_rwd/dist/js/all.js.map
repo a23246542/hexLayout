@@ -1,0 +1,1 @@
+{"version":3,"sources":["script.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA","file":"all.js","sourcesContent":["\r\n$('.ham-icon').click(function(){\r\n    console.log(\"點擊漢堡\");\r\n    $('.menu-dropdown').toggleClass('active');\r\n})"]}
