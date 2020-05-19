@@ -2,7 +2,7 @@
 //平板657
 
 .web-page.joint{
-    background: url("../assets/images/joint-bg.png") no-repeat;
+    background: url("../images/joint-bg.png") no-repeat;
     background-position: center top;
     background-size: cover;
     padding-bottom: 479px;
@@ -212,18 +212,18 @@
         
         li.double{
             margin-right: 1.94%;
-            // background: url("../../assets/images/doubleA.png");
-            background: url("../assets/images/doubleA.png");
-            background-size: cover;
-            background-position: 50% 50%;
+            // background: url(".././images/doubleA.png");
+            // background: url("./images/doubleA.png");
+            // background-size: cover;
+            // background-position: 50% 50%;
             // filter: blur(10px);//這是模糊 改用定位實現文字不透明
         }
 
         li.youth{
-            // background: url("../../assets/images/youth.png");
-            background: url("../assets/images/youth.png");
-            background-size: cover;
-            background-position: 50% 50%;
+            // background: url(".././images/youth.png");
+            // background: url("../images/youth.png");
+            // background-size: cover;
+            // background-position: 50% 50%;
         }
     }
 }

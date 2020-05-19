@@ -4,7 +4,7 @@ const browserSync = require('browser-sync');
 const autoprefixer = require('autoprefixer');
 const minimist = require('minimist'); // 用來讀取指令轉成變數
 
-const { envOptions } = require('./envOptions');
+const { envOptions,srcPath,revicePath,distPath } = require('./envOptions');
 
 let options = minimist(process.argv.slice(2), envOptions);
 //現在開發狀態
@@ -39,10 +39,10 @@ function reviceJs() {
         .pipe(gulp.dest(envOptions.revice.js.revice))
 }
 
-function reviceImg() {
-    return gulp.src(envOptions.revice.otherFiles.src)
-        .pipe($.imagemin())
-        .pipe(gulp.dest(envOptions.revice.otherFiles.path))
+function copyFiles() {
+    return gulp.src(envOptions.revice.copyFiles.src)
+        // .pipe($.imagemin())
+        .pipe(gulp.dest(envOptions.revice.copyFiles.path))
 }
 
 // function reviceAsset(){
@@ -50,6 +50,24 @@ function reviceImg() {
 //     .pipe(gulp.dest('./src/revice/assets'))
 
 // }
+
+function reviceClean(){
+    // return gulp.src(revicePath,{//??出問題 說一定要glob參數??字串
+    return gulp.src(`${revicePath}`,{
+        read: false,//If you need the file and its contents after cleaning in the same stream, do not set the read option to false.
+        allowEmpty: true,
+    })
+    .pipe($.clean())
+}
+
+function clean(){
+    // return gulp.src(distPath,{
+    return gulp.src(`${distPath}`,{
+        read: false,//If you need the file and its contents after cleaning in the same stream, do not set the read option to false.
+        allowEmpty: true,
+    })
+    .pipe($.clean())
+}
 
 function html() {
     return gulp.src(`${envOptions.revice.html.revice}/*.html`)
@@ -127,10 +145,10 @@ function reviceBrowser() {
     });
 }
 function reviceWatch(){
-    gulp.watch(envOptions.revice.html.revice, gulp.series(reviceHtml));
+    gulp.watch(envOptions.revice.html.revice, gulp.series(html));
     // gulp.watch(envOptions.html.ejsSrc, gulp.series(layoutHTML));
-    gulp.watch(envOptions.revice.style.revice, gulp.series(reviceSass));
-    gulp.watch(envOptions.revice.js.revice, gulp.series(reviceJs));
+    gulp.watch(envOptions.revice.style.revice, gulp.series(sass));
+    gulp.watch(envOptions.revice.js.revice, gulp.series(babel));
     // gulp.watch(envOptions.revice.img.revice, gulp.series(reviceImg));
 }
 
@@ -140,5 +158,5 @@ async function revice() { //不知道為什麼無效
 }
 
 //   exports.revice = revice;
-exports.mkRevice = gulp.series(reviceHtml, reviceSass, reviceJs,);
-exports.revice = gulp.series(html,sass,babel,gulp.parallel(reviceBrowser,reviceWatch));
+exports.mkRevice = gulp.series(reviceClean,reviceHtml, reviceSass, reviceJs,copyFiles);
+exports.revice = gulp.series(clean,html,sass,babel,gulp.parallel(reviceBrowser,reviceWatch));

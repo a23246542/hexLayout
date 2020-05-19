@@ -34,7 +34,7 @@ function html() {
 }
 
 function sass() {
-    const plugins = [
+    const plugins = [//好像改方法了六角
         autoprefixer(),
     ];
     return gulp.src(envOptions.style.src)
@@ -45,7 +45,9 @@ function sass() {
         outputStyle: envOptions.style.outputStyle,
         includePaths: envOptions.style.includePaths,
     }).on('error', $.sass.logError))
-    .pipe($.postcss(plugins))
+    .pipe($.postcss(plugins))//做強化
+    // .pipe($.postcss([autoprefixer()]))//新版??
+    .pipe($.concat("all.css"))
     .pipe($.if(options.env === 'prod', $.cleanCss({
         compatibility: 'ie8', 
         level: 1, //感覺1就可以了
@@ -72,11 +74,16 @@ function babel(){
     return gulp.src(envOptions.js.src)
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
+    //   presets: ['@babel/env'],//呼叫不到
     // .pipe($.babel({
-    //   presets: ['@babel/env'],
+    //     presets:['es2015']
     // }))
     .pipe($.concat(envOptions.js.concat))
-    .pipe($.if(options.env === 'prod', $.uglify()))
+    .pipe($.if(options.env === 'prod', $.uglify({
+        compress: {
+            drop_console: true
+          }
+    })))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(envOptions.js.path))
     .pipe(
@@ -89,10 +96,10 @@ function babel(){
 function vendorJs() {
     return gulp.src(envOptions.vendors.src)
     .pipe($.plumber())
-    .pipe(sourcemaps.init()) // 初始化 sourcemaps
+    .pipe($.sourcemaps.init()) // 初始化 sourcemaps
     .pipe($.concat(envOptions.vendors.concat))
     // .pipe($.if(options.env === 'prod', $.uglify()))
-    .pipe(sourcemaps.write('./')) // 寫入 sourcemaps
+    .pipe($.sourcemaps.write('./')) // 寫入 sourcemaps
     .pipe(gulp.dest(envOptions.vendors.path));
 }
 
@@ -101,16 +108,17 @@ function copyFiles() {
 }
 function images(){
     return gulp.src(envOptions.img.src)
-        .pipe($.imagemin())
+        // .pipe($.if(envIsPro=== 'prod', $.imagemin()))  // 如果在生產環境，就壓縮圖片
+        .pipe($.if(options.env === 'prod', $.imagemin()))  // 如果在生產環境，就壓縮圖片
         .pipe(gulp.dest(envOptions.img.path))
 }
 
 function clean() {
     return gulp.src(envOptions.clean.src, {
-        // read: false,//If you need the file and its contents after cleaning in the same stream, do not set the read option to false.
-        // allowEmpty: true,
-      })
-      .pipe($.clean());
+        read: false,//If you need the file and its contents after cleaning in the same stream, do not set the read option to false.
+        allowEmpty: true,
+    })
+    .pipe($.clean());
 }
 
 function browser() {
@@ -153,7 +161,7 @@ function watch() {
 //       .pipe($.ghPages());
 //   }
 
-exports.default = gulp.series(clean,html,sass,babel,vendorJs,gulp.parallel(browser,watch))
+exports.default = gulp.series(clean,html,sass,babel,vendorJs,images,gulp.parallel(browser,watch))
 exports.images = images;
 
 exports.mkRevice = mkRevice;

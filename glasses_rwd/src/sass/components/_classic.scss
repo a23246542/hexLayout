@@ -118,32 +118,32 @@
 
     .optical{
         >.photo{
-            background: url("../assets/images/8.png");
-            // background: url("../../assets/images/8.png");//!!報錯 要以all.css為基準路徑
+            background: url("../images/8.png");
+            // background: url(".././images/8.png");//!!報錯 要以all.css為基準路徑
         }
         span{
-            // background: url("../assets/images/iconfinder_44_2529968.svg");
-            background: url("../assets/images/diamond.svg") no-repeat;
+            // background: url("./images/iconfinder_44_2529968.svg");
+            background: url("../images/diamond.svg") no-repeat;
         }
     }
 
     .sunglasses{
         >.photo{
-            background:url("../assets/images/15.png");
+            background:url("../images/15.png");
         }
         span{
             color: $primary;
-            background: url("../assets/images/Layer_1.svg") no-repeat;
+            background: url("../images/Layer_1.svg") no-repeat;
         }
     }
 
     .functional{
         >.photo{
-            background: url("../assets/images/28.png");
+            background: url("../images/28.png");
 
         }
         span{
-            background: url("../assets/images/Page-1.svg") no-repeat;
+            background: url("../images/Page-1.svg") no-repeat;
         }
     }
 }

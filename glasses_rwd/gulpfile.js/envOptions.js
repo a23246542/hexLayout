@@ -20,7 +20,7 @@ let envOptions = {
     },
     style: {
         src: [
-            `${srcPath}/sass/all.scss`,
+            `${srcPath}/sass/**/*.scss`,
         ],
         outputStyle: 'expanded',
         includePaths: [
@@ -62,9 +62,12 @@ let envOptions = {
     clean: {
         src: [
             // distPath,??images也會清掉
+            './.tmp',
             `${distPath}/**/*`,
-            `!${distPath}/images`            
+            // `!${distPath}/images/**/*`            
         ]
+        // 當從 ['./public/**/*', './.tmp']陣列 換成 ['./.tmp', './public/**/*']
+        // 就可以重覆一直刷 gulp build 不跳錯誤
     },
     browserSetting: {
         // dir: `${distPath}/*.html`,
@@ -101,7 +104,15 @@ let envOptions = {
             path: `${distPath}/js/**/*.js`,
             revice: `${revicePath}/js`,
         },
-        otherFiles: {
+        vendors: {
+            src: [
+              `${nodePath}/jquery/dist/**/jquery.slim.min.js`,
+              `${nodePath}/bootstrap/dist/js/**/bootstrap.bundle.min.js`, // 已包含 popper.js
+            ],
+            concat: 'vendors.js',
+            path: `${distPath}/js`,
+        },
+        copyFiles: {
             src: [
                 `${srcPath}/**/*`,
                 `!${srcPath}/**/*.html`,

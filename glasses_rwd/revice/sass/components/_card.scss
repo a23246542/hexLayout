@@ -1,8 +1,63 @@
-.customer{    margin-top: -350px;    padding-bottom: 40px;    .container{        max-width: 1200px;        margin: 0 auto;        @include md(){            margin:  0 6.25%;
-        }    }    ul{        @include md(){            flex-wrap: wrap;
-            justify-content: space-between;        }    }    li{        width: 25%;
-        background-color: red;        &:not(:last-child){            margin-right: 2%;
-        }        @include md(){            margin-right: 0;            margin-bottom: 24px;
-        }        @include pad(){            width: 48%;
-        }        @include phone(){            width: 100%;        }    }    .card{        img{            width: 100%;            height: auto;        }        .card-body{            background-color: #fff;            border:1px solid #DEE2E6;            margin-top: -1px;            padding: 5.68%;
-            font-size: 16px;            color: #212529;            .title-name{                font-weight: bold;                margin-bottom: 16px;            }            p{                margin-bottom: 16px;            }        }        .card-footer{            color:#707070;        }    }}
+.customer{
+    margin-top: -350px;
+    padding-bottom: 40px;
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+        @include md(){
+            margin:  0 6.25%;//48/768
+        }
+    }
+    ul{
+        @include md(){
+            flex-wrap: wrap;//不小心下在li難怪沒反應
+            justify-content: space-between;
+        }
+    }
+    li{
+        width: 25%;//反正marign會內縮!! 就給他25%就對了
+        background-color: red;
+        &:not(:last-child){
+            margin-right: 2%;//這是第一種作法 方便25 50%的分
+            // margin-right: 24px;結果依樣
+        }
+        @include md(){
+            margin-right: 0;
+            margin-bottom: 24px;//第三四個也給他margin
+        }
+        @include pad(){
+            width: 48%;//第二種作法算好48
+        }
+        @include phone(){
+            width: 100%;
+
+        }
+    }
+
+    .card{
+        img{
+            width: 100%;
+            height: auto;
+        }
+        .card-body{
+            background-color: #fff;
+            border:1px solid #DEE2E6;
+            margin-top: -1px;
+            padding: 5.68%;//16/283
+            font-size: 16px;
+            color: #212529;
+            
+            .title-name{
+                // font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 16px;
+            }
+            p{
+                margin-bottom: 16px;
+            }
+        }
+        .card-footer{
+            color:#707070;
+        }
+    }
+}
