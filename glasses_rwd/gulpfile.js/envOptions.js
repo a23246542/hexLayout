@@ -62,7 +62,7 @@ let envOptions = {
     clean: {
         src: [
             // distPath,??images也會清掉
-            './.tmp',
+            // './.tmp',
             `${distPath}/**/*`,
             // `!${distPath}/images/**/*`            
         ]
@@ -106,7 +106,7 @@ let envOptions = {
         },
         vendors: {
             src: [
-              `${nodePath}/jquery/dist/**/jquery.slim.min.js`,
+               `${nodePath}/jquery/dist/**/jquery.slim.min.js`,
               `${nodePath}/bootstrap/dist/js/**/bootstrap.bundle.min.js`, // 已包含 popper.js
             ],
             concat: 'vendors.js',
@@ -118,9 +118,9 @@ let envOptions = {
                 `!${srcPath}/**/*.html`,
                 // `!${srcPath}/**/*.ejs`,
                 `!${srcPath}/js/**/*.js`,
-                `!${srcPath}/style/*`,
-                `!${srcPath}/style/**/*.scss`,
-                `!${srcPath}/style/**/*.sass`,
+                `!${srcPath}/sass/*`,
+                `!${srcPath}/sass/**/*.scss`,
+                `!${srcPath}/sass/**/*.sass`,
             ],
             path: revicePath,
         }
@@ -128,4 +128,4 @@ let envOptions = {
 
 }
 
-exports.envOptions = envOptions;//!!要匯出才讀得到
+exports.envOptions = envOptions;//要匯出

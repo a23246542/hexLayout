@@ -5,7 +5,7 @@ const autoprefixer = require('autoprefixer');
 const minimist = require('minimist'); // 用來讀取指令轉成變數
 
 const { envOptions } = require('./envOptions');
-const { mkRevice,revice } = require('./revice');
+const { mkRevice,revice,reviceSass} = require('./revice');
 
 
 
@@ -48,11 +48,11 @@ function sass() {
     .pipe($.postcss(plugins))//做強化
     // .pipe($.postcss([autoprefixer()]))//新版??
     .pipe($.concat("all.css"))
-    .pipe($.if(options.env === 'prod', $.cleanCss({
+    .pipe($.if(options.env === 'prod', $.cleanCss({// 假設開發環境則壓縮 CSS
         compatibility: 'ie8', 
-        level: 1, //感覺1就可以了
+        level: 1,
         // format: 'beautify'
-    }))) // 假設開發環境則壓縮 CSS
+    }))) 
     .pipe($.sourcemaps.write('.'))
     // .pipe($.if(options.env === 'prod',$.rename({//針對生產環境與開發環境所釋出的檔案個別命名以方便辨認
     //     // dirname: './component',
@@ -140,22 +140,8 @@ function watch() {
     gulp.watch(envOptions.style.src, gulp.series(sass));
     gulp.watch(envOptions.js.src, gulp.series(babel));
     gulp.watch(envOptions.img.src, gulp.series(images));
-    // ----------------------------------------------------
-    // gulp.watch(envOptions.revice.html.src, gulp.series(reviceHtml));
-    // gulp.watch(envOptions.html.ejsSrc, gulp.series(layoutHTML));
-    // gulp.watch(envOptions.revice.style.src, gulp.series(reviceSass));
-    // gulp.watch(envOptions.revice.js.src, gulp.series(reviceJs));
-    // gulp.watch(envOptions.revice.img.src, gulp.series(reviceImg));
 }
 
-// function clean() {
-//     return gulp.src(envOptions.clean.src, {
-//         read: false,
-//         allowEmpty: true,
-//       })
-//       .pipe($.clean());
-//   }
-  
 //   function deploy() {
 //     return gulp.src(envOptions.deploySrc)
 //       .pipe($.ghPages());
@@ -166,3 +152,4 @@ exports.images = images;
 
 exports.mkRevice = mkRevice;
 exports.revice = revice;
+exports.reviceSass = reviceSass;

@@ -10,15 +10,13 @@ let options = minimist(process.argv.slice(2), envOptions);
 //現在開發狀態
 console.log(`Current mode：${options.env}`);
 
-
-
 function reviceHtml() {
     return gulp.src(envOptions.revice.html.src)
         .pipe(gulp.dest(envOptions.revice.html.revice))
 }
 
 function reviceSass() {
-    // return gulp.src(`mydev下resume.glass的sass資料夾`)
+    // return gulp.src(`srv下resume or glass的sass資料夾`)
     return gulp.src(envOptions.revice.style.src)
         .pipe($.plumber())
         .pipe($.stripJsonComments({
@@ -45,11 +43,6 @@ function copyFiles() {
         .pipe(gulp.dest(envOptions.revice.copyFiles.path))
 }
 
-// function reviceAsset(){
-//     return gulp.src('./src/mydev/assets/**/*')
-//     .pipe(gulp.dest('./src/revice/assets'))
-
-// }
 
 function reviceClean(){
     // return gulp.src(revicePath,{//??出問題 說一定要glob參數??字串
@@ -101,7 +94,7 @@ function sass() {
     .pipe($.postcss(plugins))
     .pipe($.if(options.env === 'prod', $.cleanCss({
         compatibility: 'ie8', 
-        level: 1, //感覺1就可以了
+        level: 1, 
         // format: 'beautify'
     }))) // 假設開發環境則壓縮 CSS
     .pipe($.sourcemaps.write('.'))
@@ -160,3 +153,4 @@ async function revice() { //不知道為什麼無效
 //   exports.revice = revice;
 exports.mkRevice = gulp.series(reviceClean,reviceHtml, reviceSass, reviceJs,copyFiles);
 exports.revice = gulp.series(clean,html,sass,babel,gulp.parallel(reviceBrowser,reviceWatch));
+// exports.reviceSass = reviceSass;
