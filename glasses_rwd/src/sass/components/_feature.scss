@@ -1,0 +1,132 @@
+.web-page.feature{
+    padding: 64px 0 80px;
+    background: #FBF2F2;
+    // @include phone(){//phone要寫在下面才不會被蓋過!!!!!
+    //     padding: 32px 0 56px;
+    // }
+    @include pad(){
+        padding: 40px 0 40px;
+    }
+    @include phone(){//phone要寫在下面才不會被蓋過!!!!!
+        padding: 32px 0 56px;
+    }
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+        @include phone(){
+            // max-width: 224px;//是這樣嗎 還是也轉成百分比
+            // max-width: 60%;//有box-size
+            padding: 0 20%;
+        }
+        @include pad(){//要來算container
+            // padding: 0 12.76%;
+            max-width: 696px;
+            
+        }
+    }
+    .title{
+        margin-bottom: 44px;
+        color: $primary;
+        font-size: 48px;
+        font-weight: bold;
+        text-align: center;
+        white-space: nowrap;//!!這邊title就無法包在container
+        @include phone(){
+            font-size: 26px;
+            margin-bottom: 4px;
+        }
+    }
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;//沒用
+        padding-top: 16px;
+        @include phone(){
+            padding-top: 28px;
+        }
+    }
+    li{
+        width: 25%;
+        padding: 0 9px;
+
+        @include pad(){
+            width: 50%;//想像是col
+            padding: 0 64px;//bs4作法
+            margin-bottom: 40px;
+            // hahow作法
+            // width: calc(50%-128px);
+            // margin-right: 64px;
+            // margin-left: 64px;
+        }
+        @include phone(){
+            width: 100%;
+            padding: 0;
+            &:not(:last-child){
+                margin-bottom: 28px;
+            }
+        }
+        span{
+            // display: block;
+            margin-bottom: 40px;
+            height: 100px;
+            // ---
+            display: flex;
+            align-items: center;
+            img{
+                margin: 0 auto;//沒給明確寬高也可以
+                // height: 100%;//相反 不然會爆出來!!!
+                // width: auto;
+                
+            }
+            @include md(){
+                 margin-bottom: 16px;
+                 height: 80px;
+            }
+            @include phone(){
+
+            }
+        }
+        h3{
+            margin-bottom: 4px;
+            font-size: 24px;
+            color: $primary;
+            text-align: center;
+            font-weight: bold;
+            @include md(){
+                font-size: 20px;
+                margin-bottom: 8px;
+            }
+        }
+        p{
+            color: #000;
+            // line-height: inherit;//??沒吃到1.5
+            line-height: 1.5;
+        }
+    }
+
+    // li:nth-of-type(4){ 好像不只第四個大小不一
+    // li{
+    //     span{
+    //         display: flex;
+    //         align-items: center;
+    //     }
+    // }
+
+    
+}
+
+
+@include media-breakpoint-down(md) { 
+    .order-1{
+        order:1;
+    }
+    .order-2{
+        order: 2;
+    }
+    .order-3{
+        order: 3;
+    }
+    .order-4{
+        order: 3;
+    }
+}
