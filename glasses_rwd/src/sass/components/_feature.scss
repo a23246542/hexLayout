@@ -39,7 +39,7 @@
     ul{
         display: flex;
         flex-wrap: wrap;
-        align-items: center;//沒用
+        // align-items: center;//沒用 放這個會發現不等高
         padding-top: 16px;
         @include phone(){
             padding-top: 28px;
