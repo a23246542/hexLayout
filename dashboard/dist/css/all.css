@@ -9731,14 +9731,44 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v51/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format("woff2");
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.bg-green {
+  background-color: #EDF4EE;
+}
+
 .main {
   min-height: 100vh;
 }
 
 .sidebar-sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
+  padding: 0px 0 0;
+  height: 100vh;
+}
+
+.inline-flex {
+  display: inline-flex;
 }
 
 /*# sourceMappingURL=all.css.map */
