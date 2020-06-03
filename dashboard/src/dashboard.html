@@ -77,27 +77,42 @@
                 </nav>
             </div>
             <div class="col-md-10 ml-auto">
-                <section class="Assignment h-100">
+                <section class="assignment h-100">
                     <!-- <div class="card h-100"> -->
                         <div class="title pt-3">
-                            <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center  flex-wrap">
                                <h2 class="mr-5">Assignment</h2>
                                 <!-- <div class="inline-flex align-items-end"> -->
-                                <div class="inline-flex">
+                                <div class="inline-flex dropdown">
                                     <div class="h5 mb-0">All Courses</div>
                                     <!-- <span class="align-bottom">沒用 -->
-                                    <span class="ml-1">
+                                    <!-- <button class="dropdown-toggle ml-1">會出現icon-->
+                                    <button id="dLabel" class="ml-1" data-toggle="dropdown">
                                         <i class="fas fa-chevron-down align-middle"></i>
-                                    </span>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a href="#" class="dropdown-item">CSS</a>
+                                        <a href="#" class="dropdown-item">HTML</a>
+                                        <a href="#" class="dropdown-item">JS</a>
+                                    </div>
                                 </div>
-                                <span>
-                                    <span class="material-icons" style="user-select: auto;">notifications_active</span>
-                                </span>
+                                <div class="d-flex align-items-center ml-md-auto">
+                                    <div class="form-group mb-0">
+                                        <input type="text" name="" id="">
+                                        <button class="btn">
+                                            <span class="material-icons d-block" style="user-select: auto;">search</span>
+                                        </button>
+                                    </div>
+                                    <!-- <button class="btn"> -->
+                                    <button class="btn">
+                                        <span class="material-icons" style="user-select: auto;">notifications_active</span>
+                                    </button>
+                                </div>
                             </div>
                             
                         </div>
                         <div class="body h-100">
-                            <div class="container">
+                            <div class="container h-100">
                                 <div class="row h-100">
                                     <div class="col-md-4 bg-primary">
                                         111111
