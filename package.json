@@ -40,7 +40,8 @@
     "gulp-strip-json-comments": "^4.0.1",
     "gulp-uglify": "^3.0.2",
     "jquery": "^3.5.1",
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.5",
+    "popper": "^1.0.1"
   },
   "devDependencies": {
     "gulp-remove-empty-lines": "^0.1.0",
