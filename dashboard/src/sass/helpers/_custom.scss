@@ -23,9 +23,9 @@
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
   }
-.bg-green{
-    background-color: #EDF4EE;
-}
+// .bg-green{
+//     background-color: #EDF4EE;
+// }
 .main{
     min-height: 100vh;
 }
@@ -43,3 +43,28 @@
 .inline-flex{
     display: inline-flex;
 }
+
+.outline{
+    outline:1px solid red;
+}
+
+// 只能這樣覆蓋嗎
+// 覆蓋無效...
+.list-group-item.active{
+    background-color:$brand-primary-light;
+    // background-color:red!important;
+    border-color:$brand-primary-dark;
+    color:$brand-dark;
+}
+.card-header{
+    margin: -1px !important;
+}
+// 又被吃掉了
+// a:hover{
+//     // color:$bg-green;
+//     color:green;
+// }
+
+// .btn:hover{
+//     color:$bg-green;
+// }

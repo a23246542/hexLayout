@@ -1,0 +1,19 @@
+
+// .btn-edit:hover{
+//     color:$brand-secondary;
+// }
+// @@!btb要自己加
+//##建立自己的元件
+@each $color, $value in $theme-colors {
+    .btn-#{$color} {
+    //   background-color: $value;
+        // color: $value;
+        // @!!yia這樣用
+        // background-color:color-yiq($value);
+    }
+    .hover-#{$color} {
+        &:hover{
+            color: $value;
+        }
+    }
+}

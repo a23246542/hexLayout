@@ -9731,6 +9731,69 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+textarea {
+  outline: none;
+  border-style: none;
+}
+
+[type=submit] {
+  cursor: pointer;
+  border: none;
+}
+
+select {
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.hover-primary:hover {
+  color: #007bff;
+}
+
+.hover-secondary:hover {
+  color: #6c757d;
+}
+
+.hover-success:hover {
+  color: #28a745;
+}
+
+.hover-info:hover {
+  color: #17a2b8;
+}
+
+.hover-warning:hover {
+  color: #ffc107;
+}
+
+.hover-danger:hover {
+  color: #dc3545;
+}
+
+.hover-light:hover {
+  color: #f8f9fa;
+}
+
+.hover-dark1:hover {
+  color: #2A8356;
+}
+
+.hover-green:hover {
+  color: #EDF4EE;
+}
+
+.hover-dark:hover {
+  color: #343a40;
+}
+
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -9754,10 +9817,6 @@ a.text-dark:hover, a.text-dark:focus {
   -webkit-font-smoothing: antialiased;
 }
 
-.bg-green {
-  background-color: #EDF4EE;
-}
-
 .main {
   min-height: 100vh;
 }
@@ -9769,6 +9828,20 @@ a.text-dark:hover, a.text-dark:focus {
 
 .inline-flex {
   display: inline-flex;
+}
+
+.outline {
+  outline: 1px solid red;
+}
+
+.list-group-item.active {
+  background-color: #EDF4EE;
+  border-color: #CDDDCD;
+  color: #121212;
+}
+
+.card-header {
+  margin: -1px !important;
 }
 
 /*# sourceMappingURL=all.css.map */

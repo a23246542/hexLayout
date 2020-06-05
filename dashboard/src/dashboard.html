@@ -79,7 +79,7 @@
             <div class="col-md-10 ml-auto">
                 <section class="assignment h-100">
                     <!-- <div class="card h-100"> -->
-                        <div class="title pt-3">
+                        <div class="title pt-3 mb-4 outline">
                             <div class="d-flex align-items-center  flex-wrap">
                                <h2 class="mr-5">Assignment</h2>
                                 <!-- <div class="inline-flex align-items-end"> -->
@@ -111,13 +111,14 @@
                             </div>
                             
                         </div>
-                        <div class="body h-100">
+                        <div class="body h-100 outline">
                             <div class="container h-100">
                                 <div class="row h-100">
-                                    <div class="col-md-4 bg-primary">
+                                    <div class="col-md-4 outline">
                                         <div class="dropdown">
                                             <div class="d-flex align-items-center">
                                                     <div>All(<span>4</span>)</div>
+                                                <!-- @如何关掉outline -->
                                                 <button class="btn" data-toggle="dropdown">
                                                     <i class="fas fa-chevron-down align-middle"></i>
                                                 </button>
@@ -128,22 +129,220 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- @一堆id怪怪得 如何不要id -->
                                         <div class="list-group" id="msg">
-                                            <!-- <a href="#" class="list-group-item list-group-item-action" data-toggle="list"></a>
-                                            <a href="#" class="list-group-item list-group-item-action" data-toggle="list"></a>
-                                            <a href="#profile" class="list-group-item list-group-item-action" data-toggle="list"></a>
-                                            <a href="#messages" class="list-group-item list-group-item-action" data-toggle="list"></a> -->
-                                            <a href="#" class="list-group-item list-group-item-action"></a>
+                                            <a href="#msg1" class="list-group-item list-group-item-action" data-toggle="list">
+                                                <div class="d-flex flex-wrap justify-content-between">
+                                                    <div class="h6 w-75">Chapter Assignment 2</div><small>4 hrs ago</small>
+                                                    <!-- <span class="w-100"></span> -->
+                                                    <p class="w-75 mr-auto">Please check this file…</p><small>Emily Wang</small>
+                                                </div>
+                                            </a>
+                                            <a href="#msg2" class="list-group-item list-group-item-action" data-toggle="list">
+                                                <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center mb-1">
+                                                    <!-- @行高1.2字被切掉了 -->
+                                                    <!-- @如何缩小small一漾靠右 -->
+                                                    <!-- @text-dark没办法加重 -->
+                                                    <div class="h6 mb-0">Chapter Assignment 1</div><small class="text-dark">12 hrs ago</small>
+                                                </div>
+                                                <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center">
+                                                    <p class="h5 mb-0">My Homework</p><small class="text-muted">David Xu</small>
+                                                </div>
+                                            </a>
+                                            <a href="#msg3" class="list-group-item list-group-item-action" data-toggle="list">
+                                                <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center mb-1">
+                                                    <div class="h6 mb-0">Final Assignment</div><small class="text-dark">18 hrs ago</small>
+                                                </div>
+                                                <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center">
+                                                    <p class="h5 mb-0">Have a problem with this…</p><small class="text-muted">Tony Wei</small>
+                                                </div>
+                                            </a>
+                                            <a href="#msg4" class="list-group-item list-group-item-action" data-toggle="list">
+                                                <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center mb-1">
+                                                    <div class="h6 mb-0">Final Assignment</div><small class="text-dark">19 hrs ago</small>
+                                                </div>
+                                                <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center">
+                                                    <p class="h5 mb-0">Did I do it right?</p><small class="text-muted">Christina Lin</small>
+                                                </div>
+                                            </a>
+                                            <!-- <a href="#" class="list-group-item list-group-item-action"></a>
                                             <a href="#" class="list-group-item list-group-item-action"></a>
                                             <a href="#profile" class="list-group-item list-group-item-action"></a>
-                                            <a href="#messages" class="list-group-item list-group-item-action"></a>
+                                            <a href="#messages" class="list-group-item list-group-item-action"></a> -->
                                         </div>
                                     </div>
-                                    <div class="col-md-8 bg-secondary">
+                                    <div class="col-md-8 outline">
                                         <div class="tab-content">
-                                            <div class="tab-pane">555</div>
-                                            <div class="tab-pane" id="profile">111</div>
-                                            <div class="tab-pane" id="messages">222</div>
+                                            <div class="tab-pane" id="msg1">
+                                                <div class="text-right">
+                                                    <span class="text-muted">2 comments</span>
+                                                </div>
+                                                <!-- <div class="card min-vh-100">@太長不好處理 -->
+                                                <div class="card">
+                                                    <!-- @border重疊的問題解法 -->
+                                                    <div class="card-header bg-green border border-green">
+                                                        <div class="d-flex align-items-center">
+                                                            <div>
+                                                                <div class="h6 font-weight-light">Chapter Assignment 2 / HTML&CSS</div>
+                                                                <div class="h5 mb-0">Please check this file for me, thanks!</div>
+                                                            </div>
+                                                            <div class="ml-auto d-none d-sm-block">
+                                                                <span class="material-icons">
+                                                                    more_vert
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <!-- <div class="d-flex"> -->
+                                                        <div class="media mb-3">
+                                                            <!-- <div class="rounded-circle">@加再img才有效 -->
+                                                            <!-- @固定寬是否好正常 還是縮放 -->
+                                                            <div style="width:40px">
+                                                                <img class="w-100 rounded-circle" src="https://picsum.photos/100/100?random=2" alt="">
+                                                            </div>
+                                                            <div class="media-body pb-3 ml-2 border-bottom-green border-bottom ">
+                                                                <!-- @h6來表示樣式 行高問題 -->
+                                                                <div class="h6 mb-0">Emily Wang</div>
+                                                                <div class="text-muted mb-3">10:38 AM (4 hours ago)</div>
+                                                                <p>Hi Teacher, the attached file is my homework of chapter 2. And here comes a question: Why in the following code the height of the div is bigger than the height of the img ? There is a gap below the image, but it doesn’t seems to be a padding/margin. What is the gap or extra space below image?</p>
+                                                                <!-- <div class="btn">HW-2-David.zip</div> !div無效 -->
+                                                                <!-- @theme color明明有增加卻無效 怎麼檢查 -->
+                                                                <!-- @https://ithelp.ithome.com.tw/articles/10159555 如何新增整組的btn bg border也是有看沒有懂 -->
+                                                                <button type="file" class="btn btn-green font-weight-bold" style="background-color:#EDF4EE;">
+                                                                    <!-- @為何middle反而偏上 -->
+                                                                    <!-- <span class="material-icons align-middle align-middle"> -->
+                                                                    <span class="material-icons align-bottom">
+                                                                        attach_file
+                                                                    </span>
+                                                                    HW-2-David.zip
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="media">
+                                                            <div style="width:40px" class="">
+                                                                <img class="w-100 rounded-circle" src="https://picsum.photos/100/100?random=2" alt="">
+                                                            </div>
+                                                            <div class="media-body pb-3 ml-2 ">
+                                                                <div class="h6 mb-0">Andy Chen (You)</div>
+                                                                <div class="text-muted mb-3">13:24 AM (1 hours ago)</div>
+                                                                <p>Hi David, by default, an image is rendered inline, like a letter so it sits on the same line that a, b, c and d sit on. There is space below that line for the descenders you find on letters like g, j, p and q.</p>
+                                                                <p>You can:</p>
+                                                                <p>
+                                                                    <ul>
+                                                                        <li>adjust the vertical-align of the image to position it elsewhere (e.g. the middle ) or 　</li>
+                                                                        <li>change the display so it isn’t inline.</li>
+                                                                    </ul>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="btn-group">
+                                                                <!-- @為何這邊a會佔滿高 -->
+                                                                <!-- @middle比baseline還高 -->
+                                                                <a href="">
+                                                                    <span class="material-icons text-dark align-middle">
+                                                                        keyboard_arrow_left
+                                                                    </span>
+                                                                </a>
+                                                                <a href="">
+                                                                    <span class="material-icons text-dark align-baseline">
+                                                                        keyboard_arrow_right
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                            <!-- <div class="btn-group">!會有左右圓角 -->
+                                                            <div class="inline-flex ml-auto">
+                                                                <div class="btn btn-outline-primary mr-3 px-4">Mark as read</div>
+                                                                <div class="btn btn-primary text-capitalize px-4">reply</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reply_block position-absolute">
+                                                        <div class="card w-100 h-100">
+                                                            <div class="card-header p-3">
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="dropdown">
+                                                                    <!-- BodyText !!放在button就好 -->
+                                                                    <!-- !btn可消除邊框 -->
+                                                                        <button class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                            BodyText
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                            <li class="dropdown-item">1</li>
+                                                                            <li class="dropdown-item">2</li>
+                                                                            <li class="dropdown-item">3</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <!-- !inline-block隱藏 -->
+                                                                    <!-- ##px-3可以蓋過p-0 -->
+                                                                    <ul class="w-100 text-right px-3 overflow-hidden text-nowrap p-0 m-0">
+                                                                        <!-- @hover.scss可設定a:hover btn呢-->
+                                                                        <!-- <div class="btn btn-edit">B</div> -->
+                                                                        <!-- <div class="btn hover-dark1">
+                                                                            <span class="material-icons">
+                                                                                format_bold
+                                                                            </span>
+                                                                        </div> -->
+                                                                        <!-- @如何去除陰影 -->
+                                                                        <!-- <button class="btn material-icons hover-dark1 btn-">
+                                                                            format_bold
+                                                                        </button> -->
+                                                                        <li class="btn material-icons hover-dark1">
+                                                                            format_bold
+                                                                        </li>
+                                                                        <li class="btn material-icons hover-dark1">
+                                                                            format_italic
+                                                                        </li>
+                                                                        <li class="btn material-icons hover-dark1">
+                                                                            format_list_bulleted
+                                                                        </li>
+                                                                        <li class="btn material-icons hover-dark1">
+                                                                            format_list_numbered
+                                                                        </li>
+                                                                        <li class="btn material-icons hover-dark1">
+                                                                            insert_photo
+                                                                        </li>
+                                                                        <li class="btn material-icons hover-dark1">
+                                                                            insert_link
+                                                                        </li>
+                                                                        <li class="btn material-icons hover-dark1">
+                                                                            code
+                                                                        </li>
+                                                                        
+                                                                        <!-- @ a:hover顏色無效 -->
+                                                                        <!-- <a href="" class="btn">CCC</a> -->
+                               
+                                                                    </ul>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            <div class="card-body pb-0">
+                                                                <textarea  class="w-100 align-bottom"  style="min-height:160px"
+                                                                name="" id="" cols="50" rows="5">Reply an answer</textarea>
+                                                            </div>
+                                                            <!-- <div class="card-footer bg-transparent border-0 p-4 pt-0"> 如何微調並存 -->
+                                                            <div class="card-footer bg-transparent border-0 p-4">
+                                                                <div class="d-flex">
+                                                                    <!-- <div class="ml-auto font-weight-bold">!btn有預設-->
+                                                                    <div class="ml-auto font-weight-bold">
+                                                                        <!-- @同學px-6是在哪邊新增的呢 -->
+                                                                        <button type="button" class="btn btn-outline-primary px-6 py-2 mr-2 font-weight-bold">Cancel</div>
+                                                                        <button type="button" class="btn btn-primary px-6 py-2 font-weight-bold">Reply</div>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="msg2">task2</div>
+                                            <div class="tab-pane" id="msg3">task3</div>
+                                            <div class="tab-pane" id="msg4">task4</div>
                                         </div>
                                     </div>
                                 </div>
@@ -170,10 +369,32 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script>
         // $('.dropdown-toggle').dropdown();
-        $("#msg a").off().on('click', function(e){
-            e.preventDefault();
-            $(this).tab('show');
-        })
+        // $("#msg a").off().on('click', function(e){
+        //     e.preventDefault();
+        //     $(this).tab('show');
+        // })
+        $("#msg a:first-child").tab('show');
     </script>
+    <style>
+        /* @寫再scss吃不到 */
+        .card-header{
+            margin: -1px!important;
+        }
+        .reply_block{
+            /* top: 0; */
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        .px-6{
+            padding: 0 2rem;
+        }
+        /* .btn-edit:hover{
+            color: green;
+        }
+        a:hover{
+            color:green;
+        } */
+    </style>
 </body>
 </html>

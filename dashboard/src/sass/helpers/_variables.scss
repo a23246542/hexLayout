@@ -2,7 +2,16 @@
 //
 // Variables should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+// @是不是要放上面才能吃到
+// @设记上这样分好吗
+$brand-primary-light:#EDF4EE;
+$brand-primary-dark:#CDDDCD;
+$brand-secondary:#2A8356;
+$brand-dark:#121212;
 
+$bg-green: #EDF4EE;//!!!!!喔喔要寫前面才吃得到
+$bg-green-dark:#CDDDCD;
+// $brand-primary-dark:;
 // Color system
 
 $white:    #fff !default;
@@ -56,7 +65,11 @@ $colors: map-merge(
     "red":        $red,
     "orange":     $orange,
     "yellow":     $yellow,
-    "green":      $green,
+    // "green":      $green,
+    // "green":      $bg-green,
+    "green":      $brand-primary-light,
+    // 新增
+    "green-dark": $brand-secondary,        
     "teal":       $teal,
     "cyan":       $cyan,
     "white":      $white,
@@ -75,6 +88,10 @@ $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
+// $brand-primary:#EDF4EE;
+// $bg-green: #EDF4EE;//!!!!!喔喔要寫前面才吃得到
+// $bg-green-dark:#CDDDCD;
+
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: map-merge(
@@ -82,11 +99,16 @@ $theme-colors: map-merge(
     "primary":    $primary,
     "secondary":  $secondary,
     "success":    $success,
-    "info":       $info,
+    // "info":       $info,
+    "info":       $brand-secondary,
     "warning":    $warning,
     "danger":     $danger,
     "light":      $light,
-    "dark":       $dark
+    // "dark":       $dark,
+    // @@為何無法蓋過原本的dark 要刪掉上面的dark
+    "dark1":       $brand-secondary,
+    // 新增
+    "green": $brand-primary-light,
   ),
   $theme-colors
 );
@@ -180,7 +202,7 @@ $body-color:                $gray-900 !default;
 
 $link-color:                              theme-color("primary") !default;
 $link-decoration:                         none !default;
-$link-hover-color:                        darken($link-color, 15%) !default;
+// $link-hover-color:                        darken($link-color, 15%) !default;
 $link-hover-decoration:                   underline !default;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 $emphasized-link-hover-darken-percentage: 15% !default;
