@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<!-- <html lang="en" class="h-100"> -->
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,36 @@
     <link rel="stylesheet" href="./css/all.css">
     <script src="https://kit.fontawesome.com/77513e405a.js" crossorigin="anonymous"></script>
 </head>
-<body class="h-100">
-     <div class="main container-fluid h-100">
-        <div class="row flex-xl-nowrap h-100">
+<!-- @有main設最小 就不需要h-100?-->
+<body class="">
+     <!-- <div class="main container-fluid h-100"> -->
+     <div class="main container-fluid">
+        <!-- <div class="row flex-xl-nowrap h-100"> -->
+        <div class="row flex-xl-nowrap">
             <div class="col-md-2 p-0">
+            <!-- <div style="width:200px"> -->
+            <nav class="navbar navbar-expand-md navbar-light bg-dark">
+            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-dark"> -->
+                <a class="navbar-brand" href="#">Da</a>
+                <div class="ml-auto">XX</div>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#sideBar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>    
             <!-- <nav> -->
-                <nav class="sidebar-sticky">
+                <!-- <nav class="sidebar-sticky min-vh-100"> -->
+                <!-- <nav class="sidebar-sticky h-100 mh-50">//只有max 沒有min -->
+                <!-- @有辦法高100% 又限縮高度縮小不會蓋到嗎 目前只想到card-body 好像渴了 -->
+                <!-- <nav class="sidebar-sticky position-fixed"> -->
+                <!-- <nav class="sidebar vh-100"> -->
+                <!-- <aside id="sideBar" class="sidebar collapse navbar-collapse navbar-expand"> -->
+                <aside id="sideBar" class="sidebar collapse navbar-collapse">
+                <!-- <aside id="sideBar" class="sidebar navbar-collapse collapse"> -->
+                    <!-- @@因為collapse預設就是隱藏 如何下class md以上collapse也不要摺疊 如果官方好像也是手動下block 
+                    那.navbar-expand{-sm|-md|-lg|-xl}要幹嘛
+                    -->
+                <!-- @可是官方.navbar-expand-lg .navbar-collapse {有效欸 -->
+                <!-- <aside id="sideBar" class="sidebar collapse navbar-collapse navbar-expand"> -->
                 <!-- <div class="h-100"> -->
                     <div class="card h-100 rounded-0 border-0 bg-green">
                         <div class="card-title d-flex">
@@ -21,7 +46,7 @@
                             </div>
                             <h2>answer</h2>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body ">
                             <div class="list-group">
                                 <a class="list-item list-group-action disable" href="#">
                                     <div class="d-flex align-items-center">
@@ -74,7 +99,7 @@
                         </div>
                     </div> 
                 <!-- </div>      -->
-                </nav>
+                </aside>
             </div>
             <div class="col-md-10 ml-auto">
                 <section class="assignment h-100">
@@ -96,25 +121,42 @@
                                         <a href="#" class="dropdown-item">JS</a>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center ml-md-auto">
-                                    <div class="form-group mb-0">
-                                        <input type="text" name="" id="">
-                                        <button class="btn">
-                                            <span class="material-icons d-block" style="user-select: auto;">search</span>
-                                        </button>
+                                <div class="d-flex flex-grow-1 flex-lg-grow-0  align-items-center ml-md-auto">
+                                <!-- <div class="input-group flex-md-nowrap align-items-center ml-md-auto"> -->
+                                <!-- <div class="form-inline flex-nowrap align-items-center ml-md-auto"> -->
+
+                                    <!-- <div class="form-group mb-0 outline"> -->
+                                    <!-- !!不然input-group flex會佔滿高 要align-center-->
+                                    <!-- @這邊該用哪一個好 input-group fomr-inline -->
+                                    <!-- @@為什麼手機板form-inline會掉行 input-group不會 原始碼都是row wrap  -->
+                                    <div class="input-group align-items-center mr-1">
+                                    <!-- <div class="form-inline align-items-center outline"> -->
+                                        <input type="text" class="form-control" name="" id="">
+                                        <!-- <input type="text" name="" id=""> -->
+                                        <div class="input-group-append">
+                                            <!-- <button class="btn"> -->
+                                            <button class="btn border">
+                                            <!-- @ -->
+                                            <!-- <span class="material-icons d-block input-group-text" style="user-select: auto;">search</span> -->
+                                                <span class="material-icons d-block" style="user-select: auto;">search</span>
+                                            </button>
+                                        </div>
+                                        
                                     </div>
                                     <!-- <button class="btn"> -->
-                                    <button class="btn">
-                                        <span class="material-icons" style="user-select: auto;">notifications_active</span>
+                                    <button class="btn outline">
+                                        <!-- !!span icon用d-block或align-bottom才不會跟下面有個間格! -->
+                                        <span class="material-icons d-block" style="user-select: auto;">notifications_active</span>
                                     </button>
                                 </div>
                             </div>
                             
                         </div>
-                        <div class="body h-100 outline">
+                        <div class="body outline">
                             <div class="container h-100">
                                 <div class="row h-100">
-                                    <div class="col-md-4 outline">
+                                    <!-- <div class="col-md-4 outline"> -->
+                                    <div class="col-lg-4 outline">
                                         <div class="dropdown">
                                             <div class="d-flex align-items-center">
                                                     <div>All(<span>4</span>)</div>
@@ -171,14 +213,15 @@
                                             <a href="#messages" class="list-group-item list-group-item-action"></a> -->
                                         </div>
                                     </div>
-                                    <div class="col-md-8 outline">
+                                    <!-- <div class="col-md-8 outline"> -->
+                                    <div class="col-lg-8 outline">
                                         <div class="tab-content">
                                             <div class="tab-pane" id="msg1">
                                                 <div class="text-right">
                                                     <span class="text-muted">2 comments</span>
                                                 </div>
                                                 <!-- <div class="card min-vh-100">@太長不好處理 -->
-                                                <div class="card">
+                                                <div class="card overflow-hidden">
                                                     <!-- @border重疊的問題解法 -->
                                                     <div class="card-header bg-green border border-green">
                                                         <div class="d-flex align-items-center">
@@ -255,12 +298,18 @@
                                                             </div>
                                                             <!-- <div class="btn-group">!會有左右圓角 -->
                                                             <div class="inline-flex ml-auto">
+                                                                <!-- @為何btn-outline-green會無效 -->
+                                                                <!-- <div class="btn btn-outline-green mr-3 px-4">Mark as read</div> -->
                                                                 <div class="btn btn-outline-primary mr-3 px-4">Mark as read</div>
-                                                                <div class="btn btn-primary text-capitalize px-4">reply</div>
+                                                                <div class="btn btn-primary text-capitalize px-4"
+                                                                id="btnReply"
+                                                                >reply</div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="reply_block position-absolute">
+                                                    <div class="reply_block position-absolute"
+                                                    id="replyBlock"
+                                                    >
                                                         <div class="card w-100 h-100">
                                                             <div class="card-header p-3">
                                                                 <div class="d-flex align-items-center">
@@ -329,12 +378,12 @@
                                                                     <!-- <div class="ml-auto font-weight-bold">!btn有預設-->
                                                                     <div class="ml-auto font-weight-bold">
                                                                         <!-- @同學px-6是在哪邊新增的呢 -->
-                                                                        <button type="button" class="btn btn-outline-primary px-6 py-2 mr-2 font-weight-bold">Cancel</div>
-                                                                        <button type="button" class="btn btn-primary px-6 py-2 font-weight-bold">Reply</div>
-                                                                    </div>
-                                                                    
-                                                                </div>
-                                                                
+                                                                        <button type="button" class="btn btn-outline-primary px-6 py-2 mr-2 font-weight-bold"
+                                                                        id="btnHideReply"
+                                                                        >Cancel</button>
+                                                                        <button type="button" class="btn btn-primary px-6 py-2 font-weight-bold">Reply</button>
+                                                                    </div>                                                  
+                                                                </div>                                                     
                                                             </div>
                                                         </div>
                                                     </div>
@@ -373,19 +422,23 @@
         //     e.preventDefault();
         //     $(this).tab('show');
         // })
-        $("#msg a:first-child").tab('show');
+        $(document).ready(function(){
+            $("#msg a:first-child").tab('show');
+            
+            $("#btnReply").click(function(){
+                $("#replyBlock").addClass('show')
+            })
+            $("#btnHideReply").click(function(){
+                $("#replyBlock").removeClass('show')
+            })
+        })
     </script>
     <style>
         /* @寫再scss吃不到 */
         .card-header{
             margin: -1px!important;
         }
-        .reply_block{
-            /* top: 0; */
-            right: 0;
-            bottom: 0;
-            left: 0;
-        }
+       
         .px-6{
             padding: 0 2rem;
         }

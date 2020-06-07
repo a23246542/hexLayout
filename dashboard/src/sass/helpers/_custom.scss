@@ -27,18 +27,41 @@
 //     background-color: #EDF4EE;
 // }
 .main{
-    min-height: 100vh;
+    min-height: calc(100vh + 100px);
 }
 .sidebar-sticky{
-    // position: fixed;
-    // top: 0;
+    // @無效 結果是不夠高
+    // min-height: 400px;
+    // top: 0;//以視窗高貼上下
     // left: 0;
     // bottom: 0;//!!原本外面row會占滿高 但因為是postion會縮
-
-    // padding: 48px 0 0;
-    padding: 0px 0 0;
+    position: fixed;
+    width: 100%;//會吃到整個視窗
+    top: 0;
+    bottom: 0;
     // min-height: 100vh;//!!會吃不到
-    height: 100vh;//!!!視窗拉多高就多高
+    // min-height: 100vh;//!!!視窗拉多高就多高
+    .card-body{
+        min-height: 200px;
+    }
+}
+
+.sidebar{
+    // !!不用下面這些發現vh-100就可以實現響應視窗高度了!!
+    // position: absolute;
+    // width: 100%;//會吃到整個視窗
+    // top: 0;
+    // bottom: 0;
+    @media screen and ( min-width: 768px) {
+        height: calc(100vh - 56px);
+        // @手動出現 看官方好像也是這樣
+        display: flex !important;
+        flex-basis: auto;
+        
+    }
+    .card-body{
+        min-height: 200px;
+    }
 }
 .inline-flex{
     display: inline-flex;
@@ -68,3 +91,16 @@
 // .btn:hover{
 //     color:$bg-green;
 // }
+.reply_block{
+    /* top: 0; */
+    right: 0;//可同時並存!!
+    bottom: -100%;
+    left: 100%;
+    transition: all .5s;
+    // @?錯覺 結束得比較快
+    &.show{
+        right: 0;
+        bottom:0;
+        left: 0;
+    }
+}

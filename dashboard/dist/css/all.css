@@ -9818,12 +9818,30 @@ select {
 }
 
 .main {
-  min-height: 100vh;
+  min-height: calc(100vh + 100px);
 }
 
 .sidebar-sticky {
-  padding: 0px 0 0;
-  height: 100vh;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+.sidebar-sticky .card-body {
+  min-height: 200px;
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar {
+    height: calc(100vh - 56px);
+    display: flex !important;
+    flex-basis: auto;
+  }
+}
+
+.sidebar .card-body {
+  min-height: 200px;
 }
 
 .inline-flex {
@@ -9842,6 +9860,20 @@ select {
 
 .card-header {
   margin: -1px !important;
+}
+
+.reply_block {
+  /* top: 0; */
+  right: 0;
+  bottom: -100%;
+  left: 100%;
+  transition: all .5s;
+}
+
+.reply_block.show {
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 /*# sourceMappingURL=all.css.map */
