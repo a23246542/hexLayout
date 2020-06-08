@@ -52,12 +52,38 @@
     // width: 100%;//會吃到整個視窗
     // top: 0;
     // bottom: 0;
+    
     @media screen and ( min-width: 768px) {
-        height: calc(100vh - 56px);
+        // height: 100%;
+        // height: calc(100vh - 56px);
+        // ##發現vh有個缺點縮放視窗會伸縮，可是滾動瀏覽器 就發現card=footer沒辦法貼下面了
         // @手動出現 看官方好像也是這樣
         display: flex !important;
         flex-basis: auto;
-        
+        // ------
+        // position: fixed;//fixed視窗伸縮跟body長度都可固定
+        // // !!!發現這樣往下滑navbar會不見
+        // top: 0;//可是會吃掉上方navbar
+        // bottom: 0;
+        // // width: 100%;//會百分百整個窗口
+        // // width: calc(100% - 83.333333%);不就是16%...
+        // padding-top: 56px;//!!!
+        // -------------------
+        // position: absolute;//card-footer又會跑下面去
+        // top: 0;
+        // bottom: 0;
+        // width: 100%;
+        // padding-top: 56px;
+        // --------------------------
+        // position: sticky;//card-footer又會跑下面去
+        // top: 0;
+        // bottom: 0;
+        // width: 100%;
+        // padding-top: 56px;
+        // ---------------------
+        // !!成功了
+        // ##然後這邊不像bs4左邊列沒有footer 只要設定max-height 100vh -rem 然後設卷軸就好
+        height:calc(100% - 56px);
     }
     .card-body{
         min-height: 200px;
@@ -82,6 +108,7 @@
 .card-header{
     margin: -1px !important;
 }
+
 // 又被吃掉了
 // a:hover{
 //     // color:$bg-green;

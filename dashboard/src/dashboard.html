@@ -14,7 +14,8 @@
      <div class="main container-fluid">
         <!-- <div class="row flex-xl-nowrap h-100"> -->
         <div class="row flex-xl-nowrap">
-            <div class="col-md-2 p-0">
+            <!-- ##h-100也可以 -->
+            <div class="col-md-2 p-0 position-fixed" style="top: 0;bottom: 0;">
             <!-- <div style="width:200px"> -->
             <nav class="navbar navbar-expand-md navbar-light bg-dark">
             <!-- <nav class="navbar navbar-expand-lg navbar-light bg-dark"> -->
@@ -31,7 +32,7 @@
                 <!-- <nav class="sidebar-sticky position-fixed"> -->
                 <!-- <nav class="sidebar vh-100"> -->
                 <!-- <aside id="sideBar" class="sidebar collapse navbar-collapse navbar-expand"> -->
-                <aside id="sideBar" class="sidebar collapse navbar-collapse">
+                <aside id="sideBar" class="sidebar collapse navbar-collapse border-right">
                 <!-- <aside id="sideBar" class="sidebar navbar-collapse collapse"> -->
                     <!-- @@因為collapse預設就是隱藏 如何下class md以上collapse也不要摺疊 如果官方好像也是手動下block 
                     那.navbar-expand{-sm|-md|-lg|-xl}要幹嘛
@@ -39,40 +40,44 @@
                 <!-- @可是官方.navbar-expand-lg .navbar-collapse {有效欸 -->
                 <!-- <aside id="sideBar" class="sidebar collapse navbar-collapse navbar-expand"> -->
                 <!-- <div class="h-100"> -->
-                    <div class="card h-100 rounded-0 border-0 bg-green">
+                    <div class="card w-100 h-100 rounded-0 border-0 bg-green">
                         <div class="card-title d-flex">
                             <div class="icon">
                                 <img src="" alt="">
                             </div>
                             <h2>answer</h2>
                         </div>
-                        <div class="card-body ">
-                            <div class="list-group">
-                                <a class="list-item list-group-action disable" href="#">
+                        <div class="card-body pl-0">
+                            <!-- <div class="list-group"> -->
+                            <div class="nav flex-column nav-pills">
+                                <!-- ##省去nav-item也是可以的 -->
+                                <a class="nav-link active" href="#">
                                     <div class="d-flex align-items-center">
                                         <span class="fa fa-money-bill-alt fa-1x mr-3"></span>
                                         <div class="w-100 h6 mb-0">Dashaboard</div>
                                     </div>
                                 </a>
-                                <a class="list-item list-group-action disable">
+                                <!-- ##沒pills active好像沒差 -->
+                                <!-- <a class="nav-link" href="./dashboard_business.html"> -->
+                                <a class="nav-link" href="./dashboard_business.html">
                                     <div class="d-flex">
                                         <span class="fa fa-money"></span>
                                         <div class="w-100">Question</div>
                                     </div>
                                 </a>
-                                <a class="list-item list-group-action">
+                                <a class="nav-link text-decoration-none" href="#">
                                     <div class="d-flex">
                                         <span class="fa fa-money"></span>
                                         <div class="w-100">Assignment</div>
                                     </div>
                                 </a>
-                                <a class="list-item list-group-action disable">
+                                <a class="nav-link disabled">
                                     <div class="d-flex">
                                         <span class="fa fa-money"></span>
                                         <div class="w-100">Course</div>
                                     </div>
                                 </a>
-                                <a class="list-item list-group-action">
+                                <!-- <a class="list-item list-group-action">
                                     <div class="d-flex">
                                         <span class="fa fa-money"></span>
                                         <div class="w-100">Admin</div>
@@ -83,7 +88,7 @@
                                         <span class="fa fa-money  mr-2"></span>
                                         <div class="w-100">Settings</div>
                                     </div>
-                                </a>
+                                </a> -->
                             </div>
                         </div>
                         <div class="card-footer">
