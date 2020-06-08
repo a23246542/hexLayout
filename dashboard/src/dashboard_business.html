@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>後台控制</title>
     <link rel="stylesheet" href="./css/all.css">
     <script src="https://kit.fontawesome.com/77513e405a.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <!-- 商務版 -->
     <nav class="navbar navbar-dark bg-dark navbar-expand-md">
@@ -21,14 +23,21 @@
                     <a href="#" class="nav-link">首頁</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">列表</a>
+                    <a href="./dashboard_listTable.html" class="nav-link">列表</a>
                 </li>
             </ul>
-            <div class="form-inline ml-auto">
-                <!-- <input type="text" class="form-control" type="search"> -->
-                <!-- @@這樣縮小 也不會佔滿 可是為何input w-auto的寬度那裡來呢  預設的-->
-                <input type="text" class="form-control w-auto" type="search">
-                <button class="btn btn-primary ml-2" type="submit">Search</button>
+            <div class="form-inline ml-auto flex-nowrap">
+                <!-- @@??這邊應該用input-group?? -->
+                <!-- <div class="form-group">//縮到最小會換行??????? input-group比較不會換行-->
+                <div class="input-group">
+                    <!-- <input type="text" class="form-control" type="search"> -->
+                    <!-- @@這樣縮小 也不會佔滿 可是為何input w-auto的寬度那裡來呢  預設的-->
+                    <!-- ##手機板576以上form-inline下的fomr-control才會有w-auto了 -->
+                    <!-- <input type="text" class="form-control w-auto" type="search"> -->
+                    <input type="text" class="form-control" type="search">
+                    <button class="btn btn-primary ml-2" type="submit">Search</button>
+                </div>
+
             </div>
             <!-- <input type="text" name="" id=""> -->
         </div>
@@ -42,16 +51,16 @@
                     <div class="card-body d-flex align-items-center">
                         <!-- ##這邊flex直接家外面 才不用裡面div另外還要置中 -->
                         <!-- <div class="d-flex align-items-center"> -->
-                            <!-- @@block?? -->
-                            <span class="d-none d-md-block mr-lg-2">
-                                <i class="fas fa-money-bill-alt fa-3x "></i>
-                            </span>
-                            <div class="w-100 text-center">
-                                <div class="h5">今日營收</div>
-                                <div class="h3">192,000</div>
-                                <!-- @@4跟5怎們差這麼多 -->
-                                <!-- <div class="display-5">192,000</div> -->
-                            </div>
+                        <!-- @@block?? -->
+                        <span class="d-none d-md-block mr-lg-2">
+                            <i class="fas fa-money-bill-alt fa-3x "></i>
+                        </span>
+                        <div class="w-100 text-center">
+                            <div class="h5">今日營收</div>
+                            <div class="h3">192,000</div>
+                            <!-- @@4跟5怎們差這麼多 -->
+                            <!-- <div class="display-5">192,000</div> -->
+                        </div>
                         <!-- </div> -->
                     </div>
                 </div>
@@ -60,13 +69,13 @@
                 <div class="card h-100 rounded-0">
                     <div class="card-body d-flex align-items-center">
                         <!-- <div class="d-flex align-items-center"> -->
-                            <span class="d-none d-md-block mr-lg-2">
-                                <i class="fas fa-users fa-3x"></i>
-                            </span>
-                            <div class="w-100 text-center">
-                                <div class="h5">會員增加</div>
-                                <div class="display-4">172</div>
-                            </div>
+                        <span class="d-none d-md-block mr-lg-2">
+                            <i class="fas fa-users fa-3x"></i>
+                        </span>
+                        <div class="w-100 text-center">
+                            <div class="h5">會員增加</div>
+                            <div class="display-4">172</div>
+                        </div>
                         <!-- </div> -->
                     </div>
                 </div>
@@ -75,13 +84,13 @@
                 <div class="card h-100 rounded-0">
                     <div class="card-body d-flex align-items-center">
                         <!-- <div class="d-flex align-items-center"> -->
-                            <span class="d-none d-md-block mr-lg-2">
-                                <i class="fas fa-file-invoice-dollar fa-3x"></i>
-                            </span>
-                            <div class="w-100 text-center">
-                                <div class="h5">訂單數</div>
-                                <div class="display-4">320</div>
-                            </div>
+                        <span class="d-none d-md-block mr-lg-2">
+                            <i class="fas fa-file-invoice-dollar fa-3x"></i>
+                        </span>
+                        <div class="w-100 text-center">
+                            <div class="h5">訂單數</div>
+                            <div class="display-4">320</div>
+                        </div>
                         <!-- </div> -->
                     </div>
                 </div>
@@ -90,13 +99,13 @@
                 <div class="card h-100 rounded-0">
                     <div class="card-body d-flex align-items-center">
                         <!-- <div class="d-flex align-items-center"> -->
-                            <span class="d-none d-md-block mr-lg-2">
-                                <i class="fas fa-shipping-fast fa-3x"></i>
-                            </span>
-                            <div class="w-100 text-center">
-                                <div class="h5">待出貨數</div>
-                                <div class="display-4">120</div>
-                            </div>
+                        <span class="d-none d-md-block mr-lg-2">
+                            <i class="fas fa-shipping-fast fa-3x"></i>
+                        </span>
+                        <div class="w-100 text-center">
+                            <div class="h5">待出貨數</div>
+                            <div class="display-4">120</div>
+                        </div>
                         <!-- </div> -->
                     </div>
                 </div>
@@ -114,11 +123,13 @@
                     <!-- ##form-inline就不会满宽 form-group加在里面!!     -->
                     <div class="form-inline">
                         <div class="form-group">
-                            <label for="#month">月份</label>
+                            <!-- !!for不需要# -->
+                            <!-- <label for="#month">月份</label> -->
+                            <label for="month" class="sr-only">月份</label>
                             <!-- !!寫錯 -->
                             <!-- <input type="select" class="form-control" id="month"> -->
                             <!-- @@??为何没出现下箭头 -->
-                            <select name="" id="month" class="form-control">
+                            <select name="" id="month" class="form-control form-control-sm">
                                 <option value="4">4月</option>
                                 <option value="5">5月</option>
                                 <option value="6">6月</option>
@@ -126,13 +137,110 @@
                             </select>
                         </div>
                     </div>
+                    <div class="ml-auto">
+                        <a href="#" class="btn btn-outline-secondary btn-sm">下載報表</a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm">訂單管理</a>
+                    </div>
                 </div>
+                <!-- ##最大斷點 -->
+                <!-- @@??為何沒出現 -->
+                <div class="table-responsive-md">
+                    <table class="table mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">日期</th>
+                                <th scope="col">訂單數</th>
+                                <th scope="col">退費數</th>
+                                <th scope="col">出貨數</th>
+                                <th scope="col">有問題貨品</th>
+                                <!-- ##px的意思 下面td會跟著調整 -->
+                                <!-- <th width="200">營業額</th>
+                                <th width="200">淨利潤</th> -->
+                                <th width="15%" scope="col">營業額</th>
+                                <th width="15%" scope="col">淨利潤</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>9/1</td>
+                                <td>300</td>
+                                <td>1</td>
+                                <td>250</td>
+                                <td>3</td>
+                                <td class="text-right">256,000</td>
+                                <td class="text-right">168,000</td>
+                            </tr>
+                            <tr>
+                                <td>9/2</td>
+                                <td>300</td>
+                                <td>1</td>
+                                <td>250</td>
+                                <td>3</td>
+                                <td class="text-right">256,000</td>
+                                <td class="text-right">168,000</td>
+                            </tr>
+                            <tr>
+                                <td>9/3</td>
+                                <td>300</td>
+                                <td>1</td>
+                                <td>250</td>
+                                <td>3</td>
+                                <td class="text-right">256,000</td>
+                                <td class="text-right">168,000</td>
+                            </tr>
+                            <tr>
+                                <td>9/4</td>
+                                <td>300</td>
+                                <td>1</td>
+                                <td>250</td>
+                                <td>3</td>
+                                <td class="text-right">256,000</td>
+                                <td class="text-right">168,000</td>
+                            </tr>
+                            <tr>
+                                <td>9/5</td>
+                                <td>300</td>
+                                <td>1</td>
+                                <td>250</td>
+                                <td>3</td>
+                                <td class="text-right">256,000</td>
+                                <td class="text-right">168,000</td>
+                            </tr>
+                            <tr>
+                                <td>9/6</td>
+                                <td>300</td>
+                                <td>1</td>
+                                <td>250</td>
+                                <td>3</td>
+                                <td class="text-right">256,000</td>
+                                <td class="text-right">168,000</td>
+                            </tr>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6" class="text-right">月總營收</td>
+                                <td class="text-right">3,750,500</td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" class="text-right">月總淨利潤</td>
+                                <td class="text-right">2,140,500</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
             </div>
         </div>
     </main>
     <footer></footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
