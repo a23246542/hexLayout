@@ -21,6 +21,7 @@
 @import "./helpers/init";
 @import "./helpers/variables";//?放這邊才能蓋過去
 @import "./helpers/base";
-@import "./helpers/component";
+@import "./components/component";
 @import "./helpers/custom";
+@import "./helpers/util";
 // @import "~bootstrap/scss/bootstrap";

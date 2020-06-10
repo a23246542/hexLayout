@@ -225,26 +225,35 @@
                     <div class="modal-body">
                         <!-- ###.col-form-label用用看 -->
                         <form>
-                            <div class="😤😂">
-                                <label for="😅">用戶名稱</label>
-                                <input type="text" class="😕😂 😝😂" id="😅" value="Mark@mail.com" placeholder="Mark">
+                            <div class="form-group">
+                                <label for="userName">用戶名稱</label>
+                                <input type="text" class="form-control form-control-sm" id="userName" value="Mark@mail.com" placeholder="Mark">
                             </div>
-                            <div class="😤😂">
+                            <div class="form-group">
                                 <label for="😆">Email address</label>
-                                <input type="email" class="😕😂 😝😂" id="😆" value="Mark@mail.com"
+                                <input type="email" class="form-control form-control-sm" id="😆" value="Mark@mail.com"
                                     placeholder="name@example.com">
                             </div>
-                            <div class="😦😂">
-                                <div class="😡">
-                                    <div class="😤😂">
-                                        <label for="😇">品項</label>
-                                        <input type="text" readonly="" class="😕😂 😝😂" id="😇" value="超纖細肥皂 1盒">
+                            <!-- <div class="😦😂"> -->
+                            <!-- ##單獨col叫做表單格線 -->
+                            <!-- ##或是用form-row -->
+                            <!-- <div class="form-group row"> -->
+                            <div class="form-row">
+                                <!-- ##col也可寫在form-group上面 -->
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <!-- ##只差在是上下padding
+                                        <label for="" class="col-form-label">品項</label> -->
+                                        <label for="">品項</label>
+                                        <!-- @@??為什麼下面寫不了 -->
+                                        <input type="text" readonly="" class="form-control form-control-sm" id="😇" value="超纖細肥皂 1盒">
                                     </div>
                                 </div>
-                                <div class="😡">
-                                    <div class="😤😂">
-                                        <label for="😈">*數量</label>
-                                        <select class="😕😂 😝😂" id="😈">
+                                <div class="col-9">
+                                    <div class="form-group">
+                                        <label for="">*數量</label>
+                                        <!-- @@一樣少了下拉式箭頭 -->
+                                        <select class="form-control form-control-sm" id="😈">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -265,12 +274,12 @@
             </div>
         </div>
 
-        <div class="modal 😈😃" id="😉" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header 😉😅 😞😎">
-                        <h5 class="😪😄">刪除訂單</h5>
+                        <h5 class="modal-title">刪除訂單</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

@@ -1,14 +1,12 @@
-*{
-    // line-height: 1.5;
-}
+
 @font-face {
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
     src: url(https://fonts.gstatic.com/s/materialicons/v51/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
-  }
+}
   
-  .material-icons {
+.material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
@@ -22,7 +20,7 @@
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
-  }
+}
 // .bg-green{
 //     background-color: #EDF4EE;
 // }
@@ -130,4 +128,31 @@
         bottom:0;
         left: 0;
     }
+}
+// =====================================
+// .custom-checkbox .custom-control-input:checked~.custom-control-label:before{
+.custom-control-input:checked~.custom-control-label:before{
+    background-color: green;
+    color: white;
+}
+
+// .custom-control-label:after{
+.custom-control-label:before{//假框框
+    width: 22px;
+    height: 22px;
+    top: 2px;
+    left: -2rem;//推去左邊padding的上面
+    // margin-right: 1rem;
+}
+
+.custom-control-label{
+    // margin-left: 1rem;
+}
+
+.custom-control-label:after{//打勾svg
+    width: 22px;
+    height: 22px;
+    top: 2px;
+    left: -2rem;//推去左邊padding的上面
+    background-size: 60% auto;
 }
