@@ -1,4 +1,18 @@
 
+.bg-secondary{
+    color:white;
+    background-color: #2A8356 !important;
+}
+
+.bg-primary{
+    background-color: #EDF4EE !important;//不加important還會被吃掉
+}
+
+// @@variable有改 但這個也是沒效的
+.pl-5{
+    // padding-left: 2rem !important;
+}
+// =================================================
 @font-face {
     font-family: 'Material Icons';
     font-style: normal;
@@ -156,3 +170,17 @@
     left: -2rem;//推去左邊padding的上面
     background-size: 60% auto;
 }
+
+
+// ==================================
+.page_arrow{
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.select_arrow{
+    background-size: contain;
+    background-position-x: right;
+    appearance: none;
+}
+

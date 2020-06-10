@@ -10116,6 +10116,15 @@ select {
   color: #343a40;
 }
 
+.bg-secondary {
+  color: white;
+  background-color: #2A8356 !important;
+}
+
+.bg-primary {
+  background-color: #EDF4EE !important;
+}
+
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -10216,6 +10225,19 @@ select {
   top: 2px;
   left: -2rem;
   background-size: 60% auto;
+}
+
+.page_arrow {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.select_arrow {
+  background-size: contain;
+  background-position-x: right;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .font-family-lato {
