@@ -1,5 +1,5 @@
-// @import "/node_modules/bootstrap/scss/functions";
-// @import "/node_modules/bootstrap/scss/mixins";
+@import "/node_modules/bootstrap/scss/functions";
+@import "/node_modules/bootstrap/scss/mixins";
 // @import "./helper/variables";
 
 // @import "/node_modules/bootstrap/scss/reboot";
@@ -24,4 +24,5 @@
 @import "./components/component";
 @import "./helpers/custom";
 @import "./helpers/util";
+// @import "./helpers/variables";//?放這邊才能蓋過去
 // @import "~bootstrap/scss/bootstrap";
