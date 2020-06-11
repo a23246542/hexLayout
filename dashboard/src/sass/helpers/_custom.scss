@@ -12,6 +12,13 @@
 .pl-5{
     // padding-left: 2rem !important;
 }
+.px-5{
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+.p-5{
+    padding: 2rem !important;
+}
 // =================================================
 @font-face {
     font-family: 'Material Icons';
@@ -184,3 +191,10 @@
     appearance: none;
 }
 
+// ----------------------
+.user_photo{
+    background-image: url('https://images.unsplash.com/photo-1522069394066-326005dc26b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    width: 141px;
+    height: 141px;
+}
