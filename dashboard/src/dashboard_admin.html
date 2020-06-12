@@ -550,6 +550,8 @@
                     <button type="button" class="btn btn-outline-secondary rounded-0  py-2 px-5 mr-3"
                         data-dismiss="modal">Cancel</button>
                     <button type="button" class="btn btn-secondary rounded-0  py-2 px-5 ml-0">Update</button>
+                    <!-- <button type="button" class="btn btn-warning1 rounded-0  py-2 px-5 ml-0">Update</button> -->
+                    <!-- <button type="button" class="btn btn-green-dark rounded-0  py-2 px-5 ml-0">Update</button> -->
                 </div>
             </div>
         </div>
@@ -589,16 +591,17 @@
             // $(this).addClass('d-none').siblings('a').removeClass('d-none');
             $(this).addClass('d-none').siblings('.jsArrow').removeClass('d-none');
         })
-        // $('#viewAdminModal').click(function(){
-        //     $('#collapseExample').collapse('hide');
-        //     $('.jsArrowDown').removeClass('d-none');
-        //     $('.jsArrowUp').addClass('d-none');
-        // })
-        // $('#viewAdminModal .close').click(function(){
-        //     $('#collapseExample').collapse('hide');
-        //     $('.jsArrowDown').removeClass('d-none');
-        //     $('.jsArrowUp').addClass('d-none');
-        // })
+        // @@为舌么下面开启上面那个就失效了 一值出现bug才一值是
+        $('#viewAdminModal').click(function(){
+            $('#collapseExample').collapse('hide');
+            $('.jsArrowDown').removeClass('d-none');
+            $('.jsArrowUp').addClass('d-none');
+        })
+        $('#viewAdminModal .close').click(function(){
+            $('#collapseExample').collapse('hide');
+            $('.jsArrowDown').removeClass('d-none');
+            $('.jsArrowUp').addClass('d-none');
+        })
 
         // // @@因为btn预设inline-block是否只能直接操作block
         // $('.jsArrowDown').click(function(){

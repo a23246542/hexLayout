@@ -11,9 +11,25 @@
     //     // @!!yia這樣用
     //     // background-color:color-yiq($value);
     // }
-    .hover-#{$color} {
-        &:hover{
-            color: $value;
-        }
-    }
+    // .hover-#{$color} {
+    //     &:hover{
+    //         color: $value;
+    //     }
+    // }
+
+    // .text-#{$color}{
+    //     color: $value;
+    // }
+
+    // .btn-#{$color} {
+    //     color: color-yiq($value);
+    //     background-color: $value;
+    //     border-color: $value;
+    // }
+
+    // .btn-outline-#{$color} {
+    //     color:$value;
+    //     border-color: $value;
+    // }
 }
+
