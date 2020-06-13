@@ -1,33 +1,17 @@
-// @import "/node_modules/bootstrap/scss/functions";
-// @import "/node_modules/bootstrap/scss/mixins";
+// #自訂
+// @@只載入bootstrap抱錯 加了fun mixins才沒報錯
 @import "functions";
-// @import "./helpers/variables";
+// @import "variables";
 @import "mixins";
-// @import "./helper/variables";
-
-// @import "/node_modules/bootstrap/scss/reboot";
-// @import "/node_modules/bootstrap/scss/grid";
-// @import "/node_modules/bootstrap/scss/utilities";
-
-// @import "functions";
-// @import "mixins";
-// // @import "./helper/variables";
-// @import "helper/variables";
-
-// @import "reboot";
-// @import "grid";
-// @import "utilities";
+// ========================================
 
 // @為何文件說新變數要再bootstrap之前，不是可以覆蓋嗎
 @import "./helpers/variables";//放這邊才能蓋過去?
 @import "bootstrap";
-// @import "reboot";//@@這個要加嗎
-@import "./helpers/init";
+// @import "./base/init";
 @import "./helpers/base";
-// @import "./helpers/variables";
-// @import "./components/component";
-@import "./helpers/component";
-@import "./helpers/custom";
+// @import "./components/component";//沒有寫到元件
 @import "./helpers/util";
-// @import "./helpers/variables";//?放這邊才能蓋過去
-// @import "~bootstrap/scss/bootstrap";
+@import "./helpers/custom";
+// @import "./pages";
+

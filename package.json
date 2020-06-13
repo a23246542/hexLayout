@@ -21,6 +21,7 @@
     "babel-preset-es2015": "^6.24.1",
     "bootstrap": "^4.5.0",
     "browser-sync": "^2.26.7",
+    "ejs": "^3.1.3",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
@@ -44,6 +45,9 @@
     "popper": "^1.0.1"
   },
   "devDependencies": {
+    "gulp-ejs": "^5.1.0",
+    "gulp-front-matter": "^1.3.0",
+    "gulp-layout": "0.0.4",
     "gulp-remove-empty-lines": "^0.1.0",
     "gulp-sass": "^4.1.0"
   }

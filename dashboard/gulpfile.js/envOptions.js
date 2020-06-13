@@ -12,6 +12,7 @@ let envOptions = {
     html: {
         src: [
             `${srcPath}/**/*.html`,
+            `${srcPath}/**/*.ejs`,//不能少加!
         ],
         // ejsSrc: [
         //   `${srcPath}/**/*.ejs`,

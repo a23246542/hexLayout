@@ -19,12 +19,21 @@ console.log(`Current mode：${options.env}`);
 function html() {
     return gulp.src(envOptions.html.src)
         .pipe($.plumber())
-        .pipe($.if(options.env === 'prod', $.htmlmin({
-            // collapseWhitespace: true, //折疊空白字元 壓縮html
-            removeComments: true //刪除 HTML 註釋
-            // minifyJS: true,//压缩页面JS
-            // minifyCSS: true//压缩页面CSS
-        })))
+        // .pipe($.if(options.env === 'prod', $.htmlmin({
+        //     // collapseWhitespace: true, //折疊空白字元 壓縮html
+        //     removeComments: true //刪除 HTML 註釋
+        //     // minifyJS: true,//压缩页面JS
+        //     // minifyCSS: true//压缩页面CSS
+        // })))
+        // .pipe($.ejs({
+        //     // msg:"hello gulp!"
+        // }))
+        .pipe($.frontMatter())
+        .pipe(
+            $.layout((file) => {
+                return file.frontMatter;
+            })
+        )
         .pipe(gulp.dest(envOptions.html.path))
         .pipe(
             browserSync.reload({
@@ -153,3 +162,8 @@ exports.images = images;
 exports.mkRevice = mkRevice;
 exports.revice = revice;
 exports.reviceSass = reviceSass;
+
+// =========安裝================
+// npm install ejs --save-dev # 因為該專案用 EJS 樣板語言來寫 HTML，所以裝它
+// npm install gulp-front-matter --save-dev # 可以幫每頁 HTML 個別設定變數，好用
+// npm install gulp-layout --save-dev # 可以先接收 front-matter 傳來的值，然後傳到 EJS 模板接收變數，再轉成 HTML
