@@ -1,0 +1,32 @@
+#dashboardSide{
+   
+   @media (min-width:768px){
+        position: fixed;
+        top: 0;
+        bottom: 0;
+   }
+}
+
+#dashboardNav{
+    background-color:$brand-primary-dark;
+}
+
+.nav-link{
+    // @@這個主題主色應該是選深色還淺色 因為a預設會用primary
+    color:$dark;
+    // @@為何無反應 被蓋住了
+    &:hover{
+        color:$brand-secondary !important;
+
+    }
+    &:hover::before{
+        content:"";
+        position: absolute;
+        display: block;
+
+    }
+
+    &.active{
+        color:$brand-secondary;
+    }
+}

@@ -89,6 +89,7 @@ $theme-colors: () !default;
 $theme-colors: map-merge(
   (
     "primary":    $primary,
+    "primary2":  $brand-primary-dark,
     "secondary":  $secondary,
     "success":    $success,
     "info":       $info,
@@ -133,8 +134,8 @@ $escaped-characters: (
 
 $enable-caret:                                true !default;
 $enable-rounded:                              true !default;
-// $enable-shadows:                              false !default;
-$enable-shadows:                              true !default;
+$enable-shadows:                              false !default;
+// $enable-shadows:                              true !default;
 $enable-gradients:                            false !default;
 $enable-transitions:                          true !default;
 $enable-prefers-reduced-motion-media-query:   true !default;
@@ -197,7 +198,7 @@ $body-color:                $gray-900 !default;
 // Style anchor elements.
 
 // $link-color:                              theme-color("primary") !default;
-$link-color:                              theme-color("brand-dark") !default;
+$link-color:                              theme-color("secondary") !default;
 $link-decoration:                         none !default;
 // $link-hover-color:                        darken($link-color, 15%) !default;
 $link-hover-decoration:                   underline !default;
@@ -272,7 +273,9 @@ $box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
 $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
 
 $component-active-color:      $white !default;
-$component-active-bg:         theme-color("primary") !default;
+// $component-active-bg:         theme-color("primary") !default;
+$component-active-bg:         theme-color("secondary") !default;
+// $component-active-bg:         theme-color("primary2") !default;
 
 $caret-width:                 .3em !default;
 $caret-vertical-align:        $caret-width * .85 !default;

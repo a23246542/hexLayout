@@ -42,6 +42,28 @@
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
 }
+
+// layout=================================================
+
+// .nav-link{
+//     // @@這個主題主色應該是選深色還淺色 因為a預設會用primary
+//     color:$dark;
+//     // @@為何無反應 被蓋住了
+//     &:hover{
+//         color:$brand-secondary !important;
+//     }
+
+//     &.active{
+//         color:$brand-secondary;
+//     }
+// }
+
+ .avator_img{
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+ }
+// ===================================
 // .bg-green{
 //     background-color: #EDF4EE;
 // }
@@ -102,7 +124,7 @@
         // ---------------------
         // !!成功了
         // ##然後這邊不像bs4左邊列沒有footer 只要設定max-height 100vh -rem 然後設卷軸就好
-        height:calc(100% - 56px);
+        height:calc(100% - 90px);
     }
     .card-body{
         min-height: 200px;
@@ -180,16 +202,7 @@
 
 
 // ==================================
-.page_arrow{
-    padding-top: 6px;
-    padding-bottom: 6px;
-}
 
-.select_arrow{
-    background-size: contain;
-    background-position-x: right;
-    appearance: none;
-}
 
 // ----------------------
 .user_photo{

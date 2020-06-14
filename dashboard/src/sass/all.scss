@@ -5,13 +5,15 @@
 @import "mixins";
 // ========================================
 
-// @為何文件說新變數要再bootstrap之前，不是可以覆蓋嗎
-@import "./helpers/variables";//放這邊才能蓋過去?
+
+@import "./helpers/variables";//放這邊才能蓋過去
 @import "bootstrap";
-// @import "./base/init";
-@import "./helpers/base";
+@import "./base/base";
+@import "./base/init";
+// @import "./helpers/base";
 // @import "./components/component";//沒有寫到元件
 @import "./helpers/util";
 @import "./helpers/custom";
-// @import "./pages";
+// @import "./pages/*.scss";
+@import "./layout/layout";//@@延伸主機會一直掛掉
 
