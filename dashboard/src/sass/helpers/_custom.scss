@@ -20,50 +20,9 @@
     padding: 2rem !important;
 }
 // =================================================
-@font-face {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/materialicons/v51/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
-}
-  
-.material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    -webkit-font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
-}
 
-// layout=================================================
 
-// .nav-link{
-//     // @@這個主題主色應該是選深色還淺色 因為a預設會用primary
-//     color:$dark;
-//     // @@為何無反應 被蓋住了
-//     &:hover{
-//         color:$brand-secondary !important;
-//     }
-
-//     &.active{
-//         color:$brand-secondary;
-//     }
-// }
-
- .avator_img{
-     width: 40px;
-     height: 40px;
-     border-radius: 50%;
-     overflow: hidden;
- }
+ 
  //##dashboard========================
  
 
@@ -92,49 +51,7 @@
     }
 }
 
-.sidebar{
-    // !!不用下面這些發現vh-100就可以實現響應視窗高度了!!
-    // position: absolute;
-    // width: 100%;//會吃到整個視窗
-    // top: 0;
-    // bottom: 0;
-    
-    @media screen and ( min-width: 768px) {
-        // height: 100%;
-        // height: calc(100vh - 56px);
-        // ##發現vh有個缺點縮放視窗會伸縮，可是滾動瀏覽器 就發現card=footer沒辦法貼下面了
-        // @手動出現 看官方好像也是這樣
-        display: flex !important;
-        flex-basis: auto;
-        // ------
-        // position: fixed;//fixed視窗伸縮跟body長度都可固定
-        // // !!!發現這樣往下滑navbar會不見
-        // top: 0;//可是會吃掉上方navbar
-        // bottom: 0;
-        // // width: 100%;//會百分百整個窗口
-        // // width: calc(100% - 83.333333%);不就是16%...
-        // padding-top: 56px;//!!!
-        // -------------------
-        // position: absolute;//card-footer又會跑下面去
-        // top: 0;
-        // bottom: 0;
-        // width: 100%;
-        // padding-top: 56px;
-        // --------------------------
-        // position: sticky;//card-footer又會跑下面去
-        // top: 0;
-        // bottom: 0;
-        // width: 100%;
-        // padding-top: 56px;
-        // ---------------------
-        // !!成功了
-        // ##然後這邊不像bs4左邊列沒有footer 只要設定max-height 100vh -rem 然後設卷軸就好
-        height:calc(100% - 90px);
-    }
-    .card-body{
-        min-height: 200px;
-    }
-}
+
 .inline-flex{
     display: inline-flex;
 }

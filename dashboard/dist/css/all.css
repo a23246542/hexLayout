@@ -10425,6 +10425,29 @@ a.text-black:hover, a.text-black:focus {
   }
 }
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v51/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format("woff2");
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
 button:focus {
   /* outline: 1px dotted; */
   /* outline: 5px auto -webkit-focus-ring-color; */
@@ -10504,36 +10527,6 @@ select {
   padding: 2rem !important;
 }
 
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/materialicons/v51/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format("woff2");
-}
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
-}
-
-.avator_img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
 .main {
   min-height: calc(100vh + 100px);
 }
@@ -10546,18 +10539,6 @@ select {
 }
 
 .sidebar-sticky .card-body {
-  min-height: 200px;
-}
-
-@media screen and (min-width: 768px) {
-  .sidebar {
-    display: flex !important;
-    flex-basis: auto;
-    height: calc(100% - 90px);
-  }
-}
-
-.sidebar .card-body {
   min-height: 200px;
 }
 
@@ -10620,7 +10601,7 @@ select {
   height: 141px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   #dashboardSide {
     position: fixed;
     top: 0;
@@ -10630,6 +10611,17 @@ select {
 
 #dashboardNav {
   background-color: #CDDDCD;
+}
+
+@media screen and (min-width: 992px) {
+  #sideBar {
+    display: block;
+    height: calc(100% - 90px);
+  }
+}
+
+#sideBar .card-body {
+  min-height: 200px;
 }
 
 .nav-link {
@@ -10665,6 +10657,13 @@ select {
   background: #2A8356;
   top: 0px;
   left: -1.25rem;
+}
+
+.avator_img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=all.css.map */

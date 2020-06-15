@@ -1,6 +1,6 @@
 #dashboardSide{
    
-   @media (min-width:768px){
+   @media (min-width:992px){
         position: fixed;
         top: 0;
         bottom: 0;
@@ -9,6 +9,56 @@
 
 #dashboardNav{
     background-color:$brand-primary-dark;
+}
+
+#sideBar{
+    // !!不用下面這些發現vh-100就可以實現響應視窗高度了!!
+    // position: absolute;
+    // width: 100%;//會吃到整個視窗
+    // top: 0;
+    // bottom: 0;
+    
+    @media screen and ( min-width: 992px) {
+        // height: 100%;
+        // height: calc(100vh - 90px);
+        // ##發現vh有個缺點縮放視窗會伸縮，可是滾動瀏覽器 就發現card=footer沒辦法貼下面了
+        // @手動出現 官方好像也是這樣
+        display: block;
+        // ## 子層navbar-expand{-sm|-md|-lg|-xl}內容有效
+        // display: flex !important;
+        // flex-basis: auto;//預設最小寬度
+        // ------
+        // position: fixed;//fixed視窗伸縮跟body長度都可固定
+        // // !!!發現這樣往下滑navbar會不見
+        // top: 0;//可是會吃掉上方navbar
+        // bottom: 0;
+        // // width: 100%;//會百分百整個窗口
+        // // width: calc(100% - 83.333333%);不就是16%...
+        // padding-top: 56px;//!!!
+        // -------------------
+        // position: absolute;//card-footer又會跑下面去
+        // top: 0;
+        // bottom: 0;
+        // width: 100%;
+        // padding-top: 56px;
+        // --------------------------
+        // position: sticky;//card-footer又會跑下面去
+        // top: 0;
+        // bottom: 0;
+        // width: 100%;
+        // padding-top: 56px;
+        // ---------------------
+        // !!成功了
+        // ##然後這邊不像bs4官網左邊列沒有footer 只要設定max-height 100vh -上方rem 然後設卷軸就好
+        // ##因為這邊是fixed heigh100%跟100vh結果依樣
+        height:calc(100% - 90px);
+        // height: calc(100vh - 90px);
+        // ##這邊比較短用min-height 但card h-100吃不到
+        // min-height:calc(100vh - 90px);
+    }
+    .card-body{
+        min-height: 200px;
+    }
 }
 
 .nav-link{
@@ -44,4 +94,14 @@
             left: -1.25rem;
         }
     }
+}
+
+
+.avator_img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    // ##防止圖片壓縮
+    // flex-shrink: 0;
 }

@@ -4,7 +4,7 @@ layout: ./src/layout.ejs
 engine: ejs
 current: assignment
 ---
-<div class="col-md-10 ml-auto outline">
+<div class="col-lg-10 ml-auto outline">
     <section class="assignment">
             <div class="assignment_title pt-3 mb-4 outline">
                 <div class="d-flex align-items-center  flex-wrap">
@@ -72,7 +72,8 @@ current: assignment
                                     </div>
                                     
                                 </a>
-                                <a href="#msg2" class="list-group-item list-group-item-action" data-toggle="list">
+                                <!-- ##tab()可代替data-toggle="list" -->
+                                <a href="#msg2" class="list-group-item list-group-item-action">
                                     <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center mb-2">
                                         <!-- @行高1.2字被切掉了 -->
                                         <div class="h6 mb-0">Chapter Assignment 1</div><small class="text-dark">12 hrs ago</small>
@@ -81,7 +82,7 @@ current: assignment
                                         <p class="h5 mb-0">My Homework</p><small class="text-muted">David Xu</small>
                                     </div>
                                 </a>
-                                <a href="#msg3" class="list-group-item list-group-item-action" data-toggle="list">
+                                <a href="#msg3" class="list-group-item list-group-item-action" >
                                     <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center mb-2">
                                         <div class="h6 mb-0">Final Assignment</div><small class="text-dark">18 hrs ago</small>
                                     </div>
@@ -89,7 +90,7 @@ current: assignment
                                         <p class="h5 mb-0 text-truncate">Have a problem with this…</p><small class="text-muted">Tony Wei</small>
                                     </div>
                                 </a>
-                                <a href="#msg4" class="list-group-item list-group-item-action" data-toggle="list">
+                                <a href="#msg4" class="list-group-item list-group-item-action" >
                                     <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center mb-2">
                                         <div class="h6 mb-0">Final Assignment</div><small class="text-dark">19 hrs ago</small>
                                     </div>
@@ -123,8 +124,9 @@ current: assignment
                                         <div class="card-body border border-primary2">
                                             <div class="media mb-3">
                                                 <!-- ##<div class="rounded-circle">加img才有效 -->
-                                                <!-- @固定寬是否好正常 還是縮放 -->
-                                                <div style="width:40px;height: 40px;">
+                                                <!-- @固定寬或縮放 -->
+                                                <!-- <div style="width:40px;height: 40px;"> -->
+                                                <div class="avator_img">
                                                     <img class="w-100 h-100 rounded-circle" src="../images/emilywang.jpeg" alt="">
                                                 </div>
                                                 <div class="media-body pb-3 ml-2 border-bottom-green border-bottom ">
