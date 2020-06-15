@@ -14,6 +14,8 @@
 // @import "./components/component";//沒有寫到元件
 @import "./helpers/util";
 @import "./helpers/custom";
-// @import "./pages/*.scss";
+// @import "./pages";
+// @@Error: File to import not found or unreadable: ./pages.
+// on line 17 of src/sass/all.scss
 @import "./layout/layout";//@@延伸主機會一直掛掉
 

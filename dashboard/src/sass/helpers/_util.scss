@@ -2,7 +2,6 @@
  .font-family-lato{
     font-family: 'Lato', sans-serif;
   }
-
  
 //   .font-size-xs{
 //     font-size: $font-size-xs;//variables沒有
@@ -20,11 +19,11 @@
     font-size: $font-size-lg;//1.25rem
   }
 
-  .icon_select{
-    background: url("../images/expand_more.svg") no-repeat;
-    background-position: 95% center;
+//   .icon_select{
+//     background: url("../images/expand_more.svg") no-repeat;
+//     background-position: 95% center;
 
-  }
+//   }
 
 
   .page_arrow{
@@ -38,4 +37,14 @@
     // background-size: contain;
     // background-position-x: right;
     appearance: none;
+}
+// ##dashboard------------------------------------------------------
+
+// @@無效
+.hover-secondary{
+    @mixin hover(){
+        color: $brand-secondary;
+        // color: green;
+    }
+
 }

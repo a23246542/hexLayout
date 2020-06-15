@@ -62,7 +62,7 @@
                                 <!-- <div class="list-group"> -->
                                 <div class="nav flex-column font-weight-bold text-dark">
                                     <!-- ##省去nav-item也是可以的 -->
-                                    <a class="nav-link active mb-2" href="./dashboard.html">
+                                    <a class="nav-link mb-2 active " href="./dashboard.html">
                                         <div class="d-flex align-items-center">
                                             <!-- <span class="fa fa-money-bill-alt fa-1x mr-3"></span> -->
                                             <span class="material-icons mr-3 align-middle" style="user-select: auto;">
@@ -82,7 +82,7 @@
                                             <div class="w-100">Question</div>
                                         </div>
                                     </a>
-                                    <a class="nav-link mb-2" href="./dashboard.html">
+                                    <a class="nav-link mb-2 text-truncate" href="./dashboard.html">
                                         <div class="d-flex align-items-center">
                                             <!-- <span class="fa fa-money mr-3"></span> -->
                                             <span class="material-icons mr-3 align-middle" style="user-select: auto;">
@@ -96,11 +96,11 @@
                                             <!-- <span class="fa fa-money mr-3"></span> -->
                                             <span class="material-icons mr-3 align-middle" style="user-select: auto;">
                                                 video_library
-                                              </span>
+                                            </span>
                                             <div class="w-100">Course</div>
                                         </div>
                                     </a>
-                                    <a class="nav-link mb-2" href="./dashboard_admin.html">  
+                                    <a class="nav-link mb-2 " href="./dashboard_admin.html">  
                                         <div class="d-flex  align-items-center">
                                             <!-- <span class="fa fa-money mr-3"></span> -->
                                             <span class="material-icons mr-3 align-middle" style="user-select: auto;">
@@ -121,8 +121,8 @@
                                 </div>
                             </div>
                             <div class="card-footer d-none d-md-block">
-                                <div class="d-flex">
-                                    <div class="avator_img"><!--給了寬高40-->
+                                <div class="d-flex align-items-center">
+                                    <div class="avator_img mr-2"><!--給了寬高40-->
                                         <!-- @@圖片無法顯示 發現是縮小 為了寫了40px卻會縮 flex會動到 可是昨天沒縮 參考別人的也是寫固定-->
                                         <!-- <img class="mw-100" src="../images/andychen.jpeg" alt=""> -->
                                         <img class="w-100" src="../images/andychen.jpeg" alt="">
@@ -140,306 +140,272 @@
                 <!-- </div> -->
             </div>
 
-
-                        <div class="col-md-10 ml-auto">
-                <section class="assignment h-100">
-                    <!-- <div class="card h-100"> -->
-                        <div class="title pt-3 mb-4 outline">
-                            <div class="d-flex align-items-center  flex-wrap">
-                               <h2 class="mr-5">Assignment</h2>
-                                <!-- <div class="inline-flex align-items-end"> -->
-                                <div class="inline-flex dropdown">
-                                    <div class="h5 mb-0">All Courses</div>
-                                    <!-- <span class="align-bottom">沒用 -->
-                                    <!-- <button class="dropdown-toggle ml-1">會出現icon-->
-                                    <button class="ml-1 border-0 bg-transparent outline-0" data-toggle="dropdown">
+            <div class="col-md-10 ml-auto outline">
+    <section class="assignment">
+            <div class="assignment_title pt-3 mb-4 outline">
+                <div class="d-flex align-items-center  flex-wrap">
+                <h2 class="mr-5">Assignment</h2>
+                    <div class="inline-flex dropdown">
+                        <div class="h5 mb-0">All Courses</div>
+                        <!-- ##<button class="dropdown-toggle">會出現icon-->
+                        <button class="ml-1 border-0 bg-transparent" data-toggle="dropdown">
+                            <i class="fas fa-chevron-down align-middle"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">CSS</a>
+                            <a href="#" class="dropdown-item">HTML</a>
+                            <a href="#" class="dropdown-item">JS</a>
+                        </div>
+                    </div>
+                    <!-- ##手機版的變化不同 -->
+                    <div class="d-flex flex-grow-1 flex-lg-grow-0  align-items-center ml-md-auto">
+                    <!-- <div class="input-group flex-md-nowrap align-items-center ml-md-auto"> -->
+                    <!-- <div class="form-inline  flex-nowrap align-items-center ml-md-auto"> -->
+                        <div class="input-group align-items-center mr-1">
+                            <input type="text" class="form-control" name="" id="">
+                            <div class="input-group-append">
+                                <button class="btn border">
+                                    <!-- ##input-group-text會多加一層padding -->
+                                    <span class="material-icons d-block" style="user-select: auto;">search</span>
+                                </button>
+                            </div>
+                            
+                        </div>
+                        <button class="btn">
+                            <!-- ##span icon用d-block或align-bottom才不會跟下面有個間格! -->
+                            <span class="material-icons d-block" style="user-select: auto;">notifications_active</span>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="assignment_body outline">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 outline">
+                            <div class="dropdown">
+                                <!-- ## -->
+                                <div class="d-flex align-items-center">
+                                    <div>All(<span>4</span>)</div>
+                                    <button class="btn" data-toggle="dropdown">
                                         <i class="fas fa-chevron-down align-middle"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a href="#" class="dropdown-item">CSS</a>
-                                        <a href="#" class="dropdown-item">HTML</a>
-                                        <a href="#" class="dropdown-item">JS</a>
+                                        <a href="#" class="dropdown-item">HtML/CSS</a>
+                                        <a href="#" class="dropdown-item">Sass</a>
+                                        <a href="#" class="dropdown-item">Bootstrap</a>
                                     </div>
-                                </div>
-                                <div class="d-flex flex-grow-1 flex-lg-grow-0  align-items-center ml-md-auto">
-                                <!-- <div class="input-group flex-md-nowrap align-items-center ml-md-auto"> -->
-                                <!-- <div class="form-inline flex-nowrap align-items-center ml-md-auto"> -->
-
-                                    <!-- <div class="form-group mb-0 outline"> -->
-                                    <!-- !!不然input-group flex會佔滿高 要align-center-->
-                                    <!-- @這邊該用哪一個好 input-group fomr-inline -->
-                                    <!-- @@為什麼手機板form-inline會掉行 input-group不會 原始碼都是row wrap  -->
-                                    <div class="input-group align-items-center mr-1">
-                                    <!-- <div class="form-inline align-items-center outline"> -->
-                                        <input type="text" class="form-control" name="" id="">
-                                        <!-- <input type="text" name="" id=""> -->
-                                        <div class="input-group-append">
-                                            <!-- <button class="btn"> -->
-                                            <button class="btn border">
-                                            <!-- @ -->
-                                            <!-- <span class="material-icons d-block input-group-text" style="user-select: auto;">search</span> -->
-                                                <span class="material-icons d-block" style="user-select: auto;">search</span>
-                                            </button>
-                                        </div>
-                                        
-                                    </div>
-                                    <!-- <button class="btn"> -->
-                                    <button class="btn outline">
-                                        <!-- !!span icon用d-block或align-bottom才不會跟下面有個間格! -->
-                                        <span class="material-icons d-block" style="user-select: auto;">notifications_active</span>
-                                    </button>
                                 </div>
                             </div>
-                            
+                            <!-- @@list-group id問題 -->
+                            <div class="list-group" id="msg">
+                                <a href="#msg1" class="list-group-item list-group-item-action" data-toggle="list">
+                                    <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center mb-2">
+                                        <div class="h6 mb-0">Chapter Assignment 2</div><small class="text-dark">4 hrs ago</small>
+                                    </div>
+                                    <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center">
+                                        <p class="h5 mb-0">Please check this file…</p><small class="text-muted">Emily Wang</small>
+                                    </div>
+                                    
+                                </a>
+                                <a href="#msg2" class="list-group-item list-group-item-action" data-toggle="list">
+                                    <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center mb-2">
+                                        <!-- @行高1.2字被切掉了 -->
+                                        <div class="h6 mb-0">Chapter Assignment 1</div><small class="text-dark">12 hrs ago</small>
+                                    </div>
+                                    <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center">
+                                        <p class="h5 mb-0">My Homework</p><small class="text-muted">David Xu</small>
+                                    </div>
+                                </a>
+                                <a href="#msg3" class="list-group-item list-group-item-action" data-toggle="list">
+                                    <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center mb-2">
+                                        <div class="h6 mb-0">Final Assignment</div><small class="text-dark">18 hrs ago</small>
+                                    </div>
+                                    <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center">
+                                        <p class="h5 mb-0 text-truncate">Have a problem with this…</p><small class="text-muted">Tony Wei</small>
+                                    </div>
+                                </a>
+                                <a href="#msg4" class="list-group-item list-group-item-action" data-toggle="list">
+                                    <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center mb-2">
+                                        <div class="h6 mb-0">Final Assignment</div><small class="text-dark">19 hrs ago</small>
+                                    </div>
+                                    <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center">
+                                        <p class="h5 mb-0">Did I do it right?</p><small class="text-muted">Christina Lin</small>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                        <div class="body outline">
-                            <div class="container h-100">
-                                <div class="row h-100">
-                                    <!-- <div class="col-md-4 outline"> -->
-                                    <div class="col-lg-4 outline">
-                                        <div class="dropdown">
+                        <div class="col-lg-8 outline">
+                            <div class="tab-content">
+                                <div class="tab-pane fade" id="msg1">
+                                    <div class="text-right">
+                                        <span class="text-muted">2 comments</span>
+                                    </div>
+                                    <div class="card overflow-hidden border-0">
+                                        <!-- ##border重疊的問題解法 -->
+                                        <div class="card-header bg-primary border border-bottom-0 border-primary2">
                                             <div class="d-flex align-items-center">
-                                                    <div>All(<span>4</span>)</div>
-                                                <!-- @如何关掉outline -->
-                                                <button class="btn" data-toggle="dropdown">
-                                                    <i class="fas fa-chevron-down align-middle"></i>
-                                                </button>
-                                                <div class="dropdown-menu">
-                                                    <a href="#" class="dropdown-item">1</a>
-                                                    <a href="#" class="dropdown-item">2</a>
-                                                    <a href="#" class="dropdown-item">3</a>
+                                                <div>
+                                                    <div class="h6 font-weight-light">Chapter Assignment 2 / HTML&CSS</div>
+                                                    <div class="h5 mb-0">Please check this file for me, thanks!</div>
+                                                </div>
+                                                <div class="ml-auto d-none d-sm-block">
+                                                    <span class="material-icons">
+                                                        more_vert
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- @一堆id怪怪得 如何不要id -->
-                                        <div class="list-group" id="msg">
-                                            <a href="#msg1" class="list-group-item list-group-item-action" data-toggle="list">
-                                                <div class="d-flex flex-wrap justify-content-between">
-                                                    <div class="h6 w-75">Chapter Assignment 2</div><small>4 hrs ago</small>
-                                                    <!-- <span class="w-100"></span> -->
-                                                    <p class="w-75 mr-auto">Please check this file…</p><small>Emily Wang</small>
+                                        <div class="card-body border border-primary2">
+                                            <div class="media mb-3">
+                                                <!-- ##<div class="rounded-circle">加img才有效 -->
+                                                <!-- @固定寬是否好正常 還是縮放 -->
+                                                <div style="width:40px;height: 40px;">
+                                                    <img class="w-100 h-100 rounded-circle" src="../images/emilywang.jpeg" alt="">
                                                 </div>
-                                            </a>
-                                            <a href="#msg2" class="list-group-item list-group-item-action" data-toggle="list">
-                                                <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center mb-1">
-                                                    <!-- @行高1.2字被切掉了 -->
-                                                    <!-- @如何缩小small一漾靠右 -->
-                                                    <!-- @text-dark没办法加重 -->
-                                                    <div class="h6 mb-0">Chapter Assignment 1</div><small class="text-dark">12 hrs ago</small>
-                                                </div>
-                                                <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center">
-                                                    <p class="h5 mb-0">My Homework</p><small class="text-muted">David Xu</small>
-                                                </div>
-                                            </a>
-                                            <a href="#msg3" class="list-group-item list-group-item-action" data-toggle="list">
-                                                <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center mb-1">
-                                                    <div class="h6 mb-0">Final Assignment</div><small class="text-dark">18 hrs ago</small>
-                                                </div>
-                                                <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center">
-                                                    <p class="h5 mb-0">Have a problem with this…</p><small class="text-muted">Tony Wei</small>
-                                                </div>
-                                            </a>
-                                            <a href="#msg4" class="list-group-item list-group-item-action" data-toggle="list">
-                                                <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center mb-1">
-                                                    <div class="h6 mb-0">Final Assignment</div><small class="text-dark">19 hrs ago</small>
-                                                </div>
-                                                <div class="d-flex text-nowrap text-truncate justify-content-between align-items-center">
-                                                    <p class="h5 mb-0">Did I do it right?</p><small class="text-muted">Christina Lin</small>
-                                                </div>
-                                            </a>
-                                            <!-- <a href="#" class="list-group-item list-group-item-action"></a>
-                                            <a href="#" class="list-group-item list-group-item-action"></a>
-                                            <a href="#profile" class="list-group-item list-group-item-action"></a>
-                                            <a href="#messages" class="list-group-item list-group-item-action"></a> -->
-                                        </div>
-                                    </div>
-                                    <!-- <div class="col-md-8 outline"> -->
-                                    <div class="col-lg-8 outline">
-                                        <div class="tab-content">
-                                            <div class="tab-pane fade" id="msg1">
-                                                <div class="text-right">
-                                                    <span class="text-muted">2 comments</span>
-                                                </div>
-                                                <!-- <div class="card min-vh-100">@太長不好處理 -->
-                                                <div class="card overflow-hidden">
-                                                    <!-- @border重疊的問題解法 -->
-                                                    <div class="card-header bg-primary border border-green">
-                                                        <div class="d-flex align-items-center">
-                                                            <div>
-                                                                <div class="h6 font-weight-light">Chapter Assignment 2 / HTML&CSS</div>
-                                                                <div class="h5 mb-0">Please check this file for me, thanks!</div>
-                                                            </div>
-                                                            <div class="ml-auto d-none d-sm-block">
-                                                                <span class="material-icons">
-                                                                    more_vert
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <!-- <div class="d-flex"> -->
-                                                        <div class="media mb-3">
-                                                            <!-- <div class="rounded-circle">@加再img才有效 -->
-                                                            <!-- @固定寬是否好正常 還是縮放 -->
-                                                            <div style="width:40px">
-                                                                <img class="w-100 rounded-circle" src="https://picsum.photos/100/100?random=2" alt="">
-                                                            </div>
-                                                            <div class="media-body pb-3 ml-2 border-bottom-green border-bottom ">
-                                                                <!-- @h6來表示樣式 行高問題 -->
-                                                                <div class="h6 mb-0">Emily Wang</div>
-                                                                <div class="text-muted mb-3">10:38 AM (4 hours ago)</div>
-                                                                <p>Hi Teacher, the attached file is my homework of chapter 2. And here comes a question: Why in the following code the height of the div is bigger than the height of the img ? There is a gap below the image, but it doesn’t seems to be a padding/margin. What is the gap or extra space below image?</p>
-                                                                <!-- <div class="btn">HW-2-David.zip</div> !div無效 -->
-                                                                <!-- @theme color明明有增加卻無效 怎麼檢查 -->
-                                                                <button type="file" class="btn btn-primary border-primary2 font-weight-bold">
-                                                                    <!-- @為何middle反而偏上 -->
-                                                                    <!-- <span class="material-icons align-middle align-middle"> -->
-                                                                    <span class="material-icons align-bottom">
-                                                                        attach_file
-                                                                    </span>
-                                                                    HW-2-David.zip
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media">
-                                                            <div style="width:40px" class="">
-                                                                <img class="w-100 rounded-circle" src="https://picsum.photos/100/100?random=2" alt="">
-                                                            </div>
-                                                            <div class="media-body pb-3 ml-2 ">
-                                                                <div class="h6 mb-0">Andy Chen (You)</div>
-                                                                <div class="text-muted mb-3">13:24 AM (1 hours ago)</div>
-                                                                <p>Hi David, by default, an image is rendered inline, like a letter so it sits on the same line that a, b, c and d sit on. There is space below that line for the descenders you find on letters like g, j, p and q.</p>
-                                                                <p>You can:</p>
-                                                                <p>
-                                                                    <ul>
-                                                                        <li>adjust the vertical-align of the image to position it elsewhere (e.g. the middle ) or 　</li>
-                                                                        <li>change the display so it isn’t inline.</li>
-                                                                    </ul>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-footer">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="btn-group">
-                                                                <!-- @為何這邊a會佔滿高 -->
-                                                                <!-- @middle比baseline還高 -->
-                                                                <a href="">
-                                                                    <span class="material-icons text-dark align-middle">
-                                                                        keyboard_arrow_left
-                                                                    </span>
-                                                                </a>
-                                                                <a href="">
-                                                                    <span class="material-icons text-dark align-baseline">
-                                                                        keyboard_arrow_right
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <!-- <div class="btn-group">!會有左右圓角 -->
-                                                            <div class="inline-flex ml-auto">
-                                                                <!-- @為何btn-outline-green會無效 -->
-                                                                <!-- <div class="btn btn-outline-green mr-3 px-4">Mark as read</div> -->
-                                                                <div class="btn btn-outline-primary mr-3 px-4">Mark as read</div>
-                                                                <div class="btn btn-primary text-capitalize px-4"
-                                                                id="btnReply"
-                                                                >reply</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="reply_block position-absolute"
-                                                    id="replyBlock"
-                                                    >
-                                                        <div class="card w-100 h-100">
-                                                            <div class="card-header p-3">
-                                                                <div class="d-flex align-items-center">
-                                                                    <div class="dropdown">
-                                                                    <!-- BodyText !!放在button就好 -->
-                                                                    <!-- !btn可消除邊框 -->
-                                                                        <button class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                                            BodyText
-                                                                        </button>
-                                                                        <ul class="dropdown-menu">
-                                                                            <li class="dropdown-item">1</li>
-                                                                            <li class="dropdown-item">2</li>
-                                                                            <li class="dropdown-item">3</li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <!-- !inline-block隱藏 -->
-                                                                    <!-- ##px-3可以蓋過p-0 -->
-                                                                    <ul class="w-100 text-right px-3 overflow-hidden text-nowrap p-0 m-0">
-                                                                        <!-- @hover.scss可設定a:hover btn呢-->
-                                                                        <!-- <div class="btn btn-edit">B</div> -->
-                                                                        <!-- <div class="btn hover-dark1">
-                                                                            <span class="material-icons">
-                                                                                format_bold
-                                                                            </span>
-                                                                        </div> -->
-                                                                        <!-- @如何去除陰影 -->
-                                                                        <!-- <button class="btn material-icons hover-dark1 btn-">
-                                                                            format_bold
-                                                                        </button> -->
-                                                                        <li class="btn material-icons hover-dark1">
-                                                                            format_bold
-                                                                        </li>
-                                                                        <li class="btn material-icons hover-dark1">
-                                                                            format_italic
-                                                                        </li>
-                                                                        <li class="btn material-icons hover-dark1">
-                                                                            format_list_bulleted
-                                                                        </li>
-                                                                        <li class="btn material-icons hover-dark1">
-                                                                            format_list_numbered
-                                                                        </li>
-                                                                        <li class="btn material-icons hover-dark1">
-                                                                            insert_photo
-                                                                        </li>
-                                                                        <li class="btn material-icons hover-dark1">
-                                                                            insert_link
-                                                                        </li>
-                                                                        <li class="btn material-icons hover-dark1">
-                                                                            code
-                                                                        </li>
-                                                                        
-                                                                        <!-- @ a:hover顏色無效 -->
-                                                                        <!-- <a href="" class="btn">CCC</a> -->
-                               
-                                                                    </ul>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                            <div class="card-body pb-0">
-                                                                <textarea  class="w-100 align-bottom"  style="min-height:160px"
-                                                                name="" id="" cols="50" rows="5">Reply an answer</textarea>
-                                                            </div>
-                                                            <!-- <div class="card-footer bg-transparent border-0 p-4 pt-0"> 如何微調並存 -->
-                                                            <div class="card-footer bg-transparent border-0 p-4">
-                                                                <div class="d-flex">
-                                                                    <!-- <div class="ml-auto font-weight-bold">!btn有預設-->
-                                                                    <div class="ml-auto font-weight-bold">
-                                                                        <!-- @同學px-6是在哪邊新增的呢 -->
-                                                                        <button type="button" class="btn btn-outline-primary px-6 py-2 mr-2 font-weight-bold"
-                                                                        id="btnHideReply"
-                                                                        >Cancel</button>
-                                                                        <button type="button" class="btn btn-primary px-6 py-2 font-weight-bold">Reply</button>
-                                                                    </div>                                                  
-                                                                </div>                                                     
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                <div class="media-body pb-3 ml-2 border-bottom-green border-bottom ">
+                                                    <!-- @h6來表示樣式 行高問題 -->
+                                                    <div class="h6 mb-0">Emily Wang</div>
+                                                    <div class="text-muted mb-3">10:38 AM (4 hours ago)</div>
+                                                    <p>Hi Teacher, the attached file is my homework of chapter 2. And here comes a question: Why in the following code the height of the div is bigger than the height of the img ? There is a gap below the image, but it doesn’t seems to be a padding/margin. What is the gap or extra space below image?</p>
+                                                    <button type="file" class="btn btn-primary border-primary2 font-weight-bold">
+                                                        <!-- ##align-middle會偏上 以右邊字為對齊 -->
+                                                        <span class="material-icons align-bottom">
+                                                            attach_file
+                                                        </span>
+                                                        HW-2-David.zip
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <div class="tab-pane fade" id="msg2">task2</div>
-                                            <div class="tab-pane fade" id="msg3">task3</div>
-                                            <div class="tab-pane fade" id="msg4">task4</div>
+                                            <div class="media">
+                                                <div style="width:40px;height: 40px;" class="">
+                                                    <img class="w-100 h-100 rounded-circle" src="../images/andychen.jpeg" alt="">
+                                                </div>
+                                                <div class="media-body pb-3 ml-2">
+                                                    <div class="h6 mb-0">Andy Chen (You)</div>
+                                                    <div class="text-muted mb-3">13:24 AM (1 hours ago)</div>
+                                                    <p>Hi David, by default, an image is rendered inline, like a letter so it sits on the same line that a, b, c and d sit on. There is space below that line for the descenders you find on letters like g, j, p and q.</p>
+                                                    <p>You can:</p>
+                                                    <p>
+                                                        <ul>
+                                                            <li>adjust the vertical-align of the image to position it elsewhere (e.g. the middle ) or 　</li>
+                                                            <li>change the display so it isn’t inline.</li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer border border-top-0 border-primary2">
+                                            <div class="d-flex align-items-center">
+                                                <!-- ##btn-group的inline-flex會內縮 -->
+                                                <div class="btn-group">
+                                                    <!-- @@a的高度來源 d-block也無用 -->
+                                                    <!-- ##middle比baseline還低 一個在a中間 一個在a下方 -->
+                                                    <!-- <a href="#" class="btn btn-secondary"> -->
+                                                    <a href="#">
+                                                        <span class="material-icons text-dark align-middle">
+                                                            keyboard_arrow_left
+                                                        </span>
+                                                    </a>
+                                                    <a href="#">
+                                                        <!-- <span class="material-icons text-dark align-baseline"> -->
+                                                        <span class="material-icons text-dark align-middle">
+                                                            keyboard_arrow_right
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <!-- ##btn-group也是inline-flex 但子btn會有圓角 -->
+                                                <!-- <div class="btn-group ml-auto"> -->
+                                                <!-- <div class="inline-flex ml-auto"> -->
+                                                <div class="d-flex ml-auto">
+                                                    <!-- <div class="btn btn-outline-green mr-3 px-4">Mark as read</div> -->
+                                                    <div class="btn btn-outline-secondary mr-3 px-4 py-2">Mark as read</div>
+                                                    <div class="btn btn-secondary text-capitalize px-4 py-2"
+                                                    id="btnReply"
+                                                    >reply</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--replyBlock-->
+                                        <div class="reply_block position-absolute"
+                                        id="replyBlock"
+                                        >
+                                            <!-- <div class="card w-100 h-100"> -->
+                                            <div class="card">
+                                                <div class="card-header p-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="dropdown">
+                                                        <!-- ##btn可消除button邊框 -->
+                                                            <button class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                BodyText
+                                                            </button>
+                                                            <ul class="dropdown-menu">
+                                                                <li class="dropdown-item">1</li>
+                                                                <li class="dropdown-item">2</li>
+                                                                <li class="dropdown-item">3</li>
+                                                            </ul>
+                                                        </div>
+                                                        <!-- #inline-block+超出按鍵overflow隱藏掉 -->
+                                                        <!-- ##px-3可以覆蓋p-0 -->
+                                                        <ul class="w-100 text-right overflow-hidden text-nowrap p-0 px-3 m-0">
+                                                            <!-- @@自訂hover-secondary無效 -->
+                                                            <li class="btn material-icons hover-secondary text-secondary">
+                                                                format_bold
+                                                            </li>
+                                                            <li class="btn material-icons hover-secondary">
+                                                                format_italic
+                                                            </li>
+                                                            <li class="btn material-icons hover-secondary">
+                                                                format_list_bulleted
+                                                            </li>
+                                                            <li class="btn material-icons hover-secondary">
+                                                                format_list_numbered
+                                                            </li>
+                                                            <li class="btn material-icons hover-dark1">
+                                                                insert_photo
+                                                            </li>
+                                                            <li class="btn material-icons hover-dark1">
+                                                                insert_link
+                                                            </li>
+                                                            <li class="btn material-icons hover-dark1">
+                                                                code
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body pb-0">
+                                                    <textarea  class="w-100 align-bottom"  style="min-height:160px"
+                                                    placeholder="Reply an answer"
+                                                    name="" id="" cols="50" rows="5"></textarea>
+                                                </div>
+                                                <!-- @@<div class="card-footer bg-transparent border-0 p-4 pt-0"> p-4覆蓋掉pt-0 如何微調並存 -->
+                                                <div class="card-footer bg-transparent border-0 p-4">
+                                                    <div class="d-flex">
+                                                        <!-- ##<div class="ml-auto font-weight-bold">btn有預設字重 要個別加-->
+                                                        <div class="ml-auto">
+                                                            <button type="button" class="btn btn-outline-secondary px-5 py-2 mr-2 font-weight-bold"
+                                                            id="btnHideReply"
+                                                            >Cancel</button>
+                                                            <button type="button" class="btn btn-secondary px-5 py-2 font-weight-bold">Reply</button>
+                                                        </div>                                                  
+                                                    </div>                                                     
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="tab-pane fade" id="msg2">task2</div>
+                                <div class="tab-pane fade" id="msg3">task3</div>
+                                <div class="tab-pane fade" id="msg4">task4</div>
                             </div>
-                            
                         </div>
-                    <!-- </div> -->
-                </section>
+                    </div>
+                </div>
+                
             </div>
+        
+    </section>
+</div>
 
 
         </div>

@@ -1,4 +1,11 @@
-
+button:focus {
+    // #預設
+    /* outline: 1px dotted; */
+    /* outline: 5px auto -webkit-focus-ring-color; */
+    outline:none !important;
+    // outline:$brand-primary-light;
+    box-shadow:none!important;
+}
 img{
     // max-width: 100%;
     // height: auto;
