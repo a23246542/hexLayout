@@ -10509,39 +10509,6 @@ select {
           appearance: none;
 }
 
-.bg-secondary {
-  color: white;
-  background-color: #2A8356 !important;
-}
-
-.bg-primary {
-  background-color: #EDF4EE !important;
-}
-
-.px-5 {
-  padding-left: 2rem !important;
-  padding-right: 2rem !important;
-}
-
-.p-5 {
-  padding: 2rem !important;
-}
-
-.main {
-  min-height: calc(100vh + 100px);
-}
-
-.sidebar-sticky {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-}
-
-.sidebar-sticky .card-body {
-  min-height: 200px;
-}
-
 .inline-flex {
   display: inline-flex;
 }
@@ -10550,14 +10517,14 @@ select {
   outline: 1px solid red;
 }
 
+.main {
+  min-height: calc(100vh + 100px);
+}
+
 .list-group-item.active {
   background-color: #EDF4EE;
   border-color: #CDDDCD;
   color: #121212;
-}
-
-.card-header {
-  margin: -1px !important;
 }
 
 .reply_block {
@@ -10595,10 +10562,10 @@ select {
 }
 
 .user_photo {
-  background-image: url("https://images.unsplash.com/photo-1522069394066-326005dc26b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
-  background-size: cover;
   width: 141px;
   height: 141px;
+  background-image: url("../images/emir.jpeg");
+  background-size: cover;
 }
 
 @media (min-width: 992px) {

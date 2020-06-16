@@ -36,18 +36,17 @@
                     <div class="card h-100 rounded-0 border-0 bg-primary">
                         <div class="card-body text-truncate">
                             <!-- @@為何...出不來 -->
-                            <div class="nav flex-column font-weight-bold text-dark">
+                            <div class="nav flex-column font-weight-bold">
                                 <!-- ##nav-item可省 -->
-                                <!-- <a class="nav-link mb-2 <% if (current === 'assignment') {%>active<%} %> " href="./dashboard.html"> -->
                                 <a class="nav-link mb-2" href="#">
                                     <div class="d-flex align-items-center">
                                         <span class="material-icons mr-3 align-middle" style="user-select: auto;">
                                             insert_chart
                                         </span>
-                                        <div class="w-100 h6 mb-0">Dashaboard</div>
+                                        <h6 class="w-100 mb-0">Dashboard</h6>
                                     </div>
                                 </a>
-                                <a class="nav-link mb-2 text-truncate" href="#">
+                                <a class="nav-link mb-2" href="#">
                                     <div class="d-flex align-items-center">
                                         <span class="material-icons mr-3 align-middle" style="user-select: auto;">
                                             forum
@@ -55,7 +54,7 @@
                                         <div class="w-100">Question</div>
                                     </div>
                                 </a>
-                                <a class="nav-link mb-2" href="./dashboard.html">
+                                <a class="nav-link mb-2 text-truncate" href="./dashboard.html">
                                     <div class="d-flex align-items-center">
                                         <span class="material-icons mr-3 align-middle" style="user-select: auto;">
                                             assignment
@@ -71,7 +70,6 @@
                                         <div class="w-100">Course</div>
                                     </div>
                                 </a>
-                                <!-- <a class="nav-link mb-2 <% if (current === 'admin') {%>active<%} %>" href="./dashboard_admin.html">   -->
                                 <a class="nav-link mb-2" href="./dashboard_admin.html">  
                                     <div class="d-flex  align-items-center">
                                         <span class="material-icons mr-3 align-middle" style="user-select: auto;">
@@ -123,7 +121,7 @@
     <script>
     // ##nav===============================================
     $(document).ready(function(){
-         $('#sideBarv nav a').on('click', function (e) {
+         $('#sideBar nav a').on('click', function (e) {
         // @@為何沒有反應
         e.preventDefault()
         $(this).tab('show')
@@ -173,9 +171,9 @@
                 // }
                 // $(this).toggleClass('d-block').toggleClass('d-none');
                 
-                // ##这个成功! 移除掉d-none inline-block就会自动出现了
-                console.log(this);
                 
+                console.log(this);
+                // ##这个成功! 移除掉d-none
                 // @@突然又變失敗
                 // $(this).addClass('d-none').siblings('a').removeClass('d-none');
                 $(this).addClass('d-none').siblings('.jsArrow').removeClass('d-none');
@@ -191,16 +189,17 @@
             // @@为舌么下面开启上面那个就失效了 一值出现bug才一值是
             $('#viewAdminModal').click(function(){
                 $('#collapseExample').collapse('hide');
-                $('.jsArrowDown').removeClass('d-none');
-                $('.jsArrowUp').addClass('d-none');
+                // $('.jsArrowDown').removeClass('d-none');
+                // $('.jsArrowUp').addClass('d-none');
             })
             $('#viewAdminModal .close').click(function(){
                 $('#collapseExample').collapse('hide');
-                $('.jsArrowDown').removeClass('d-none');
-                $('.jsArrowUp').addClass('d-none');
+                // $('.jsArrowDown').removeClass('d-none');
+                // $('.jsArrowUp').addClass('d-none');
             })
 
-            // // @@因为btn预设inline-block是否只能直接操作block
+            // -----下省略---------------------------
+            // // @@btn预设inline-block是否只能直接操作block
             // $('.jsArrowDown').click(function(){
             //     // $(this).addClass('d-none').removeClass('d-block');
             //     // $(this).removeClass('d-block').addClass('d-none').;
@@ -227,13 +226,5 @@
         
         })
     </script>
-    <style>
-        /* ##bs4有預設 */
-        .card-header{
-            margin: -1px!important;
-        }
-    
-
-    </style>
 </body>
 </html>
