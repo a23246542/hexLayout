@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<!-- <html lang="en" class="h-100"> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="https://kit.fontawesome.com/77513e405a.js" crossorigin="anonymous"></script>
+</head>
+<!-- #main設最小 不需要h-100-->
+<!-- @@發現有個奇怪的bug 開分頁後按的 別頁也會動到 -->
+<body class="">
+     <!-- <div class="main container-fluid h-100"> -->
+     <div class="main container-fluid">
+        <!-- <div class="row flex-xl-nowrap h-100"> -->
+        <div class="row flex-xl-nowrap">
+            <div id="dashboardSide" class="col-lg-2 p-0" style="">
+                 <!-- ##fixed沒辦法用w-100吃到col的寬度 -->
+                <!-- <div class="position-fixed" style="top: 0;bottom: 0;right:0;left:0"> -->
+                    <!-- <div style="width:200px"> -->
+                <nav id="dashboardNav" class="navbar navbar-expand-lg pt-lg-5 pl-md-4 text-truncate navbar-light bg-primary">
+                    <a class="navbar-brand" href="#">
+                        <!-- @@這邊應該給死寬高好 還是w-auto -->
+                        <img class="" src="./images/logo-ANSWER.svg" alt="">
+                    </a>
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#sideBar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav> 
+                <!-- ##mw-50 只有max 沒有min -->
+                <aside id="sideBar" class="sidebar collapse navbar-collapse border-right">
+                <!-- ##collapse預設隱藏 手動block開啟 -->
+                <!-- ##navbar的navbar-expand{-sm|-md|-lg|-xl}讓navbar-collapse內容水平flex展開 但只對子層有用-->
+                    <div class="card h-100 rounded-0 border-0 bg-primary">
+                        <div class="card-body text-truncate">
+                            <!-- @@為何...出不來 -->
+                            <div class="nav flex-column font-weight-bold">
+                                <!-- ##nav-item可省 -->
+                                <a class="nav-link mb-2" href="#">
+                                    <div class="d-flex align-items-center">
+                                        <span class="material-icons mr-3 align-middle" style="user-select: auto;">
+                                            insert_chart
+                                        </span>
+                                        <h6 class="w-100 mb-0">Dashboard</h6>
+                                    </div>
+                                </a>
+                                <a class="nav-link mb-2" href="#">
+                                    <div class="d-flex align-items-center">
+                                        <span class="material-icons mr-3 align-middle" style="user-select: auto;">
+                                            forum
+                                        </span>
+                                        <div class="w-100">Question</div>
+                                    </div>
+                                </a>
+                                <a class="nav-link mb-2 text-truncate" href="./dashboard.html">
+                                    <div class="d-flex align-items-center">
+                                        <span class="material-icons mr-3 align-middle" style="user-select: auto;">
+                                            assignment
+                                        </span>
+                                        <div class="w-100">Assignment</div>
+                                    </div>
+                                </a>
+                                <a class="nav-link mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <span class="material-icons mr-3 align-middle" style="user-select: auto;">
+                                            video_library
+                                        </span>
+                                        <div class="w-100">Course</div>
+                                    </div>
+                                </a>
+                                <a class="nav-link mb-2" href="./dashboard_admin.html">  
+                                    <div class="d-flex  align-items-center">
+                                        <span class="material-icons mr-3 align-middle" style="user-select: auto;">
+                                            supervisor_account
+                                        </span>
+                                        <div class="w-100">Admin</div>
+                                    </div>
+                                </a>
+                                <a class="nav-link mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <span class="material-icons mr-3 align-middle" style="user-select: auto;">
+                                            settings
+                                        </span>
+                                        <div class="w-100">Settings</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-footer d-none d-md-block">
+                            <div class="d-flex align-items-center">
+                                <!-- ##寫死寬高40，也會被flex壓縮-->
+                                <div class="avator_img mr-2">
+                                    <!-- <img class="mw-100" src="../images/andychen.jpeg" alt=""> -->
+                                    <img class="w-100" src="../images/andychen.jpeg" alt="">
+                                </div>
+                                <!-- #text-truncate有時有效有時無效 -->
+                                <div class="avator_info text-truncate">
+                                    <div>Andy Chen</div>
+                                    <div class="text-truncate">andy0410@mail.com</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </aside>
+            </div>
+
+                        <!-- @@這樣是否modal只能放在row裡面 -->
+            <div class="col-md-10 ml-auto">
+                <!--Admin title-->
+                <div class="p-3 d-flex justify-content-between">
+                    <div class="l d-flex align-items-center font-weight-bold">
+                        <h2 class="pr-8">Admin</h2>
+                        <a href="javascript:void(0);" class="btn d-flex font-weight-bold" data-toggle="modal"
+                            data-target="#addAdminModal" data-backdrop="static">
+                            <i class="material-icons text-secondary mr-1">add</i>
+                            <span>Add New Admin</span>
+                        </a>
+                    </div>
+                    <div class="d-flex">
+                        <i class="material-icons mr-4">search</i>
+                        <i class="material-icons">notifications_active</i>
+                    </div>
+                </div>
+                <!--table-->
+                <div class="p-3 table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID
+                                    <span class="material-icons align-bottom font-size-md text-secondary">
+                                        arrow_downward
+                                    </span>
+                                </th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Verified</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">#1</th>
+                                <td>Emir Wicks</td>
+                                <td>emir.wicks@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right pr-0">
+                                    <a type="button" class="visi-btn " data-toggle="modal" data-target="#viewAdminModal"
+                                        data-name="Emir Wicks" data-mail="Emir.Wicks@mail.com">
+                                        <span class="material-icons  mr-4 ">
+                                            visibility
+                                        </span>
+                                    </a>
+                                    <a type="button" class="edit-btn " data-toggle="modal" data-target="#editAdminModal"
+                                        data-name="Emir Wicks" data-mail="Emir.Wicks@mail.com">
+                                        <span class="material-icons">
+                                            create
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#2</th>
+                                <td>Zaina Goldsmith</td>
+                                <td>zaina.goldsmith@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right pr-0">
+                                    <a type="button" class="visi-btn " data-toggle="modal" data-target="#viewAdminModal"
+                                        data-name="Zaina Goldsmith" data-mail="Zaina.Goldsmith@mail.com">
+                                        <span class="material-icons  mr-4 ">
+                                            visibility
+                                        </span>
+                                    </a>
+                                    <a type="button" class="edit-btn " data-toggle="modal" data-target="#editAdminModal"
+                                        data-name="Zaina Goldsmith" data-mail="Zaina.Goldsmith@mail.com">
+                                        <span class="material-icons">
+                                            create
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#3</th>
+                                <td>Mahima Lopez</td>
+                                <td>Mahima.Lopez@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right pr-0">
+                                    <a type="button" class="visi-btn " data-toggle="modal" data-target="#viewAdminModal"
+                                        data-name="Mahima Lopez" data-mail="Mahima.Lopez@mail.com">
+                                        <span class="material-icons  mr-4 ">
+                                            visibility
+                                        </span>
+                                    </a>
+                                    <a type="button" class="edit-btn " data-toggle="modal" data-target="#editAdminModal"
+                                        data-name="Mahima Lopez" data-mail="Mahima.Lopez@mail.com">
+                                        <span class="material-icons">
+                                            create
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#4</th>
+                                <td>Pharrell Murray</td>
+                                <td class="text-truncate">Pharrell.Murray@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right pr-0 text-nowrap">
+                                    <a type="button" class="visi-btn " data-toggle="modal" data-target="#viewAdminModal"
+                                        data-name="Klaudia Rhodes" data-mail="Klaudia.Rhodes@mail.com">
+                                        <span class="material-icons  mr-4 ">
+                                            visibility
+                                        </span>
+                                    </a>
+                                    <a type="button" class="edit-btn " data-toggle="modal" data-target="#editAdminModal"
+                                        data-name="Klaudia Rhodes" data-mail="Klaudia.Rhodes@mail.com">
+                                        <span class="material-icons">
+                                            create
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#5</th>
+                                <td>Annika Mcbride</td>
+                                <td>Annika.Mcbride@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right pr-0">
+                                    <a type="button" class="visi-btn " data-toggle="modal" data-target="#viewAdminModal"
+                                        data-name="Pharrell Murray" data-mail="Pharrell.Murray@mail.com">
+                                        <span class="material-icons  mr-4 ">
+                                            visibility
+                                        </span>
+                                    </a>
+                                    <a type="button" class="edit-btn " data-toggle="modal" data-target="#editAdminModal"
+                                        data-name="Pharrell Murray" data-mail="Pharrell.Murray@mail.com">
+                                        <span class="material-icons">
+                                            create
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#6</th>
+                                <td>Fatimah Clark</td>
+                                <td>Fatimah.Clark@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right pr-0">
+                                    <a type="button" class="visi-btn " data-toggle="modal" data-target="#viewAdminModal"
+                                        data-name="Annika Mcbride" data-mail="Annika.Mcbride@mail.com">
+                                        <span class="material-icons  mr-4 ">
+                                            visibility
+                                        </span>
+                                    </a>
+                                    <a type="button" class="edit-btn " data-toggle="modal" data-target="#editAdminModal"
+                                        data-name="Annika Mcbride" data-mail="Annika.Mcbride@mail.com">
+                                        <span class="material-icons">
+                                            create
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#7</th>
+                                <td>Klaudia Rhodes</td>
+                                <td>Klaudia.Rhodes@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right pr-0">
+                                    <a type="button" class="visi-btn " data-toggle="modal" data-target="#viewAdminModal"
+                                        data-name="Fatimah Clark" data-mail="Fatimah.Clarkz@mail.com">
+                                        <span class="material-icons  mr-4 ">
+                                            visibility
+                                        </span>
+                                    </a>
+                                    <a type="button" class="edit-btn " data-toggle="modal" data-target="#editAdminModal"
+                                        data-name="Fatimah Clark" data-mail="Fatimah.Clarkz@mail.com">
+                                        <span class="material-icons">
+                                            create
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#8</th>
+                                <td>Tillie Lucero</td>
+                                <td>Tillie.Lucero@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right pr-0">
+                                    <a type="button" class="visi-btn " data-toggle="modal" data-target="#viewAdminModal"
+                                        data-name="Tillie Lucero" data-mail="Tillie.Lucero@mail.com">
+                                        <span class="material-icons  mr-4 ">
+                                            visibility
+                                        </span>
+                                    </a>
+                                    <a type="button" class="edit-btn " data-toggle="modal" data-target="#editAdminModal"
+                                        data-name="Tillie Lucero" data-mail="Tillie.Lucero@mail.com">
+                                        <span class="material-icons">
+                                            create
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#9</th>
+                                <td>Sabrina Stephenson</td>
+                                <td>Sabrina.Stephenson@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right pr-0">
+                                    <a type="button" class="visi-btn " data-toggle="modal" data-target="#viewAdminModal"
+                                        data-name="Sabrina Stephenson" data-mail="Sabrina.Stephenson@mail.com">
+                                        <span class="material-icons  mr-4 ">
+                                            visibility
+                                        </span>
+                                    </a>
+                                    <a type="button" class="edit-btn " data-toggle="modal" data-target="#editAdminModal"
+                                        data-name="Sabrina Stephenson" data-mail="Sabrina.Stephenson@mail.com">
+                                        <span class="material-icons">
+                                            create
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#10</th>
+                                <td>Annie Smith</td>
+                                <td>Annie.Smith@mail.com</td>
+                                <td>Yes</td>
+                                <td class="text-right pr-0">
+                                    <a type="button" class="visi-btn " data-toggle="modal" data-target="#viewAdminModal"
+                                        data-name="Annie Smith" data-mail="Annie.Smith@mail.com">
+                                        <span class="material-icons  mr-4 ">
+                                            visibility
+                                        </span>
+                                    </a>
+                                    <a type="button" class="edit-btn " data-toggle="modal" data-target="#editAdminModal"
+                                        data-name="Annie Smith" data-mail="Annie.Smith@mail.com">
+                                        <span class="material-icons">
+                                            create
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <nav>
+                    <ul class="pagination justify-content-end mr-5 border-secondary">
+
+                        <li class="page-item">
+                            <a class="page-link px-1 page_arrow" href="#"  tabindex="-1">
+                                <i aria-hidden="true" class="material-icons align-middle" style="user-select: auto;">chevron_left</i>
+                            </a>
+                            <!-- <a class="page-link material-icons" href="#">
+                                chevron_left
+                            </a> -->
+                        </li>
+                        <!-- ##顏色出不來 page-link擋住page-item顏色 -->
+                        <!-- <li class="page-item  bg-secondary"> -->
+                        <li class="page-item active">
+                            <a class="page-link bg-secondary border-secondary" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link " href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link px-1 page_arrow" href="#" tabindex="-1">
+                                <i aria-hidden="true" class="material-icons align-middle" style="user-select: auto;">chevron_right</i>                            </a>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+            </div>
+            <!--addAdminModal-->
+            <!-- ##tabindex="-1"去除索引 -->
+            <!-- ##要及時除錯 打show沒用 modal停留的辦法  -->
+            <div class="modal fade" id="addAdminModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content px-4">
+                        <div class="modal-header border-0">
+                            <div class="h4 mb-0">New Admin</div>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- ##整個都用表單包起來? -->
+                            <form action="">
+                                <div class="border-bottom border-primary2">
+                                    <h5 class="h5 font-weight-normal">Account</h5>
+                                    <div class="form-group">
+                                        <label for="adminName" class="mb-1 font-size-sm">Name</label>
+                                        <input type="text" name="" id="adminName" class="form-control rounded-0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="adminEmail" class="mb-1 font-size-sm">Email</label>
+                                        <input type="text" name="" id="adminEmail" class="form-control rounded-0">
+                                    </div>
+                                </div>
+                                <!-- ------ -->
+                                <div class="border-bottom border-primary2 pb-2 pt-3">
+                                    <h5 class="h5 font-weight-normal mb-2">Verification</h5>
+                                    <!-- ##span flex就變區塊元素了!!! -->
+                                    <span class="d-flex">
+                                        <i class="material-icons text-warning mr-2 mb-2">warning</i>
+                                        unverified
+                                    </span>
+                                    <button class="btn btn-outline-secondary btn-block text-capitalize mb-2 rounded-0">
+                                        send verification mail
+                                    </button>
+                                </div>
+                                <!-- -------- -->
+                                <div class="border-bottom border-primary2 py-2 pt-3">
+                                    <h5 class="h5 font-weight-normal mb-2">Access Level</h5>
+                                    <div class="form-group">
+                                        <label for="" class="sr-only">Access Level</label>
+                                        <!-- ##placeholder沒有效果 只能用selected -->
+                                        <select name="" id="" class="form-control border-dark rounded-0 select_arrow">
+                                            <option value="" selected hidden>-choose access level-</option>
+                                            <!-- <option value="" selected disabled>-choose access level-</option> 可見但不可選 -->
+                                            <option value="admin">admin</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- ------ -->
+                                <div class="pt-3">
+                                    <h5 class="h5 font-weight-normal text-capitalize mb-3">custom access</h5>
+                                    <!-- ##手刻的設計方式 -->
+                                    <!-- <div class="">
+                                        <label for="lecture">
+                                            <input type="checkbox" id="lecture">
+                                            <span></span>
+                                            lecture
+                                        </label>
+                                    </div> -->
+                                    <!-- ##form-check是預設樣式 只是純checkbox.radio布局 -->
+                                    <!-- <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="" id="lecture">
+                                        <label for="lecture" class="form-check-label">lecture</label>
+                                    </div> -->
+                                    <!-- ##BS4 自訂表單方式 跟form-check結構一樣-->
+                                    <!-- <div class="custom-control"> 會騰出空間 -->
+                                    <div class="custom-control custom-checkbox pl-5 mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="lectureCheck">
+                                        <label for="lectureCheck" class="custom-control-label font-size-md">Lecture</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox pl-5 mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="couponCheck">
+                                        <label for="couponCheck" class="custom-control-label font-size-md">Coupon</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox pl-5 mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="messageCheck">
+                                        <label for="messageCheck" class="custom-control-label font-size-md">Message</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox pl-5 mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="settingCheck">
+                                        <label for="settingCheck" class="custom-control-label font-size-md">Setting</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox pl-5 mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="taskCheck">
+                                        <label for="taskCheck" class="custom-control-label font-size-md">Task menu</label>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <div class="modal-footer border-top-0">
+                            <button class="btn btn-outline-secondary btn-md px-4 " data-dismiss="modal">Cancel</button>
+                            <button class="btn btn-secondary btn-md  px-5" data-dismiss="modal">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--viewAdminModal-->
+            <!-- @@這邊的tabindex="-1" -->
+            <div class="modal fade" id="viewAdminModal" tabindex="-1"  role="dialog" aria-labelledby="exampleModalLabel" aria-modal="true">
+            <!-- ##這樣讓modal定住 -->
+            <!-- <div class="modal fade show" id="viewAdminModal" tabindex="-1" style="display: block;" role="dialog" aria-labelledby="exampleModalLabel" aria-modal="true"> -->
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="media p-5">
+                            <div class="mr-3 user_photo"></div>
+                            <div class="media-body">
+                                <!-- ##.close會自動float到右邊 -->
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h6 class="mt-0 mb-2">#1</h6>
+                                <h6 class="text-dark mb-0">admin</h6>
+                                <!-- ##modal-name modal-mail 傳入資料 用each作法-->
+                                <h5 class="text-black font-weight-bold mb-2">Emir Wicks</h5>
+                                <p class="text-muted mb-3">Emir.Wicks@mail.com</p>
+                                <span class="text-dark py-1 px-2 bg-primary border-0">verified</span>
+                                <!-- ##float讓小元件跑到右邊很方便 -->
+                                <span class="float-right d-block">
+                                    <a class="btn jsArrow jsArrowDown" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        <span class="material-icons  text-secondary">
+                                            keyboard_arrow_down
+                                        </span>
+                                    </a>
+                                    <a class="btn jsArrow jsArrowUp d-none " data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        <span class="material-icons  text-secondary">
+                                            keyboard_arrow_up
+                                        </span>
+                                    </a>
+                                </span>
+                                <!-- @@为何用collapsing作渐变无效 -->
+                                <div class="collapse collapsing fade" id="collapseExample">
+                                    <div class="d-flex mt-5">
+                                        <button type="button" class="btn btn-outline-warning rounded-0  py-2 px-5 mr-3" data-dismiss="modal">deactivate</button>
+                                        <button type="button" class="btn btn-secondary rounded-0 py-2 px-5" data-dismiss="modal">edit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>         
+                    </div>
+                </div>
+            </div>
+            <!-- editAdminModal -->
+            <div class="modal fade" id="editAdminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <!-- ## -->
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title font-weight-bold" id="exampleModalLabel">Edit Admin</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- <form class="admin-form"> -->
+                            <form>
+                                <h5 class="font-weight-bold">Account</h5>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1" class="mb-1 font-size-sm">Name</label>
+                                    <input type="text"
+                                        class="form-control form-control-lg border-0 rounded-0  bg-primary font-size-base"
+                                        placeholder="Emir Wicks"
+                                        id="InputName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" class="font-size-sm mb-1">Email</label>
+                                    <input type="email"
+                                        class="form-control form-control-lg border-0 rounded-0  bg-primary font-size-base"
+                                        placeholder="Emir.Wicks@mail.com"
+                                        id="InputEmail1">
+                                </div>
+                                <hr class="border-primary">
+                                <h5 class="font-weight-bold mb-3">Verification</h5>
+                                <p class="font-weight-bold d-flex">
+                                    <span class="material-icons mr-2 align-bottom text-secondary">
+                                        check_circle
+                                    </span>
+                                    Verified
+                                    <span class="font-weight-normal font-size-sm ml-auto">2020/4/12</span>
+                                </p>
+                                <button type="button"
+                                    class="btn btn-outline-primary2 py-3 font-weight-bold btn-block rounded-0">
+                                    Send Verification Mail
+                                </button>
+
+                                <hr class="border-primary">
+
+                                <h5 class="font-weight-bold mb-3">Access Level</h5>
+                                <div class="form-group">
+                                    <select class="select_arrow form-control form-control-md border-dark rounded-0
+                                        ">
+                                        <option value="" selected disabled hidden>Admin</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+
+                                </div>
+                                <hr class="border-primary">
+                                <h5 class="font-weight-bold mb-3">Custom Access</h5>
+                                <div class=" custom-control custom-checkbox mb-3 pl-5">
+                                    <input type="checkbox" class="custom-control-input" id="lectureChecked">
+                                    <label class="custom-control-label" for="lectureChecked">Lecture</label>
+                                </div>
+                                <div class=" custom-control custom-checkbox mb-3 pl-5">
+                                    <input type="checkbox" class="custom-control-input" id="couponChecked">
+                                    <label class="custom-control-label" for="couponChecked">Coupon</label>
+                                </div>
+                                <div class=" custom-control custom-checkbox mb-3 pl-5">
+                                    <input type="checkbox" class="custom-control-input" id="messageChecked">
+                                    <label class="custom-control-label" for="messageChecked">Message</label>
+                                </div>
+                                <div class=" custom-control custom-checkbox mb-3 pl-5">
+                                    <input type="checkbox" class="custom-control-input" id="settingChecked">
+                                    <label class="custom-control-label" for="settingChecked">Setting</label>
+                                </div>
+                                <div class=" custom-control custom-checkbox mb-3 pl-5">
+                                    <input type="checkbox" class="custom-control-input" id="taskmenuChecked">
+                                    <label class="custom-control-label" for="taskmenuChecked">task menu</label>
+                                </div>
+
+                                <hr class="border-primary">
+                                <h5 class="font-weight-bold mb-3">Deactivate Account</h5>
+                                <p class="text-warning">
+                                    <span class="material-icons  align-text-bottom">
+                                        warning
+                                    </span>
+                                    This cannot be undone!
+                                </p>
+                                <button type="button" class="btn btn-outline-warning py-3 font-weight-bold btn-block">
+                                    Deactivate This Account
+                                </button>
+                            </form>
+                        </div>
+                        <div class="modal-footer ">
+                            <button type="button" class="btn btn-outline-secondary rounded-0  py-2 px-5 mr-3"
+                                data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-secondary rounded-0  py-2 px-5 ml-0">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- <script src="../../node_modules/jquery/dist/jquery.slim.min.js"></script> -->
+    <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    
+    <script>
+    // ##nav===============================================
+    $(document).ready(function(){
+         $('#sideBar nav a').on('click', function (e) {
+        // @@為何沒有反應
+        e.preventDefault()
+        $(this).tab('show')
+        // --------------------
+            // $(this).addClass('active');
+        })
+    })
+   
+    //##Assignment=========================================================
+        // $('.dropdown-toggle').dropdown();
+        
+        $(document).ready(function(){
+            $("#msg a").off().on('click', function(e){
+                e.preventDefault();
+                $(this).tab('show');
+            })
+            $("#msg a:first-child").tab('show');
+            
+            // -------------------------------------
+            $("#btnReply").click(function(){
+                $("#replyBlock").addClass('show')
+            })
+            $("#btnHideReply").click(function(){
+                $("#replyBlock").removeClass('show')
+            })
+        })
+
+    //##Admin ==========================================
+        // @@要再写一个输入资料
+        $(document).ready(function(){
+                // @@siblings到底可不可以这样用 写一下little-js
+            $('.jsArrow').click(function(){
+                // @@??为何回呼函数失败了
+                // $(this).hide(function(){
+                //     $(this).siblings('.jsArrow').show();
+                // });
+                // =========
+                // $(this).hide();
+                // // $(this).siblings('.jsArrow').show();
+                // $(this).siblings('.jsArrow').css('display', 'inline-block');//难道说也包含
+                // ========
+                // $(this).siblings('.jsArrow').css('display', 'inline-block');//难道说也包含
+                // $(this).hide();//是一定要取不同的名称才有办法做到 名称相冲
+                // @有更好的做法吗 下面都失败
+                // if($(this).hasClass('d-block')){
+                //     $(this).removeClass('d-block').siblings('a').addClass('d-block')
+                // }
+                // $(this).toggleClass('d-block').toggleClass('d-none');
+                
+                
+                console.log(this);
+                // ##这个成功! 移除掉d-none
+                // @@突然又變失敗
+                // $(this).addClass('d-none').siblings('a').removeClass('d-none');
+                $(this).addClass('d-none').siblings('.jsArrow').removeClass('d-none');
+
+                    // @@??
+                    // $(this).removeClass('d-none');
+                    // $(this).addClass('d-none');//無
+                    // $(this).addClass('.d-none');//有
+                    // $('.jsArrowDown').addClass('d-none');//無
+                    // $(this).addClass('bbxx');//有
+                    // $(this).hide();//有
+            })
+            // @@为舌么下面开启上面那个就失效了 一值出现bug才一值是
+            $('#viewAdminModal').click(function(){
+                $('#collapseExample').collapse('hide');
+                // $('.jsArrowDown').removeClass('d-none');
+                // $('.jsArrowUp').addClass('d-none');
+            })
+            $('#viewAdminModal .close').click(function(){
+                $('#collapseExample').collapse('hide');
+                // $('.jsArrowDown').removeClass('d-none');
+                // $('.jsArrowUp').addClass('d-none');
+            })
+
+            // -----下省略---------------------------
+            // // @@btn预设inline-block是否只能直接操作block
+            // $('.jsArrowDown').click(function(){
+            //     // $(this).addClass('d-none').removeClass('d-block');
+            //     // $(this).removeClass('d-block').addClass('d-none').;
+            //     $(this).css('display','none');
+            //     // $('jsArrowTop').addClass('d-block');
+            //     $('.jsArrowUp').css('display','inline-block');
+            // })
+            // $('.jsArrowUp').click(function(){
+            //     // $(this).addClass('d-none').removeClass('d-block');
+            //     // $(this).removeClass('d-block').addClass('d-none').;
+            //     // $(this).removeClass('d-block').addClass('d-none').;
+            //     $(this).css('display','none');
+            //     // $('jsArrowDown').addClass('.d-block');
+            //     $('.jsArrowDown').css('display','inline-block');
+            // })
+            // $('.jsArrowUp').css('display','none');
+
+            // $('.close').click(function(){
+            //     $('#collapseExample').collapse('hide');
+            //     // @@如果是点外面的话就没用了 要找parents
+            //     $('.jsArrowDown').css('display','inline-block');
+            //     $('.jsArrowUp').css('display','none');
+            // })
+        
+        })
+    </script>
+</body>
+</html>
