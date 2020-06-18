@@ -1,78 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" 
-        content="width=device-width, initial-scale=1.0,user-scalable=no,shrink-to-fit=no,maximum-scale=1.0,minimum-scale=1.0"
-        />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta name="author" content="" />
-        <!-- 作者 -->
-        <meta name="keywords" content="" />
-        <!-- 關鍵字 -->
-        <meta name="description" content="" />
-        <!-- 網頁說明 -->
-        <meta name="company" content="" />
-        <!-- 公司名稱 -->
-        <meta name="copyright" content="" />
-        <!-- 版權宣告 -->
-        <meta name="Distribution" content="" />
-        <!-- 網站發佈地址 -->
-        <meta property=" og:title" content="" />
-        <!-- 分享的標題  -->
-        <meta property="og:description" content="" />
-        <!-- 分享的內容敘述 -->
-        <meta property="og:url" content="" />
-        <!-- 分享的網頁連結 -->
-        <meta property="og:image" content="" />
-        <!--分享在FB的縮圖 -->
-        <title>Index</title>
-        <!-- Google icon -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        <!-- Open Sans Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-        <!-- Raleway Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@700&display=swap"
-        rel="stylesheet">
-        <link rel="stylesheet" href="./assets/style/all.css" />
-        <!-- <link rel="stylesheet" href="/node_modules/swiper/"> -->
-        <!-- <script
-            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-            crossorigin="anonymous"
-        ></script>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
-        
-    </head>
-    <body>
-        <header class="header d-flex justify-content-between" data-aos="animate__backInRight">
-            <h1 class="logo">
-                Fixie
-            </h1>
-            <ul class='nav d-flex'> 
-                <li class='mr48-1'>
-                    <a href="javascript:;">Product</a>
-                </li>
-                <li class='mr48-1'>
-                    <a href="javascript:;">Blog</a>
-                </li>
-                <li>
-                    <a href="javascript:;">contact</a>
-                </li>
-            </ul>
-        </header>
 
-        <div class="swiper-container">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scalable=no,shrink-to-fit=no,maximum-scale=1.0,minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="" />
+    <!-- 作者 -->
+    <meta name="keywords" content="" />
+    <!-- 關鍵字 -->
+    <meta name="description" content="" />
+    <!-- 網頁說明 -->
+    <meta name="company" content="" />
+    <!-- 公司名稱 -->
+    <meta name="copyright" content="" />
+    <!-- 版權宣告 -->
+    <meta name="Distribution" content="" />
+    <!-- 網站發佈地址 -->
+    <meta property=" og:title" content="" />
+    <!-- 分享的標題  -->
+    <meta property="og:description" content="" />
+    <!-- 分享的內容敘述 -->
+    <meta property="og:url" content="" />
+    <!-- 分享的網頁連結 -->
+    <meta property="og:image" content="" />
+    <!--分享在FB的縮圖 -->
+    <title>Index</title>
+    <!-- Google icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <!-- Open Sans Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Raleway Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style/all.css" />
+    <!-- <link rel="stylesheet" href="/node_modules/swiper/"> -->
+
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+
+</head>
+
+<body>
+    <!-- ##fixed-top -->
+    <nav class="navbar navbar-expand-md navbar-light bg-white py-2 fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand py-0" href="#">
+                <h1 class="navbar_logo">ALOHA</h1>
+            </a>
+             <!-- 手機顯示 Login -->
+            <div class="navbar-nav d-md-none">
+                <!-- 未登入 -->
+                <a class="js-nav__login nav-link text-dark font-weight-bold" 
+                    data-toggle="modal"
+                    data-target="#mobileLogin"> 
+                    <span class="login__userName">Login</span> 
+                </a>
+                <!-- 已登入 -->
+                <button class="js-nav__hasLogin  nav-link btn btn-link login__navImage ml-5 d-none">
+                </button>
+            </div>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <!-- ##ml-auto -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <!-- ##mr-5 -->
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="material-icons text-dark"> language </span>
+                        </a>
+                        <!-- ##md-right -->
+                        <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="language">
+                            <a href="#" class="dropdown-item">繁體中文</a>
+                            <a href="#" class="dropdown-item">日本語</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark font-weight-bold" href="#">Sign up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark font-weight-bold d-none" href="login.html">Login</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </nav>
+    <!-- mobile Login modal -->
+    <div class="modal--fluid modal fade" id="mobileLogin" tabindex="-1" role="dialog" aria-labelledby="mobileLogin"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-0">
+                <div class="modal-header border-0 rounded-0">
+                    <h4 class="logo modal-title mb-0">
+                        ALOHA
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="material-icons text-info"> close </span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3 class="font-weight-bold">Login</h3>
+                    <form action="" class="mb-3">
+                        <div class="form-group ">
+                            <label for="userNameLogin" class="mb-0">Name</label>
+                            <input type="text" id="userNameLogin" class="form-control form-control-lg">
+                        </div>
+                        <div class="form-group ">
+                            <label for="userEmail" class="mb-0">Email</label>
+                            <input type="email" id="userNameLogin" class="form-control form-control-lg">
+                        </div>
+                        <small class="mb-2 d-block">By signing in or creating an account, you agree with our
+                            <a href="">Terms & Conditions</a> and
+                            <a href="">Privacy Statement</a>
+                        </small>
+                        <div class="form-group">
+                            <input type="checkbox" id="userRemember" class="checkbox" checked>
+                            <label for="userRemember" class="checkbox__label"> Remember me</label>
+                        </div>
+                        <a href="member.html" class="btn btn-primary btn-block py-2 mb-1">LOGIN</a>
+                        <p class="text-muted text-center">Don’t have an account yet? <span
+                                class="text-primary font-weight-bold">Sign up</span></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">Slide 1</div>
       <div class="swiper-slide">Slide 2</div>
@@ -90,30 +150,67 @@
     <div class="swiper-button-prev"></div>
   </div>
 
-        <footer class="footer">
-            <ul class="d-flex">
-                <li class="mr48-1">
-                    <a href="javascript">Product</a>
-                </li>
-                <li class="mr48-1">
-                    <a href="javascript">Blog</a>
-                </li>
-                <li class="mr48-1">
-                    <a href="javascript">contact</a>
-                </li>
-            </ul>
-            <p class="copyright text-center">© 2020 Fixie. All Rights Reserved.</p>
-            <p class="logo text-right">Fixie</p>
-        </footer>
-        <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css"> -->
-        <script type="module" src="./assets/js/all.js"></script>
-        <!-- <script>
-            AOS.init({
-                useClassNames: true,
-                initClassName: false,
-                animatedClassName: 'animate__animated'
-                });
-        </script> -->
-    </body>
+    <footer>
+
+
+        <!-- 頁尾導覽列 -->
+        <nav class="js-footer__nav navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container">
+                <ul
+                    class="navbar-nav flex-column-reverse flex-column-md flex-md-row justify-content-center justify-content-md-between align-items-center w-100">
+                    <li>
+                        <p class="nav-item text-muted h5 mb-0 ">© 2020 ALOHA, Inc. All rights reserved.</p>
+                    </li>
+                    <li class="d-flex ml-md-6">
+                        <a class="nav-item text-muted nav-link h5 mb-0 mr-3" href="#">FAQs</a>
+                        <a class="nav-item text-muted nav-link h5 mb-0 mr-3" href="#">Terms of use</a>
+                        <a class="nav-item text-muted nav-link h5 mb-0" href="#">Privacy policy</a>
+                    </li>
+                    <!-- language -->
+                    <li class="btn-group ml-auto d-lg-block d-none">
+                        <button type="button"
+                            class="btn btn-link dropdown-toggle d-flex align-items-center text-decoration-none"
+                            data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+                            <span class="material-icons text-dark"> language </span>
+                            <small class="ml-1 text-dark">English</small>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg-right">
+                            <a href="#" class="dropdown-item">繁體中文</a>
+                            <a href="#" class="dropdown-item">日本語</a>
+                        </div>
+                    </li>
+                    <!-- $ -->
+                    <li class="btn-group d-lg-block d-none">
+                        <button type="button"
+                            class="btn btn-link dropdown-toggle d-flex align-items-center text-decoration-none"
+                            data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+                            <span class="material-icons text-dark"> attach_money </span>
+                            <small class="ml-1 text-dark">TWD</small>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg-right">
+                            <button class="dropdown-item" type="button">US</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </footer>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css"> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"> </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+    <!-- <script src="../../node_modules/swiper/js/swiper.min.js"> </script> -->
+    <script type="module" src="./assets/js/all.js"></script>
+
+</body>
+
 </html>

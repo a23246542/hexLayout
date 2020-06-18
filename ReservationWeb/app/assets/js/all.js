@@ -3,7 +3,7 @@
 // import 'aos';
 // import Swiper from 'swiper';
 // import '/node_modules/swiper/js/swiper.min.js';
-import '../../../../node_modules/swiper/js/swiper'
+// import '../../../../node_modules/swiper/js/swiper'
 
 var swiper = new Swiper('.swiper-container', {
     navigation: {
@@ -11,3 +11,10 @@ var swiper = new Swiper('.swiper-container', {
         prevEl: '.swiper-button-prev',
     },
 });
+
+
+AOS.init({
+    useClassNames: true,
+    initClassName: false,
+    animatedClassName: 'animate__animated'
+    });
