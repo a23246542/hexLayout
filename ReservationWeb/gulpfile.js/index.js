@@ -37,12 +37,17 @@ function layoutHTML() {
 }
 
 function sass() {
+// PostCSS AutoPrefixer
   const plugins = [
     autoprefixer(),
   ];
   return gulp.src(envOptions.style.src) 
     .pipe($.sourcemaps.init())
-    .pipe($.sass().on('error', $.sass.logError))
+    .pipe($.sass({
+        outputStyle: 'nested',
+        // includePaths: ['../node_modules/bootstrap/scss']
+        includePaths: ['../node_modules/']
+    }).on('error', $.sass.logError))
     .pipe($.postcss(plugins))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(envOptions.style.path))
@@ -56,9 +61,9 @@ function sass() {
 function babel() {
   return gulp.src(envOptions.javascript.src)
     .pipe($.sourcemaps.init())
-    .pipe($.babel({
-      presets: ['@babel/env'],
-    }))
+    // .pipe($.babel({
+    //   presets: ['@babel/env'],
+    // }))
     .pipe($.concat(envOptions.javascript.concat))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(envOptions.javascript.path))
