@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0,user-scalable=no,shrink-to-fit=no,maximum-scale=1.0,minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="author" content="" />
+        <!-- 作者 -->
+        <meta name="keywords" content="" />
+        <!-- 關鍵字 -->
+        <meta name="description" content="" />
+        <!-- 網頁說明 -->
+        <meta name="company" content="" />
+        <!-- 公司名稱 -->
+        <meta name="copyright" content="" />
+        <!-- 版權宣告 -->
+        <meta name="Distribution" content="" />
+        <!-- 網站發佈地址 -->
+        <meta property=" og:title" content="" />
+        <!-- 分享的標題  -->
+        <meta property="og:description" content="" />
+        <!-- 分享的內容敘述 -->
+        <meta property="og:url" content="" />
+        <!-- 分享的網頁連結 -->
+        <meta property="og:image" content="" />
+        <!--分享在FB的縮圖 -->
+        <title><%- title %></title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/style/all.css" />
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </head>
+    <body>
+        <header class="header d-flex justify-content-between" data-aos="animate__backInRight">
+            <h1 class="logo">
+                Fixie
+            </h1>
+            <ul class='nav d-flex'> 
+                <li class='mr48-1'>
+                    <a href="javascript:;">Product</a>
+                </li>
+                <li class='mr48-1'>
+                    <a href="javascript:;">Blog</a>
+                </li>
+                <li>
+                    <a href="javascript:;">contact</a>
+                </li>
+            </ul>
+        </header>
+
+        <%- contents %>
+
+        <footer class="footer">
+            <ul class="d-flex">
+                <li class="mr48-1">
+                    <a href="javascript">Product</a>
+                </li>
+                <li class="mr48-1">
+                    <a href="javascript">Blog</a>
+                </li>
+                <li class="mr48-1">
+                    <a href="javascript">contact</a>
+                </li>
+            </ul>
+            <p class="copyright text-center">© 2020 Fixie. All Rights Reserved.</p>
+            <p class="logo text-right">Fixie</p>
+        </footer>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+        <script src="./assets/js/all.js"></script>
+        <script>
+            AOS.init({
+                useClassNames: true,
+                initClassName: false,
+                animatedClassName: 'animate__animated'
+                });
+        </script>
+    </body>
+</html>
