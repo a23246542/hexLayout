@@ -6,6 +6,12 @@
 @import 'swiper/swiper.scss';
 @import "aos/src/sass/aos.scss";
 
+@import "./helpers/base";
+@import "./helpers/init";
+@import "./helpers/util";
+@import "./helpers/plugin";
+
+@import "./pages/layout";
 
 body {
     background: #eee;

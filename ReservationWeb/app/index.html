@@ -4,20 +4,519 @@ layout: ./app/layout.ejs
 engine: ejs
 current: index
 ---
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
-      <div class="swiper-slide">Slide 10</div>
+<!-- TODO: fixedTop: fixed-top不知道為什麼進不去 -->
+<main>
+  <!-- Banner -->
+  <section class="section__banner image--cover d-flex align-items-center">
+    <div class="container ">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide ">
+                <div class="row justify-content-center">
+                  <div class="col-10">
+                    <h2 class="h1 mb-0 text-white text-center d-none d-md-block">Discover your ideal hotel</h2>
+                    <h2 class="mb-0 text-white text-center d-md-none">Discover your ideal hotel</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev text-white"></div>
+            <div class="swiper-button-next text-white"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Add Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
+  </section>
+
+  <!-- SEARCH -->
+  <section class="section__search container mb-5">
+    <div class="row no-gutters justify-content-center">
+      <div class="rounded--deepen col-12 col-md-10 bg-secondary">
+        <ul class="list-unstyled d-flex flex-column flex-lg-row justify-content-lg-between p-3 mb-0">
+          <!-- Destination btn -->
+          <li class="dropdown w-100 mr-2 mb-2 mb-lg-0">
+            <button class="btn btn-link btn-block bg-white text-black-50 border-0 pl-2 py-2 d-flex text-decoration-none"
+              type="button" id="dropdownDestinationButton" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+              <span class="material-icons text-info mr-2"> place </span> Destination
+            </button>
+            <div class="dropdown-menu w-100 mt-1" aria-labelledby="dropdownDestinationButton">
+              <a class="dropdown-item d-flex justify-content-start pl-2" href="#">
+                <span class="material-icons mr-1"> star </span>
+                <p class="mb-0">Bangkok
+                  <small class="text-black-50 d-block">Thailand</small>
+                </p>
+              </a>
+              <a class="dropdown-item d-flex justify-content-start pl-2" href="#">
+                <span class="material-icons mr-1"> star </span>
+                <p class="mb-0">Kyoto
+                  <small class="text-black-50 d-block"> JAPAN</small>
+                </p>
+              </a>
+              <a class="dropdown-item d-flex justify-content-start pl-2" href="#">
+                <span class="material-icons mr-1"> star </span>
+                <p class="mb-0">Roma
+                  <small class="text-black-50 d-block">Italy</small>
+                </p>
+              </a>
+              <a class="dropdown-item d-flex justify-content-start pl-2" href="#">
+                <span class="material-icons mr-1"> star </span>
+                <p class="mb-0">Paris
+                  <small class="text-black-50 d-block">London</small>
+                </p>
+              </a>
+              <a class="dropdown-item d-flex justify-content-start pl-2" href="#">
+                <span class="material-icons mr-1"> star </span>
+                <p class="mb-0">Reykjavík
+                  <small class="text-black-50 d-block">iceland</small>
+                </p>
+              </a>
+            </div>
+          </li>
+          
+          <!-- 日曆 -->
+          <li class="dropdown w-100 mr-2 mb-2 mb-lg-0">
+            <button class="btn btn-link btn-block bg-white d-flex text-black-50 text-nowrap border-0 pl-2 py-2 text-decoration-none" type="button" id="dropdownCalendarButton" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false" data-offset="0,10">
+              <span class="material-icons text-info mr-2"> date_range </span>CHECK-IN / OUT
+            </button>
+            <div class="js-calendar__mobileDropdown dropdown-menu mt-1" aria-labelledby="dropdownCalendarButton">
+              <div class="calendar d-flex flex-column flex-lg-row">
+                <!-- 2020 六月 -->
+                <div class="calendar__month lineSeparator px-1">
+                  <button class="calendar__monthPrev btn btn-outline-info d-flex border-0">
+                    <span class="material-icons"> chevron_left </span>
+                  </button>
+                  <p class="text-center text-info font-weight-bold w-100 mb-0 py-1">JUNE 2020</p>
+                  <table class="js-calendar__mobileTable table table-borderless mb-0">
+                    <thead >
+                      <tr>
+                        <th scope="row"> S </th>
+                        <th scope="row"> M </th>
+                        <th scope="row"> T </th>
+                        <th scope="row"> W </th>
+                        <th scope="row"> T </th>
+                        <th scope="row"> F </th>
+                        <th scope="row"> S </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td> </td>
+                        <td class="calendar__day"> 1 </td>
+                        <td class="calendar__day"> 2 </td>
+                        <td class="calendar__day"> 3 </td>
+                        <td class="calendar__day"> 4 </td>
+                        <td class="calendar__day"> 5 </td>
+                        <td class="calendar__day"> 6 </td>
+                      </tr>
+                      <tr>
+                        <td class="calendar__day"> 7 </td>
+                        <td class="calendar__day"> 8 </td>
+                        <td class="calendar__day text-primary"> 9 </td>
+                        <td class="calendar__day"> 10 </td>
+                        <td class="calendar__day"> 11 </td>
+                        <td class="calendar__day"> 12 </td>
+                        <td class="calendar__day"> 13 </td>
+                      </tr>
+                      <tr>
+                        <td class="calendar__day">14</td>
+                        <td class="calendar__day">15</td>
+                        <td class="calendar__day">16</td>
+                        <td class="calendar__day calendar__selectDate">17</td>
+                        <td class="calendar__day calendar__selectDate">18</td>
+                        <td class="calendar__day calendar__selectDate">19</td>
+                        <td class="calendar__day calendar__selectDate">20</td>
+                      </tr>
+                      <tr>
+                        <td class="calendar__day">21</td>
+                        <td class="calendar__day">22</td>
+                        <td class="calendar__day">23</td>
+                        <td class="calendar__day">24</td>
+                        <td class="calendar__day">25</td>
+                        <td class="calendar__day">26</td>
+                        <td class="calendar__day">27</td>
+                      </tr>
+                      <tr>
+                        <td class="calendar__day">28</td>
+                        <td class="calendar__day">29</td>
+                        <td class="calendar__day">30</td>
+                        <td class=""></td>
+                        <td class=""></td>
+                        <td class=""></td>
+                        <td class=""></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- 2020 七月 -->
+                <div class="calendar__month px-1">
+                  <button class="calendar__monthNext btn btn-outline-info d-flex border-0">
+                    <span class=" material-icons"> chevron_right </span>
+                  </button>
+                  <p class="text-center text-info font-weight-bold w-100 mb-0 py-1">JULY 2020</p>
+                  <table class="js-calendar__mobileTable table table-borderless mb-0">
+                    <thead >
+                      <tr>
+                        <th scope="row"> S </th>
+                        <th scope="row"> M </th>
+                        <th scope="row"> T </th>
+                        <th scope="row"> W </th>
+                        <th scope="row"> T </th>
+                        <th scope="row"> F </th>
+                        <th scope="row"> S </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td class="calendar__day"> 1 </td>
+                        <td class="calendar__day"> 2 </td>
+                        <td class="calendar__day"> 3 </td>
+                        <td class="calendar__day"> 4 </td>
+                      </tr>
+                      <tr>
+                        <td class="calendar__day">5</td>
+                        <td class="calendar__day">6</td>
+                        <td class="calendar__day">7</td>
+                        <td class="calendar__day">8</td>
+                        <td class="calendar__day">9</td>
+                        <td class="calendar__day">10</td>
+                        <td class="calendar__day">11</td>
+                      </tr>
+                      <tr>
+                        <td class="calendar__day">12</td>
+                        <td class="calendar__day">13</td>
+                        <td class="calendar__day">14</td>
+                        <td class="calendar__day">15</td>
+                        <td class="calendar__day">16</td>
+                        <td class="calendar__day">17</td>
+                        <td class="calendar__day">18</td>
+                      </tr>
+                      <tr>
+                        <td class="calendar__day">19</td>
+                        <td class="calendar__day">20</td>
+                        <td class="calendar__day">21</td>
+                        <td class="calendar__day">22</td>
+                        <td class="calendar__day">23</td>
+                        <td class="calendar__day">24</td>
+                        <td class="calendar__day">25</td>
+                      </tr>
+                      <tr>
+                        <td class="calendar__day">26</td>
+                        <td class="calendar__day">27</td>
+                        <td class="calendar__day">28</td>
+                        <td class="calendar__day">29</td>
+                        <td class="calendar__day">30</td>
+                        <td class="calendar__day">31</td>
+                        <td class=""></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Guests btn -->
+          <li class="dropdown w-100 mr-2 mb-2 mb-lg-0">
+            <button class="btn btn-link btn-block bg-white text-black-50 border-0 pl-2 py-2 d-flex text-decoration-none"
+              type="button" id="dropdownGuestsButton" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+              <span class="material-icons text-info mr-2"> person </span> Guests
+            </button>
+            <ul class="dropdown-menu list-unstyled w-100 mb-0 mt-1" aria-labelledby="dropdownGuestsButton">
+              <li class="dropdown-item d-flex justify-content-between align-items-center px-2">
+                <p class="mb-0">Adult</p>
+                <div class="btn-group btn-group-sm align-items-center" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-outline-info border-0 d-flex">
+                    <span class="material-icons"> remove </span>
+                  </button>
+                  <button type="button" class="btn btn-link text-decoration-none" disabled> 2 </button>
+                  <button type="button" class="btn btn-outline-info border-0 pr-0 d-flex">
+                    <span class="material-icons"> add </span>
+                  </button>
+                </div>
+              </li>
+              <li class="dropdown-item d-flex justify-content-between align-items-center px-2">
+                <p class="mb-0">Child</p>
+                <div class="btn-group btn-group-sm align-items-center" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-outline-info border-0 d-flex">
+                    <span class="material-icons"> remove </span>
+                  </button>
+                  <button type="button" class="btn btn-link text-decoration-none" disabled> 0 </button>
+                  <button type="button" class="btn btn-outline-info border-0 pr-0 d-flex">
+                    <span class="material-icons"> add </span>
+                  </button>
+                </div>
+              </li>
+              <li class="dropdown-item d-flex justify-content-between align-items-center px-2">
+                <p class="mb-0">Room</p>
+                <div class="btn-group btn-group-sm align-items-center" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-outline-info border-0 d-flex">
+                    <span class="material-icons"> remove </span>
+                  </button>
+                  <button type="button" class="btn btn-link text-decoration-none" disabled> 1 </button>
+                  <button type="button" class="btn btn-outline-info border-0 pr-0 d-flex">
+                    <span class="material-icons"> add </span>
+                  </button>
+                </div>
+              </li>
+
+            </ul>
+          </li>
+          <!-- Search btn -->
+          <li>
+            <a href="result.html"
+              class="btn btn-primary px-4 py-2 border-0 font-weight-bold d-flex justify-content-center"> SEARCH </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Top Choices -->
+  <section class="section__topChoices container mb-5 mb-lg-7">
+    <h2 class="mb-3 d-md-block d-none">Top Choices</h2>
+    <h3 class="mb-3 d-md-none">Top Choices</h3>
+    <div class="row">
+      <!-- 地點選擇清單 -->
+      <div class="col-5 mb-3">
+        <div class="list-group flex-row" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action text-center border-0 rounded-0 h4 font-weight-bold active"
+            id="list-home-list" data-toggle="list" href="#list-Bali" role="tab" aria-controls="Bali">
+            Bali<sup>128</sup>
+          </a>
+          <a class="list-group-item list-group-item-action text-center border-0 rounded-0 h4 font-weight-bold"
+            id="list-profile-list" data-toggle="list" href="#list-Okinawa" role="tab" aria-controls="Okinawa">
+            Okinawa<sup>67</sup>
+          </a>
+          <a class="list-group-item list-group-item-action text-center border-0 rounded-0 h4 font-weight-bold"
+            id="list-messages-list" data-toggle="list" href="#list-Taipei" role="tab" aria-controls="Taipei">
+            Taipei<sup>53</sup>
+          </a>
+        </div>
+      </div>
+
+    </div>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="card border-0">
+            <img src="assets/images/top1.jpg" alt="" class="inner__img object--cover rounded--deepen">
+            <div class="card-body pl-0 pt-1">
+              <p class="mb-1 text-info font-weight-bold">Hotel Aqua</p>
+              <p class="mb-1 text-muted d-flex align-items-center">
+                <span class="material-icons text-info"> star </span>
+                <span class="material-icons text-info"> star </span>
+                <span class="material-icons text-info"> star </span>
+                <span class="material-icons text-info"> star </span>
+                <span class="material-icons text-info mr-1"> star </span>
+                5.0
+                <small class="">・2k reviews</small>
+              </p>
+              <p class="mb-1">TWD 2,480<small class="text-muted ml-1"><del>TWD 3,980</del></small></p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card border-0">
+            <img src="assets/images/top2.jpg" alt="" class="inner__img object--cover rounded--deepen">
+            <div class="card-body pl-0 pt-1">
+              <p class="mb-1 text-info font-weight-bold">Mr. Kawasaki Inn</p>
+              <p class="mb-1 text-muted d-flex align-items-center">
+                <span class="material-icons text-info"> star </span>
+                <span class="material-icons text-info"> star </span>
+                <span class="material-icons text-info"> star </span>
+                <span class="material-icons text-info mr-1"> star </span>
+                4.0
+                <small class="text-muted">・500 reviews</small>
+              </p>
+              <p class="mb-1">TWD 3,380</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card border-0">
+            <img src="assets/images/top3.jpg" alt="" class="inner__img object--cover rounded--deepen">
+            <div class="card-body pl-0 pt-1">
+              <p class="mb-1 text-info font-weight-bold">Weekly Paradise</p>
+              <p class="mb-1 text-muted d-flex align-items-center">
+                <span class="material-icons text-info"> star </span>
+                <span class="material-icons text-info"> star </span>
+                <span class="material-icons text-info"> star </span>
+                <span class="material-icons text-info mr-1"> star </span>
+                4.0
+                <small class="text-muted">・470 reviews</small>
+              </p>
+              <p class="mb-1">TWD 4,780</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card border-0">
+            <img src="assets/images/top4.jpg" alt="" class="inner__img object--cover  rounded--deepen">
+            <div class="card-body pl-0 pt-1">
+              <p class="mb-1 text-info font-weight-bold">Beast Hotel</p>
+              <p class="mb-1  text-muted d-flex align-items-center">
+                <span class="material-icons text-info"> star </span>
+                <span class="material-icons text-info"> star </span>
+                <span class="material-icons text-info"> star </span>
+                <span class="material-icons text-info mr-1"> star </span>
+                4.0
+                <small class="text-muted">・283 reviews</small>
+              </p>
+              <p class="mb-1">TWD 1,980</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add Arrows -->
+      <!-- TODO:位置再往外，swiper-container會覆蓋 -->
+      <button class="custom__swiper-button-prev swiper-button-prev btn btn-secondary btn-sm rounded-circle d-none"> </button>
+      <button class="custom__swiper-button-next swiper-button-next btn btn-secondary btn-sm rounded-circle"> </button>
+    </div>
+  </section>
+
+  <!-- Popular Destinations -->
+  <section class="section__destinations container mb-5 mb-lg-7">
+    <h2 class="mb-3 d-md-block d-none">Popular Destinations</h2>
+    <h3 class="mb-3 d-md-none">Popular Destinations</h3>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4 mb-1 mb-md-3">
+        <button type="button"
+          class="inner__img inner__img__Osaka image--cover rounded--deepen btn btn-block d-flex justify-content-between align-items-center px-3 py-2 border-0">
+          <div class="inner__text d-flex flex-column text-left">
+            <small class="text-white-50 font-weight-bold">JAPAN</small>
+            <h3 class="mb-0 text-white">Osaka</h3>
+          </div>
+          <span class="material-icons text-white"> keyboard_arrow_down </span>
+        </button>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-1 mb-md-3">
+        <button type="button"
+          class="inner__img inner__img__Kyoto image--cover rounded--deepen btn btn-block d-flex justify-content-between align-items-center px-3 py-2 border-0">
+          <div class="inner__text d-flex flex-column text-left">
+            <small class="text-white-50 font-weight-bold">JAPAN</small>
+            <h3 class="mb-0 text-white">Kyoto</h3>
+          </div>
+          <span class="material-icons text-white"> keyboard_arrow_down </span>
+        </button>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-1 mb-md-3">
+        <button type="button"
+          class="inner__img inner__img__Reykjavic image--cover rounded--deepen btn btn-block d-flex justify-content-between align-items-center px-3 py-2 border-0">
+          <div class="inner__text d-flex flex-column text-left">
+            <small class="text-white-50 font-weight-bold">ICELAND</small>
+            <h3 class="mb-0 text-white">Reykjavík</h3>
+          </div>
+          <span class="material-icons text-white"> keyboard_arrow_down </span>
+        </button>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-1 mb-md-3">
+        <button type="button"
+          class="inner__img inner__img__Paris image--cover rounded--deepen btn btn-block d-flex justify-content-between align-items-center px-3 py-2 border-0">
+          <div class="inner__text d-flex flex-column text-left">
+            <small class="text-white-50 font-weight-bold">LONDON</small>
+            <h3 class="mb-0 text-white">Paric</h3>
+          </div>
+          <span class="material-icons text-white"> keyboard_arrow_down </span>
+        </button>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-1 mb-md-3">
+        <button type="button"
+          class="inner__img inner__img__Roma image--cover rounded--deepen btn btn-block d-flex justify-content-between align-items-center px-3 py-2 border-0">
+          <div class="inner__text d-flex flex-column text-left">
+            <small class="text-white-50 font-weight-bold">ITALY</small>
+            <h3 class="mb-0 text-white">Roma</h3>
+          </div>
+          <span class="material-icons text-white"> keyboard_arrow_down </span>
+        </button>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <button type="button"
+          class="inner__img inner__img__Bangkok image--cover rounded--deepen btn btn-block d-flex justify-content-between align-items-center px-3 py-2 border-0">
+          <div class="inner__text d-flex flex-column text-left">
+            <small class="text-white-50 font-weight-bold">THAILAND</small>
+            <h3 class="mb-0 text-white">Bangkok</h3>
+          </div>
+          <span class="material-icons text-white"> keyboard_arrow_down </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Inspiration -->
+  <section class="section__inspiration container mb-5 mb-lg-7">
+    <div class="d-md-block d-none">
+      <h2 class="d-flex justify-content-between align-items-center mb-3"> Get Inspiration
+        <button class="btn btn-outline-primary px-2">SEE MORE</button>
+      </h2>
+    </div>
+    <div class="d-md-none">
+      <h3 class="d-flex justify-content-between align-items-center mb-3"> Get Inspiration
+        <button class="btn btn-outline-primary px-2">SEE MORE</button>
+      </h3>
+    </div>
+    <!-- swiper 輪播 -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="card border-0">
+            <img src="assets/images/italy.jpg" alt="" class="inner__img object--cover rounded--deepen mb-3">
+            <div class="card-body px-0">
+              <h3 class="mb-1">The fifth most visited country</h3>
+              <p>Italy is the fifth most visited country in the world, with a total of 52.3 million…</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card border-0">
+            <img src="assets/images/Thailand.jpg" alt="" class="inner__img object--cover rounded--deepen mb-3">
+            <div class="card-body px-0">
+              <h3 class="mb-1">Visit Thailand for Bangkok</h3>
+              <p>Asian tourists primarily visit Thailand for Bangkok and the historical, natural, and…</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card border-0">
+            <img src="assets/images/NewZealand.jpg" alt="" class="inner__img object--cover rounded--deepen mb-3">
+            <div class="card-body px-0">
+              <h3 class="mb-1">Lord of the Rings Tour</h3>
+              <p>The national cuisine has been described as Pacific Rim, incorporating the native Māori…</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Add Arrows -->
+      <button class="custom__swiper-button-next swiper-button-next btn btn-secondary btn-sm rounded-circle"> </button>
+    </div>
+
+  </section>
+
+  <!-- 訂閱區塊 -->
+  <section class="section__subscribe d-flex align-items-center py-3 bg-secondary">
+    <div class="container">
+      <form class="row flex-column align-items-center">
+        <div class="col-lg-12 col-xl-8 mb-3 ">
+          <h3 class="h1 text-center font-weight-bold d-md-block d-none mb-0 ">Subscribe for Exclusive Offer</h3>
+          <h3 class="text-center font-weight-bold d-md-none mb-0 ">Subscribe for Exclusive Offer</h3>
+        </div>
+        <div class="col-12 col-md-10 col-lg-6 ">
+          <div class="input-group">
+            <input type="text" id="subscribe" placeholder="Your email address" class="form-control py-2 h-100 border-0"
+              required>
+            <div class="input-group-append">
+              <input class="btn btn-primary border-0 px-4" type="submit" value="SUBSCRIBE">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>

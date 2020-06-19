@@ -9582,6 +9582,15 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos], [data-aos][data-aos][data-
     -webkit-transform: perspective(2500px) rotateX(0);
             transform: perspective(2500px) rotateX(0); }
 
+.navbar_logo {
+  width: 96px;
+  height: 24px;
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-image: url("../images/logo-aloha.svg");
+  background-repeat: no-repeat; }
+
 body {
   background: #eee;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;

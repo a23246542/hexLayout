@@ -4,6 +4,7 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
+$brand-primary:#6C51E2;
 
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
@@ -79,7 +80,7 @@ $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: map-merge(
   (
-    "primary":    $primary,
+    "primary":    $brand-primary//$primary,
     "secondary":  $secondary,
     "success":    $success,
     "info":       $info,
@@ -146,7 +147,9 @@ $spacers: map-merge(
     2: ($spacer * .5),
     3: $spacer,
     4: ($spacer * 1.5),
-    5: ($spacer * 3)
+    5: ($spacer * 2)//原本3
+    6: ($spacer * 3)
+    7: ($spacer * 4)
   ),
   $spacers
 );
