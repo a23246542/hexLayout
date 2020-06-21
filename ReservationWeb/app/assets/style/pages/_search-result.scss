@@ -1,0 +1,33 @@
+.section {
+    &__resultList {
+        &__sort{
+            .nav-link{
+                font-size: 18px;
+            }
+        }
+        .inner {
+            &__item {
+                // 手機
+                margin: 0px -15px;//##no-gutter
+                border-bottom: 4px solid map-get($theme-colors, secondary);
+                //平板.pc
+                @include media-breakpoint-up(sm) {
+                    margin: 0px;
+                    border-bottom: 1px solid map-get($theme-colors, secondary);
+                }
+            }
+
+            &__link {
+                &:hover {
+                    border-radius: 8px;
+                    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.075);
+                    transition: all 0.35s;
+
+                    .inner__title {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

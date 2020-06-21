@@ -1,0 +1,116 @@
+/*page的custom-tools*/
+
+// result-search頁的分隔線
+.lineSeparator {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 1px;
+      height: 80%;
+    //##上下10% 高度80%
+      top: 10%;
+      bottom: 10%;
+      right: -1px;//##right必要
+      background-color: map-get($theme-colors, secondary);
+    }
+}
+
+/*swiper 按鈕*/
+// todo 獨立出custom-swiper
+.custom {
+
+    &__swiper-button-next {
+        // position: relative;//%%不能亂加 absolute不見
+        width: 40px;
+        height: 40px;
+        // right: 0;
+        top: 30%;
+        transform: translateX(25%);//## translate百分比 &超出會被蓋掉
+        // z-index: 100;//無效
+        background-color: $brand-secondary;
+        &::after {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+
+    // &__swiper-button-prev {
+    //     width: 40px;
+    //     height: 40px;
+    //     top: 30%;
+    //     transform: translateX(-25%);
+
+    //     &::after {
+    //         font-size: 16px;
+    //         font-weight: bold;
+    //     }
+    // }
+    
+    // ##todo range更好的方式
+    &__rangeGroup {
+        position: relative;
+        input[type=range] {
+            position: absolute;
+            appearance: none;
+            /* 重置預設背景拉條 */
+            // overflow: hidden;
+            height: 8px;
+            outline: none;
+            background: none;
+            pointer-events: none;
+
+            // 滑動的橫條軌道
+            &::-webkit-slider-runnable-track {
+                background-color: map-get($theme-colors, primary);
+                border-radius: 8px;
+                height: 2px;
+            }
+
+            // 滑動的圈圈按鈕
+            &::-webkit-slider-thumb {
+                appearance: none;
+                position: relative;
+                top: -8px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: map-get($theme-colors, primary);
+                pointer-events: auto;
+
+                @include media-breakpoint-up(md) {
+                    top: -7px;
+                    width: 16px;
+                    height: 16px;
+                }
+                // ::-webkit-slider-thumb:before
+            }
+
+        }
+    }
+}
+
+
+// 會跑版
+// .swiper-container {
+//   overflow: visible;
+// }
+// $slide: ".swiper-slide";
+// .swiper-slide {
+//   opacity: 0;
+//   visibility: hidden;
+//   transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+//   &-active {
+//     opacity: 1;
+//     visibility: visible;
+
+//     @for $i from 1 through 3 {
+//       & + #{$slide} {
+//         opacity: 1;
+//         visibility: visible;
+//       }
+//       $slide: "#{$slide} + .swiper-slide";
+//     }
+//   }
+// }

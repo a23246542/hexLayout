@@ -1,46 +1,33 @@
+// @@sass使用相對路徑 其他html用絕對路勁 gitpage?
+/*project*/
+@import "./helpers/custom-variables";
+
+
+	/* BootStrap 4 */
+// All
 @import 'bootstrap/scss/functions';
 // @import 'mixins';
 @import "./helpers/variables";
 @import "bootstrap/scss/bootstrap";
 // @import '~swiper/swiper.scss';//失敗
-@import 'swiper/swiper.scss';
+
+/*plugin*/
+
+// @import 'swiper/swiper.scss';//%%沒有什麼樣式
+// C:\Users\a2324\Documents\hexLayout\node_modules\swiper\css\swiper.min.css
+// @import url("swiper/css/swiper.min.css");
 @import "aos/src/sass/aos.scss";
 
+/*初始化.工具類*/
 @import "./helpers/base";
 @import "./helpers/init";
 @import "./helpers/util";
-@import "./helpers/plugin";
 
+
+/*pages分頁*/
+@import "./helpers//custom";
 @import "./pages/layout";
+@import "./pages/index";
+@import "./pages/search-result";
 
-body {
-    background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color:#000;
-    margin: 0;
-    padding: 0;
-  }
-  .swiper-container {
-    width: 100%;
-    height: 500px;
-  }
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: red;
 
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }

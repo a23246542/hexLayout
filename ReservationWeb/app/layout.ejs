@@ -26,6 +26,7 @@
     <!-- 分享的網頁連結 -->
     <meta property="og:image" content="" />
     <!--分享在FB的縮圖 -->
+
     <title><%- title %></title>
     <!-- Google icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -34,10 +35,18 @@
     <!-- Raleway Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./assets/style/all.css" />
-    <!-- <link rel="stylesheet" href="/node_modules/swiper/"> -->
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+    <!-- swiper -->
+    <!-- @@錯誤 需用絕對路禁 但node_module在外層 -->
+    <!-- <link rel="stylesheet" href="../node_modules/swiper/css/swiper.min.css"> -->
+    <!-- <link rel="stylesheet" href="node_modules/swiper/css/swiper.min.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <!-- ##放最後 -->
+    <link rel="stylesheet" type="text/css" href="./assets/style/all.css" />
 
-    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
 
 </head>
 
@@ -49,8 +58,8 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand py-0" href="#">
-                <h1 class="navbar_logo mb-0">ALOHA</h1>
+            <a class="navbar-brand py-0" href="index.html">
+                <h1 class="logo mb-0">ALOHA</h1>
             </a>
             <!-- 手機顯示 Login -->
             <div class="navbar-nav d-md-none">
@@ -179,8 +188,8 @@
             </div>
         </nav>
     </footer>
-    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css"> -->
+    <!-- 套件 -->
+    <!-- <script src="./assets/js/vendors.js"></script> -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"> </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

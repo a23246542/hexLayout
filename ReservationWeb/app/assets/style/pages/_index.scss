@@ -1,0 +1,173 @@
+.section__banner {
+    margin-top: 58px;
+    // height: 320px;
+    height: auto;
+}
+
+.slide1 {
+    // background-image: url("../../images/index-banner.jpg");
+    // background-image: url("../images/index-banner.jpg"); //%%dist為主
+    // %%要文字不是圖
+}
+
+.swiper-container {
+    width: 100%;
+    // height: 500px;
+    height: 320px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+
+    // /* Center slide text vertically */
+    // display: -webkit-box;
+    // display: -ms-flexbox;
+    // display: -webkit-flex;
+    // display: flex;
+    // -webkit-box-pack: center;
+    // -ms-flex-pack: center;
+    // -webkit-justify-content: center;
+    // justify-content: center;
+    // -webkit-box-align: center;
+    // -ms-flex-align: center;
+    // -webkit-align-items: center;
+    // align-items: center;
+}
+
+/* 區塊命名 */
+.section {
+    &__banner {
+        margin-top: 58px;
+        height: 320px;
+        background-image: url("../images/index-banner.jpg");
+    }
+
+    &__search {
+        // transform: translateY 會影響 BS元件圖層 ?!
+        // transform: translateY(-25%);
+        // @include media-breakpoint-up(lg) {
+        //   transform: translateY(-50%);
+        // }
+        margin-top: -52px;
+        // ###
+        position: relative;
+        z-index: 100;
+    }
+
+    &__topChoices {
+        .inner {
+            &__img {
+                width: 255px;
+                height: 164px;
+                // ##include media-breakpoint-up()
+                @include media-breakpoint-up(md) {
+                    height: 185px;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    height: 175px;
+                }
+            }
+        }
+        // ##slide一次給
+        // @@會不會太長
+        //&__card--textRight{
+        .card{
+            text-align: left;
+        }
+    }
+
+    &__destinations {
+        .inner {
+            &__img {
+                position: relative;
+                // todo改inner__img--shadow
+                &::after {
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    // border-radius: 8px;
+                    // ##右邊色號在上方 & 透明色號
+                    background: linear-gradient(-90deg, #0000 0%, #000 100%);
+                }
+
+                // TODO:圖片或許可以獨立出來使用
+                &--Osaka {
+                    background-image: url("../images/Osaka.jpg");
+                }
+
+                &--Kyoto {
+                    background-image: url("../images/Kyoto.jpg");
+                }
+
+                &--Reykjavic {
+                    background-image: url("../images/Reykjavic.jpg");
+                }
+
+                &--Paris {
+                    background-image: url("../images/Paris.jpg");
+                }
+
+                &--Roma {
+                    background-image: url("../images/Roman.jpg");
+                }
+
+                &__Bangkok {
+                    background-image: url("../images/Bangkok.jpg");
+                }
+            }
+
+            &__text {
+                z-index: 9;
+            }
+        }
+
+        .btn {
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+
+    &__inspiration {
+        // @@todo 不知道哪來的core.scss
+        .swiper-container{
+            height: auto;
+        }
+
+        .card{
+            text-align: left;
+        }
+        // .inner__img
+        .inner {
+            &__img {
+                object-fit: cover;
+                width: 240px;
+                height: 181px;
+
+                // ##手機圖大 平版小 pc又大
+                // ##min-width
+                @include media-breakpoint-up(md) {
+                    width: 210px;
+                    height: 158px;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    width: 350px;
+                    height: 263px;
+                }
+            }
+        }
+    }
+
+    &__subscribe {
+        @include media-breakpoint-up(md) {
+            height: 320px;
+        }
+    }
+}
