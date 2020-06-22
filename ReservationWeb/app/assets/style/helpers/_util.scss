@@ -1,131 +1,58 @@
+/*單一工具類別*/
+
 // .overflow-x--atuo{
 //   overflow-x: auto;
 // }
 
-.overflow--Xscroll{
-  @media screen and (max-width:1199px){
-    overflow-x: scroll;
-    appearance: none;//@@無效 todo隱藏
-  }
+.overflow--Xscroll {
+    @media screen and (max-width:1199px) {
+        overflow-x: scroll;
+        appearance: none; //@@無效 todo隱藏
+    }
 }
 // flex-wrap: nowrap;
 // overflow: scroll;
 // white-space: nowrap;
 
-@mixin hidden-text($width, $height, $bg_url) {
-    width: $width;
-    height: $height;
-    text-indent: 101%;
-    overflow: hidden;
-    white-space: nowrap;
-    background-image: $bg_url;
-    background-repeat: no-repeat;
-  }
 
-  // ##也可改bg--cover
+// ##也可改bg--cover
 .image--cover {
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat
-  }
+}
 
 .object--cover {
-  object-fit: cover;
+    object-fit: cover;
 }
 
 // 圓角
 .rounded--deepen {
-  border-radius: 8px;
+    border-radius: 8px;
 }
+
 .rounded-top--deepen {
-  border-radius: 8px 8px 0 0;
+    border-radius: 8px 8px 0 0;
 }
 
 // 分隔線
 .lineSeparator {
-  position: relative;
-  &::before {
-    position: absolute;
-    content: "";
-    top: 10%;
-    bottom: 10%;
-    right: -1px;
-    width: 1px;
-    height: 80%;
-    // TODO map-get
-    background-color: map-get($theme-colors, secondary);
-  }
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 80%;
+        top: 10%; //##上下10% 高度80%
+        bottom: 10%;
+        right: -1px; //##right必要
+        background-color: map-get($theme-colors, secondary); //##map-get
+    }
 }
 
 // 欄位設定
 .card-columns {
-  @include media-breakpoint-up(lg) {
-    column-count: 2;
-  }
+    @include media-breakpoint-up(lg) {
+        column-count: 2;
+    }
 }
-
-
-// 手刻版本
-.checkbox {
-  display: none;//##加在input
-  &__label {
-    cursor: pointer;
-    @include media-breakpoint-only(md){
-      font-size: 14px;
-    }
-    &::before {
-      content: "\2714";
-      border: 2px solid map-get($theme-colors , dark );
-      border-radius: 10%;
-      display: inline-block;
-    
-      width: 24px;
-      height: 10px;
-      flex-shrink:0;//##
-      transform: translateY(0px);
-      padding: 0px 0 20px 4px;
-      margin-right: 4px;
-      color:transparent;//##先隱藏
-    }
-  }
-  
-  &:checked {
-    + .checkbox__label::before {
-      border: 2px solid  map-get($theme-colors , primary );
-      background-color:  map-get($theme-colors , primary );
-      color: white;
-    }
-  }
-}
-
-
-// todo BS4版本(跨瀏覽器)
-// .custom-checkbox{
-//   .custom-control-input:checked ~ .custom-control-label{
-
-//     &::before{
-//       width: 24px;
-//       height: 10px;
-//       border-radius: 10%;
-//       display: inline-block;
-//       transform: translateY(0px);
-//       padding: 0px 0 20px 4px;
-//       margin-right: 4px;
-
-//     }
-//     &::after{
-//       content: "\2714";
-//       border: 2px solid map-get($theme-colors , dark );
-//       border-radius: 10%;
-//       display: inline-block;
-    
-//       width: 24px;
-//       height: 10px;
-//       transform: translateY(0px);
-//       padding: 0px 0 20px 4px;
-//       margin-right: 4px;
-//       color:transparent;//##先隱藏
-//     }
-    
-//   }
-// }

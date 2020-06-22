@@ -100,21 +100,21 @@ $(document).ready(function () {
     });
 
 
-    $(window).resize(function () {
-        if ($(window).width() < 576) {
-            $('.js-myBooking__item').addClass(' bg-secondary rounded--deepen');
-        } else {
-            $('.js-myBooking__item').removeClass('bg-secondary rounded--deepen');
-        }
+    // $(window).resize(function () {
+    //     if ($(window).width() < 576) {
+    //         $('.js-myBooking__item').addClass(' bg-secondary rounded--deepen');
+    //     } else {
+    //         $('.js-myBooking__item').removeClass('bg-secondary rounded--deepen');
+    //     }
 
-        if ($(window).width() < 992) {
-            $('.js-calendar__mobileDropdown').addClass('w-100');
-            $('.js-calendar__mobileTable').addClass('table-sm');
-        } else {
-            $('.js-calendar__mobileDropdown').removeClass('w-100');
-            $('.js-calendar__mobileTable').removeClass('table-sm');
-        }
-    });
+    //     if ($(window).width() < 992) {
+    //         $('.js-calendar__mobileDropdown').addClass('w-100');
+    //         $('.js-calendar__mobileTable').addClass('table-sm');
+    //     } else {
+    //         $('.js-calendar__mobileDropdown').removeClass('w-100');
+    //         $('.js-calendar__mobileTable').removeClass('table-sm');
+    //     }
+    // });
 
     switch ($('title').text()) {
 

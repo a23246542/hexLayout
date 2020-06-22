@@ -1,6 +1,6 @@
 @charset "UTF-8";
-/*project*/
 /* BootStrap 4 */
+/* project variables*/
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -8995,7 +8995,7 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
-/*plugin*/
+/*plugin or vendors*/
 body[data-aos-duration='50'] [data-aos], [data-aos][data-aos][data-aos-duration='50'] {
   -webkit-transition-duration: 50ms;
        -o-transition-duration: 50ms;
@@ -10115,7 +10115,8 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos], [data-aos][data-aos][data-
     -webkit-transform: perspective(2500px) rotateX(0);
             transform: perspective(2500px) rotateX(0); }
 
-/*初始化.工具類*/
+/*初始化.全站設定.工具類*/
+/*90% 全站設定*/
 html {
   font-size: 16px; }
 
@@ -10130,10 +10131,27 @@ body {
 .main {
   min-height: calc(100vh - 260px); }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+img {
+  display: block; }
+
+a.nav-link {
+  color: #000000DE; }
+  a.nav-link.active {
+    color: #6C51E2; }
+
+th, td {
+  text-align: center; }
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
   line-height: 1.2; }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Raleway', serif;
   color: #000000DE; }
 
@@ -10158,9 +10176,7 @@ small {
 .text--muted {
   font-size: 14px; }
 
-th, td {
-  text-align: center; }
-
+/*單一工具類別*/
 @media screen and (max-width: 1199px) {
   .overflow--Xscroll {
     overflow-x: scroll;
@@ -10188,11 +10204,11 @@ th, td {
   .lineSeparator::before {
     position: absolute;
     content: "";
+    width: 1px;
+    height: 80%;
     top: 10%;
     bottom: 10%;
     right: -1px;
-    width: 1px;
-    height: 80%;
     background-color: #F1F0F8; }
 
 @media (min-width: 992px) {
@@ -10201,93 +10217,7 @@ th, td {
        -moz-column-count: 2;
             column-count: 2; } }
 
-.checkbox {
-  display: none; }
-  .checkbox__label {
-    cursor: pointer; }
-    @media (min-width: 768px) and (max-width: 991.98px) {
-      .checkbox__label {
-        font-size: 14px; } }
-    .checkbox__label::before {
-      content: "\2714";
-      border: 2px solid #343a40;
-      border-radius: 10%;
-      display: inline-block;
-      width: 24px;
-      height: 10px;
-      -ms-flex-negative: 0;
-          flex-shrink: 0;
-      -webkit-transform: translateY(0px);
-          -ms-transform: translateY(0px);
-              transform: translateY(0px);
-      padding: 0px 0 20px 4px;
-      margin-right: 4px;
-      color: transparent; }
-  .checkbox:checked + .checkbox__label::before {
-    border: 2px solid #6C51E2;
-    background-color: #6C51E2;
-    color: white; }
-
-/*pages分頁*/
-/*page的custom-tools*/
-.lineSeparator {
-  position: relative; }
-  .lineSeparator::before {
-    position: absolute;
-    content: "";
-    display: block;
-    width: 1px;
-    height: 80%;
-    top: 10%;
-    bottom: 10%;
-    right: -1px;
-    background-color: #F1F0F8; }
-
-/*swiper 按鈕*/
-.custom__swiper-button-next {
-  width: 40px;
-  height: 40px;
-  top: 30%;
-  -webkit-transform: translateX(25%);
-      -ms-transform: translateX(25%);
-          transform: translateX(25%);
-  background-color: #F1F0F8; }
-  .custom__swiper-button-next::after {
-    font-size: 16px;
-    font-weight: bold; }
-
-.custom__rangeGroup {
-  position: relative; }
-  .custom__rangeGroup input[type=range] {
-    position: absolute;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    /* 重置預設背景拉條 */
-    height: 8px;
-    outline: none;
-    background: none;
-    pointer-events: none; }
-    .custom__rangeGroup input[type=range]::-webkit-slider-runnable-track {
-      background-color: #6C51E2;
-      border-radius: 8px;
-      height: 2px; }
-    .custom__rangeGroup input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-              appearance: none;
-      position: relative;
-      top: -8px;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: #6C51E2;
-      pointer-events: auto; }
-      @media (min-width: 768px) {
-        .custom__rangeGroup input[type=range]::-webkit-slider-thumb {
-          top: -7px;
-          width: 16px;
-          height: 16px; } }
-
+/*layout*/
 .logo {
   width: 96px;
   height: 24px;
@@ -10322,11 +10252,6 @@ th, td {
 
 .icon__rating {
   font-size: 18px; }
-
-a.nav-link {
-  color: #000000DE; }
-  a.nav-link.active {
-    color: #6C51E2; }
 
 .section__login {
   position: relative; }
@@ -10428,6 +10353,82 @@ a.nav-link {
   .list-group-item.active::after {
     background: #6C51E2; }
 
+/*其他元件客製 or module*/
+/*多page用 component的custom-tools*/
+.custom {
+  /*swiper 按鈕*/
+  /*range 按鈕*/ }
+  .custom__swiper-button-next {
+    width: 40px;
+    height: 40px;
+    top: 30%;
+    -webkit-transform: translateX(25%);
+        -ms-transform: translateX(25%);
+            transform: translateX(25%);
+    background-color: #F1F0F8; }
+    .custom__swiper-button-next::after {
+      font-size: 16px;
+      font-weight: bold; }
+  .custom__rangeGroup {
+    position: relative; }
+    .custom__rangeGroup input[type=range] {
+      position: absolute;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      /* 重置預設背景拉條 */
+      height: 8px;
+      outline: none;
+      background: none;
+      pointer-events: none; }
+      .custom__rangeGroup input[type=range]::-webkit-slider-runnable-track {
+        background-color: #6C51E2;
+        border-radius: 8px;
+        height: 2px; }
+      .custom__rangeGroup input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+                appearance: none;
+        position: relative;
+        top: -8px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #6C51E2;
+        pointer-events: auto; }
+        @media (min-width: 768px) {
+          .custom__rangeGroup input[type=range]::-webkit-slider-thumb {
+            top: -7px;
+            width: 16px;
+            height: 16px; } }
+
+.checkbox {
+  display: none; }
+  .checkbox__label {
+    cursor: pointer; }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      .checkbox__label {
+        font-size: 14px; } }
+    .checkbox__label::before {
+      content: "\2714";
+      border: 2px solid #343a40;
+      border-radius: 10%;
+      display: inline-block;
+      width: 24px;
+      height: 10px;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+      -webkit-transform: translateY(0px);
+          -ms-transform: translateY(0px);
+              transform: translateY(0px);
+      padding: 0px 0 20px 4px;
+      margin-right: 4px;
+      color: transparent; }
+  .checkbox:checked + .checkbox__label::before {
+    border: 2px solid #6C51E2;
+    background-color: #6C51E2;
+    color: white; }
+
+/*pages分頁*/
 .section__banner {
   margin-top: 58px;
   height: auto; }
@@ -10540,5 +10541,7 @@ a.nav-link {
   transition: all 0.35s; }
   .section__resultList .inner__link:hover .inner__title {
     text-decoration: underline; }
+
+/*主要css*/
 
 /*# sourceMappingURL=all.css.map */

@@ -1,0 +1,48 @@
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4 {
+    line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Raleway', serif;
+    color: #000000DE;
+}
+
+h1,
+.h1 {
+    font-size: 48px;
+}
+
+h2,
+.h2 {
+    font-size: 32px;
+}
+
+h3,
+.h3 {
+    font-size: 24px;
+}
+
+h4,
+.h4 {
+    font-size: 16px;
+}
+
+small {
+    font-size: 12px;
+}
+
+// BS4帶有顏色變淺效果
+.text-muted {
+    font-size: 14px;
+}
+
+// 為了 14px
+.text--muted {
+    font-size: 14px;
+}

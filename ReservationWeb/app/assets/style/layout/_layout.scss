@@ -42,14 +42,8 @@
     }
 
 
-    a.nav-link {
-        color: map-get($theme-colors, info);
-
-        &.active {
-            color: map-get($theme-colors, primary);
-        }
-    }
-
+    
+    //todo下面那一個好像應該放index
     .section {
         &__login {
             position: relative;
@@ -170,6 +164,7 @@
         }
     }
 
+    //todo 應該放custom或page/index
     .list-group-item {
         position: relative;
 
@@ -183,7 +178,7 @@
             background: #f1f0f8;
         }
     }
-
+    //todo 應該放custom或page/index
     .list-group-item.active {
         background-color: white;
         color: map-get($theme-colors, primary);

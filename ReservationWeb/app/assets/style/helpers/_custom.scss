@@ -1,26 +1,8 @@
-/*page的custom-tools*/
+/*多page用 component的custom-tools*/
 
-// result-search頁的分隔線
-.lineSeparator {
-    position: relative;
-    &::before {
-      position: absolute;
-      content: "";
-      display: block;
-      width: 1px;
-      height: 80%;
-    //##上下10% 高度80%
-      top: 10%;
-      bottom: 10%;
-      right: -1px;//##right必要
-      background-color: map-get($theme-colors, secondary);
-    }
-}
 
-/*swiper 按鈕*/
-// todo 獨立出custom-swiper
 .custom {
-
+    /*swiper 按鈕*/
     &__swiper-button-next {
         // position: relative;//%%不能亂加 absolute不見
         width: 40px;
@@ -48,6 +30,7 @@
     //     }
     // }
     
+    /*range 按鈕*/
     // ##todo range更好的方式
     &__rangeGroup {
         position: relative;
@@ -114,3 +97,72 @@
 //     }
 //   }
 // }
+
+// ======================================================
+
+// 手刻版本
+//todo 改custom__checkbox
+.checkbox {
+    display: none;//##加在input
+    &__label {
+      cursor: pointer;
+      @include media-breakpoint-only(md){
+        font-size: 14px;
+      }
+      &::before {
+        content: "\2714";
+        border: 2px solid map-get($theme-colors , dark );
+        border-radius: 10%;
+        display: inline-block;
+      
+        width: 24px;
+        height: 10px;
+        flex-shrink:0;//##
+        transform: translateY(0px);
+        padding: 0px 0 20px 4px;
+        margin-right: 4px;
+        color:transparent;//##先隱藏
+      }
+    }
+    
+    &:checked {
+      + .checkbox__label::before {
+        border: 2px solid  map-get($theme-colors , primary );
+        background-color:  map-get($theme-colors , primary );
+        color: white;
+      }
+    }
+  }
+  
+  
+  // todo BS4版本(跨瀏覽器)
+  // .custom-checkbox{
+  //   .custom-control-input:checked ~ .custom-control-label{
+  
+  //     &::before{
+  //       width: 24px;
+  //       height: 10px;
+  //       border-radius: 10%;
+  //       display: inline-block;
+  //       transform: translateY(0px);
+  //       padding: 0px 0 20px 4px;
+  //       margin-right: 4px;
+  
+  //     }
+  //     &::after{
+  //       content: "\2714";
+  //       border: 2px solid map-get($theme-colors , dark );
+  //       border-radius: 10%;
+  //       display: inline-block;
+      
+  //       width: 24px;
+  //       height: 10px;
+  //       transform: translateY(0px);
+  //       padding: 0px 0 20px 4px;
+  //       margin-right: 4px;
+  //       color:transparent;//##先隱藏
+  //     }
+      
+  //   }
+  // }
+  

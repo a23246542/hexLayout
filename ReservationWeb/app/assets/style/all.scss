@@ -1,33 +1,48 @@
-// @@sass使用相對路徑 其他html用絕對路勁 gitpage?
-/*project*/
-@import "./helpers/custom-variables";
 
 
-	/* BootStrap 4 */
+/* BootStrap 4 */
 // All
 @import 'bootstrap/scss/functions';
-// @import 'mixins';
 @import "./helpers/variables";
 @import "bootstrap/scss/bootstrap";
 // @import '~swiper/swiper.scss';//失敗
 
-/*plugin*/
-
+/*plugin or vendors*/
+@import "aos/src/sass/aos.scss";
+// @@載入失敗
 // @import 'swiper/swiper.scss';//%%沒有什麼樣式
 // C:\Users\a2324\Documents\hexLayout\node_modules\swiper\css\swiper.min.css
 // @import url("swiper/css/swiper.min.css");
-@import "aos/src/sass/aos.scss";
+// @import "../../../../node_modules/swiper/css/swiper.min.css";
+// @import url("../../../../node_modules/swiper/css/swiper.min.css");
+// @import url("../../node_modules/swiper/css/swiper.min.css");
+// @import "../../node_modules/swiper/css/swiper.min.css";
 
-/*初始化.工具類*/
-@import "./helpers/base";
-@import "./helpers/init";
+/*初始化.全站設定.工具類*/
+// @import "reset";//不用reset
+@import "./base/base";
+@import "./base/fontStyle";
+@import "./helpers/mixin";
 @import "./helpers/util";
 
+/*layout*/
+@import "./layout/layout";
+
+/*其他元件客製 or module*/
+@import "./helpers/custom";
 
 /*pages分頁*/
-@import "./helpers//custom";
-@import "./pages/layout";
+// @import "./pages/layout";
 @import "./pages/index";
 @import "./pages/search-result";
+
+/*主要css*/
+// @import "main.css";
+
+
+
+// @@sass使用相對路徑 其他html用絕對路勁 gitPage絕對路徑
+// @@要先import function 才能variables 自訂變數放前面
+
 
 
