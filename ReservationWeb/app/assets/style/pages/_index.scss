@@ -1,8 +1,4 @@
-.section__banner {
-    margin-top: 58px;
-    // height: 320px;
-    height: auto;
-}
+
 
 .slide1 {
     // background-image: url("../../images/index-banner.jpg");
@@ -10,38 +6,49 @@
     // %%要文字不是圖
 }
 
-.swiper-container {
-    width: 100%;
-    // height: 500px;
-    height: 320px;
-}
+// .swiper-container {
+//     width: 100%;
+//     // height: 500px;
+//     height: 320px;
+// }
 
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
+// .swiper-slide {
+//     text-align: center;
+//     font-size: 18px;
 
 
-    // /* Center slide text vertically */
-    // display: -webkit-box;
-    // display: -ms-flexbox;
-    // display: -webkit-flex;
-    // display: flex;
-    // -webkit-box-pack: center;
-    // -ms-flex-pack: center;
-    // -webkit-justify-content: center;
-    // justify-content: center;
-    // -webkit-box-align: center;
-    // -ms-flex-align: center;
-    // -webkit-align-items: center;
-    // align-items: center;
-}
+//     // /* Center slide text vertically */
+//     // display: -webkit-box;
+//     // display: -ms-flexbox;
+//     // display: -webkit-flex;
+//     // display: flex;
+//     // -webkit-box-pack: center;
+//     // -ms-flex-pack: center;
+//     // -webkit-justify-content: center;
+//     // justify-content: center;
+//     // -webkit-box-align: center;
+//     // -ms-flex-align: center;
+//     // -webkit-align-items: center;
+//     // align-items: center;
+// }
 
 /* 區塊命名 */
+// @@裡面客製修改元件該如何命
 .section {
     &__banner {
         margin-top: 58px;
         height: 320px;
         background-image: url("../images/index-banner.jpg");
+
+        .swiper-container {
+            width: 100%;
+            height: auto;
+        }
+        
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+        }
     }
 
     &__search {
@@ -76,6 +83,30 @@
         //&__card--textRight{
         .card{
             text-align: left;
+        }
+
+        &__navItem{
+            position: relative;
+
+            &::after {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background: #f1f0f8;
+            }
+        }
+
+        &__navItem--active{
+            background-color: white;
+            color: map-get($theme-colors, primary);
+            transition: all 0.35s;
+    
+            &::after {
+                background: map-get($theme-colors, primary);
+            }
         }
     }
 

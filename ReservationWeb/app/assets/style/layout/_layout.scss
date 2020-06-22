@@ -1,88 +1,51 @@
     // @@每頁都可用到的樣式
-    .logo {
+    .l_logo {
         @include hidden-text(96px, 24px, url("../images/logo-aloha.svg"));
     }
 
+    //todo 拆分到header
+    // .l_login {
+    //     &__navImage {
+    //         position: relative;
+    //         &::before {
+    //             position: absolute;
+    //             content: "";
+    //             width: 24px;
+    //             height: 24px;
+    //             background-image: url("../images/sung-wang-g4DgCF90EM4-unsplash.jpg");
+    //             background-size: cover;
+    //             background-position: center;
+    //             background-repeat: no-repeat;
+    //             border-radius: 50%;
+    //             border: 2px solid map-get($theme-colors, primary);
+    //             top: 0px;
+    //             left: -32px;
 
-    .login {
-        &__navImage {
-            position: relative;
+    //             @include media-breakpoint-up(md) {
+    //                 top: 0;
+    //             }
+    //         }
+    //     }
 
-            &::before {
-                position: absolute;
-                content: "";
-                width: 24px;
-                height: 24px;
-                background-image: url("../images/sung-wang-g4DgCF90EM4-unsplash.jpg");
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                border-radius: 50%;
-                border: 2px solid map-get($theme-colors, primary);
-                top: 0px;
-                left: -32px;
-
-                @include media-breakpoint-up(md) {
-                    top: 0;
-                }
-            }
-        }
-
-        &__memberImage {
-            width: 64px;
-            height: 64px;
-        }
-    }
+    //     &__memberImage {
+    //         width: 64px;
+    //         height: 64px;
+    //     }
+    // }
 
 
-    .icon {
-        &__rating {
+    .l_icon {
+        &__rating {//評價星星字變小
             font-size: 18px;
         }
     }
 
 
-    
-    //todo下面那一個好像應該放index
     .section {
-        &__login {
-            position: relative;
-
-            &__banner {
-                position: absolute;
-                background-image: url("../images/login.jpg");
-                // min-height: 800px;
-                height: 100vh;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-            }
-
-            &__info {
-                position: relative;
-
-                @include media-breakpoint-up(md) {
-                    margin-top: 96px;
-                }
-
-                @include media-breakpoint-up(lg) {
-                    margin-top: 176px;
-                }
-
-                &__location {
-                    position: absolute;
-                    bottom: -20%;
-                    left: 50%;
-                    transform: translateX(-50%);
-
-                    @include media-breakpoint-up(lg) {
-                        bottom: -40%;
-                        left: 0;
-                        transform: translateX(0);
-                    }
-                }
-            }
+        
+        // ##todo 之後做login
+        &__login{
+            
         }
 
         &__searchResult {
@@ -98,9 +61,9 @@
         }
     }
 
-    //   ##每頁產品都用的
-    //todo l-product l_product
-    .product {
+
+    /*layout-產品*/
+    .l_product {
         &__img {
             width: 150px;
             height: 150px;
@@ -115,13 +78,13 @@
                 height: 175px;
             }
 
-            &__booking {
-                @include media-breakpoint-down(sm) {
-                    width: 100%;
-                    height: 226px;
-                    border-radius: 8px 8px 0px 0px;
-                }
-            }
+            // &__booking {
+            //     @include media-breakpoint-down(sm) {
+            //         width: 100%;
+            //         height: 226px;
+            //         border-radius: 8px 8px 0px 0px;
+            //     }
+            // }
         }
 
         &__price {
@@ -154,13 +117,13 @@
                 }
             }
 
-            &__origin {
-                font-size: 12px;
+            // &__origin {
+            //     font-size: 12px;
 
-                @include media-breakpoint-up(md) {
-                    font-size: 14px;
-                }
-            }
+            //     @include media-breakpoint-up(md) {
+            //         font-size: 14px;
+            //     }
+            // }
         }
     }
 

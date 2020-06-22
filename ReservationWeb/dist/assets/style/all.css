@@ -10218,7 +10218,7 @@ small {
             column-count: 2; } }
 
 /*layout*/
-.logo {
+.l_logo {
   width: 96px;
   height: 24px;
   text-indent: 101%;
@@ -10227,64 +10227,8 @@ small {
   background-image: url("../images/logo-aloha.svg");
   background-repeat: no-repeat; }
 
-.login__navImage {
-  position: relative; }
-  .login__navImage::before {
-    position: absolute;
-    content: "";
-    width: 24px;
-    height: 24px;
-    background-image: url("../images/sung-wang-g4DgCF90EM4-unsplash.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    border: 2px solid #6C51E2;
-    top: 0px;
-    left: -32px; }
-    @media (min-width: 768px) {
-      .login__navImage::before {
-        top: 0; } }
-
-.login__memberImage {
-  width: 64px;
-  height: 64px; }
-
-.icon__rating {
+.l_icon__rating {
   font-size: 18px; }
-
-.section__login {
-  position: relative; }
-  .section__login__banner {
-    position: absolute;
-    background-image: url("../images/login.jpg");
-    height: 100vh;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0; }
-  .section__login__info {
-    position: relative; }
-    @media (min-width: 768px) {
-      .section__login__info {
-        margin-top: 96px; } }
-    @media (min-width: 992px) {
-      .section__login__info {
-        margin-top: 176px; } }
-    .section__login__info__location {
-      position: absolute;
-      bottom: -20%;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-          -ms-transform: translateX(-50%);
-              transform: translateX(-50%); }
-      @media (min-width: 992px) {
-        .section__login__info__location {
-          bottom: -40%;
-          left: 0;
-          -webkit-transform: translateX(0);
-              -ms-transform: translateX(0);
-                  transform: translateX(0); } }
 
 .section__searchResult {
   margin-top: 72px; }
@@ -10292,30 +10236,26 @@ small {
     .section__searchResult .lineSeparator::before {
       background-color: white; } }
 
-.product__img {
+/*layout-產品*/
+.l_product__img {
   width: 150px;
   height: 150px;
   border-radius: 0; }
   @media (min-width: 576px) {
-    .product__img {
+    .l_product__img {
       border-radius: 8px 0px 0px 8px; } }
   @media (min-width: 992px) {
-    .product__img {
+    .l_product__img {
       width: 255px;
       height: 175px; } }
-  @media (max-width: 767.98px) {
-    .product__img__booking {
-      width: 100%;
-      height: 226px;
-      border-radius: 8px 8px 0px 0px; } }
 
-.product__price {
+.l_product__price {
   position: relative;
   font-size: 16px; }
   @media (min-width: 768px) {
-    .product__price__title {
+    .l_product__price__title {
       font-size: 24px; }
-      .product__price__title::before {
+      .l_product__price__title::before {
         position: absolute;
         content: "per night";
         font-size: 12px;
@@ -10323,15 +10263,10 @@ small {
         color: #00000099;
         top: -15px;
         right: 0; } }
-  .product__price.active .product__price__title {
+  .l_product__price.active .product__price__title {
     color: #6C51E2; }
-    .product__price.active .product__price__title::before {
+    .l_product__price.active .product__price__title::before {
       top: -20px; }
-  .product__price__origin {
-    font-size: 12px; }
-    @media (min-width: 768px) {
-      .product__price__origin {
-        font-size: 14px; } }
 
 .list-group-item {
   position: relative; }
@@ -10429,23 +10364,17 @@ small {
     color: white; }
 
 /*pages分頁*/
-.section__banner {
-  margin-top: 58px;
-  height: auto; }
-
-.swiper-container {
-  width: 100%;
-  height: 320px; }
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px; }
-
 /* 區塊命名 */
 .section__banner {
   margin-top: 58px;
   height: 320px;
   background-image: url("../images/index-banner.jpg"); }
+  .section__banner .swiper-container {
+    width: 100%;
+    height: auto; }
+  .section__banner .swiper-slide {
+    text-align: center;
+    font-size: 18px; }
 
 .section__search {
   margin-top: -52px;
@@ -10464,6 +10393,26 @@ small {
 
 .section__topChoices .card {
   text-align: left; }
+
+.section__topChoices__navItem {
+  position: relative; }
+  .section__topChoices__navItem::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: #f1f0f8; }
+
+.section__topChoices__navItem--active {
+  background-color: white;
+  color: #6C51E2;
+  -webkit-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s; }
+  .section__topChoices__navItem--active::after {
+    background: #6C51E2; }
 
 .section__destinations .inner__img {
   position: relative; }
