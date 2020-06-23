@@ -1,8 +1,8 @@
-/*多page用 component的custom-tools*/
+/*@@當作多page用 现有component的custom-tools如何*/
 
 
 .custom {
-    /*swiper 按鈕*/
+    /*改swiper 按鈕*/
     &__swiper-button-next {
         // position: relative;//%%不能亂加 absolute不見
         width: 40px;
@@ -31,7 +31,8 @@
     // }
     
     /*range 按鈕*/
-    // ##todo range更好的方式
+    // ## todo range更好的方式
+    // ## todo bs4的下去改
     &__rangeGroup {
         position: relative;
         input[type=range] {
@@ -101,8 +102,8 @@
 // ======================================================
 
 // 手刻版本
-//todo 改custom__checkbox
-.checkbox {
+//todo 之後換改bs4 变custom__checkbox
+.l_checkbox {
     display: none;//##加在input
     &__label {
       cursor: pointer;
@@ -126,7 +127,7 @@
     }
     
     &:checked {
-      + .checkbox__label::before {
+      + .l_checkbox__label::before {
         border: 2px solid  map-get($theme-colors , primary );
         background-color:  map-get($theme-colors , primary );
         color: white;

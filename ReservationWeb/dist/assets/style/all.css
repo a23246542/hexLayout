@@ -10268,30 +10268,10 @@ small {
     .l_product__price.active .product__price__title::before {
       top: -20px; }
 
-.list-group-item {
-  position: relative; }
-  .list-group-item::after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background: #f1f0f8; }
-
-.list-group-item.active {
-  background-color: white;
-  color: #6C51E2;
-  -webkit-transition: all 0.35s;
-  -o-transition: all 0.35s;
-  transition: all 0.35s; }
-  .list-group-item.active::after {
-    background: #6C51E2; }
-
 /*其他元件客製 or module*/
-/*多page用 component的custom-tools*/
+/*@@當作多page用 现有component的custom-tools如何*/
 .custom {
-  /*swiper 按鈕*/
+  /*改swiper 按鈕*/
   /*range 按鈕*/ }
   .custom__swiper-button-next {
     width: 40px;
@@ -10336,14 +10316,14 @@ small {
             width: 16px;
             height: 16px; } }
 
-.checkbox {
+.l_checkbox {
   display: none; }
-  .checkbox__label {
+  .l_checkbox__label {
     cursor: pointer; }
     @media (min-width: 768px) and (max-width: 991.98px) {
-      .checkbox__label {
+      .l_checkbox__label {
         font-size: 14px; } }
-    .checkbox__label::before {
+    .l_checkbox__label::before {
       content: "\2714";
       border: 2px solid #343a40;
       border-radius: 10%;
@@ -10358,7 +10338,7 @@ small {
       padding: 0px 0 20px 4px;
       margin-right: 4px;
       color: transparent; }
-  .checkbox:checked + .checkbox__label::before {
+  .l_checkbox:checked + .l_checkbox__label::before {
     border: 2px solid #6C51E2;
     background-color: #6C51E2;
     color: white; }
@@ -10381,22 +10361,22 @@ small {
   position: relative;
   z-index: 100; }
 
-.section__topChoices .inner__img {
+.section__topChoices ._inner__img {
   width: 255px;
   height: 164px; }
   @media (min-width: 768px) {
-    .section__topChoices .inner__img {
+    .section__topChoices ._inner__img {
       height: 185px; } }
   @media (min-width: 992px) {
-    .section__topChoices .inner__img {
+    .section__topChoices ._inner__img {
       height: 175px; } }
 
 .section__topChoices .card {
   text-align: left; }
 
-.section__topChoices__navItem {
+.section__topChoices .list-group-item {
   position: relative; }
-  .section__topChoices__navItem::after {
+  .section__topChoices .list-group-item::after {
     position: absolute;
     content: "";
     width: 100%;
@@ -10405,18 +10385,18 @@ small {
     left: 0;
     background: #f1f0f8; }
 
-.section__topChoices__navItem--active {
+.section__topChoices .list-group-item.active {
   background-color: white;
   color: #6C51E2;
   -webkit-transition: all 0.35s;
   -o-transition: all 0.35s;
   transition: all 0.35s; }
-  .section__topChoices__navItem--active::after {
+  .section__topChoices .list-group-item.active::after {
     background: #6C51E2; }
 
-.section__destinations .inner__img {
+.section__destinations ._inner__img {
   position: relative; }
-  .section__destinations .inner__img::after {
+  .section__destinations ._inner__img::after {
     position: absolute;
     content: "";
     top: 0;
@@ -10426,20 +10406,20 @@ small {
     background: -webkit-gradient(linear, right top, left top, from(#0000), to(#000));
     background: -o-linear-gradient(right, #0000 0%, #000 100%);
     background: linear-gradient(-90deg, #0000 0%, #000 100%); }
-  .section__destinations .inner__img--Osaka {
+  .section__destinations ._inner__img--Osaka {
     background-image: url("../images/Osaka.jpg"); }
-  .section__destinations .inner__img--Kyoto {
+  .section__destinations ._inner__img--Kyoto {
     background-image: url("../images/Kyoto.jpg"); }
-  .section__destinations .inner__img--Reykjavic {
+  .section__destinations ._inner__img--Reykjavic {
     background-image: url("../images/Reykjavic.jpg"); }
-  .section__destinations .inner__img--Paris {
+  .section__destinations ._inner__img--Paris {
     background-image: url("../images/Paris.jpg"); }
-  .section__destinations .inner__img--Roma {
+  .section__destinations ._inner__img--Roma {
     background-image: url("../images/Roman.jpg"); }
-  .section__destinations .inner__img__Bangkok {
+  .section__destinations ._inner__img--Bangkok {
     background-image: url("../images/Bangkok.jpg"); }
 
-.section__destinations .inner__text {
+.section__destinations ._inner__text {
   z-index: 9; }
 
 .section__destinations .btn:focus {
@@ -10452,17 +10432,17 @@ small {
 .section__inspiration .card {
   text-align: left; }
 
-.section__inspiration .inner__img {
+.section__inspiration ._inner__img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 240px;
   height: 181px; }
   @media (min-width: 768px) {
-    .section__inspiration .inner__img {
+    .section__inspiration ._inner__img {
       width: 210px;
       height: 158px; } }
   @media (min-width: 992px) {
-    .section__inspiration .inner__img {
+    .section__inspiration ._inner__img {
       width: 350px;
       height: 263px; } }
 
@@ -10473,22 +10453,22 @@ small {
 .section__resultList__sort .nav-link {
   font-size: 18px; }
 
-.section__resultList .inner__item {
+.section__resultList ._inner__item {
   margin: 0px -15px;
   border-bottom: 4px solid #F1F0F8; }
   @media (min-width: 576px) {
-    .section__resultList .inner__item {
+    .section__resultList ._inner__item {
       margin: 0px;
       border-bottom: 1px solid #F1F0F8; } }
 
-.section__resultList .inner__link:hover {
+.section__resultList ._inner__link:hover {
   border-radius: 8px;
   -webkit-box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.075);
           box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.075);
   -webkit-transition: all 0.35s;
   -o-transition: all 0.35s;
   transition: all 0.35s; }
-  .section__resultList .inner__link:hover .inner__title {
+  .section__resultList ._inner__link:hover ._inner__title {
     text-decoration: underline; }
 
 /*主要css*/

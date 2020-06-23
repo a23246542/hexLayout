@@ -1,10 +1,6 @@
 
 
-.slide1 {
-    // background-image: url("../../images/index-banner.jpg");
-    // background-image: url("../images/index-banner.jpg"); //%%dist為主
-    // %%要文字不是圖
-}
+
 
 // .swiper-container {
 //     width: 100%;
@@ -40,6 +36,12 @@
         height: 320px;
         background-image: url("../images/index-banner.jpg");
 
+        // .slide1 {
+        //     // background-image: url("../../images/index-banner.jpg");
+        //     // background-image: url("../images/index-banner.jpg"); //%%dist為主
+        //     // %%要文字不是圖
+        // }
+
         .swiper-container {
             width: 100%;
             height: auto;
@@ -48,6 +50,10 @@
         .swiper-slide {
             text-align: center;
             font-size: 18px;
+
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
         }
     }
 
@@ -64,7 +70,7 @@
     }
 
     &__topChoices {
-        .inner {
+        ._inner {
             &__img {
                 width: 255px;
                 height: 164px;
@@ -79,15 +85,16 @@
             }
         }
         // ##slide一次給
-        // @@會不會太長
-        //&__card--textRight{
+        // @@會不會太長 可是只是原本card組件附加上去
+        //&__card--textRight{ 這個不要
         .card{
             text-align: left;
         }
 
-        &__navItem{
+        
+        // ## todo換改nav作法
+        .list-group-item {
             position: relative;
-
             &::after {
                 position: absolute;
                 content: "";
@@ -98,23 +105,22 @@
                 background: #f1f0f8;
             }
         }
-
-        &__navItem--active{
+        .list-group-item.active {
             background-color: white;
             color: map-get($theme-colors, primary);
             transition: all 0.35s;
-    
             &::after {
                 background: map-get($theme-colors, primary);
             }
         }
+
     }
 
     &__destinations {
-        .inner {
+        ._inner {
             &__img {
                 position: relative;
-                // todo改inner__img--shadow
+                // todo改_inner__img--shadow
                 &::after {
                     position: absolute;
                     content: "";
@@ -148,7 +154,7 @@
                     background-image: url("../images/Roman.jpg");
                 }
 
-                &__Bangkok {
+                &--Bangkok {
                     background-image: url("../images/Bangkok.jpg");
                 }
             }
@@ -175,7 +181,7 @@
             text-align: left;
         }
         // .inner__img
-        .inner {
+        ._inner {
             &__img {
                 object-fit: cover;
                 width: 240px;
