@@ -10354,7 +10354,8 @@ small {
     height: auto; }
   .section__banner .swiper-slide {
     text-align: center;
-    font-size: 18px; }
+    font-size: 18px;
+    white-space: nowrap; }
 
 .section__search {
   margin-top: -52px;
