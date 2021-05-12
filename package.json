@@ -45,7 +45,7 @@
     "jquery": "^3.5.1",
     "minimist": "^1.2.5",
     "popper": "^1.0.1",
-    "swiper": "^5.4.5",
+    "swiper": "^6.5.1",
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "express": "^4.17.1",
