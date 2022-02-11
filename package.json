@@ -50,7 +50,7 @@
     "@babel/preset-env": "^7.9.6",
     "express": "^4.17.1",
     "morgan": "^1.9.1",
-    "node-sass": "^4.12.0"
+    "node-sass": "^7.0.0"
   },
   "devDependencies": {
     "gulp-ejs": "^5.1.0",
